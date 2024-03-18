@@ -69,7 +69,7 @@ class Welcome extends StatelessWidget {
                         RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                       ),
                       minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
-                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      backgroundColor: MaterialStateProperty.all(Colors.transparent),
                       shadowColor: MaterialStateProperty.all(Colors.transparent)
                     ),
                   )

@@ -1,5 +1,8 @@
 import 'package:defi/view/auth/forgot-password.dart';
+import 'package:defi/view/auth/sign-in-code.dart';
 import 'package:defi/view/auth/sign-in.dart';
+import 'package:defi/view/auth/sign-up.dart';
+import 'package:defi/view/auth/verify-email.dart';
 import 'package:defi/view/welcome.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +17,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/',
+      initialRoute: '/welcome',
       routes: {
-        '/': (context) => Welcome(),
+        // '/': 
+        '/welcome': (context) => Welcome(),
+        '/sign-up':(context) => SignUp(),
         '/sign-in': (context) => SignIn(),
-        '/forgot-password': (context) => ForgotPassword()
+        '/sign-in-code': (context) => SignInCode(),
+        '/verify-email':(context) => VerifyEmail(),
+        '/forgot-password': (context) => ForgotPassword(),
       },
 
       // home: Splash()

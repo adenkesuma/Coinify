@@ -45,7 +45,7 @@ class _SignInState extends State<SignIn> {
                     contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     border: OutlineInputBorder(),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black)
+                      borderSide: BorderSide(color: Colors.grey)
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.blue)
@@ -74,7 +74,7 @@ class _SignInState extends State<SignIn> {
                     contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     border: OutlineInputBorder(),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black)
+                      borderSide: BorderSide(color: Colors.grey)
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.blue)
@@ -94,7 +94,7 @@ class _SignInState extends State<SignIn> {
                 )
               ],
             ),
-            SizedBox(height: 30.0),
+            SizedBox(height: 50.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -131,7 +131,7 @@ class _SignInState extends State<SignIn> {
             SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/sign-in');
+                Navigator.pushNamed(context, '/sign-in-code');
               }, 
               child: Text(
                 "Sign in",
