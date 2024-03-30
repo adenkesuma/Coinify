@@ -9,6 +9,8 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   bool isPasswordVisible = false;
+  FocusNode emailText = FocusNode();
+  FocusNode passwordText = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,8 @@ class _SignInState extends State<SignIn> {
               'Sign In to Coinify',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 24.0
+                fontSize: 24.0,
+                fontFamily: "Graphik",
               )
             ),
             SizedBox(height: 20.0),
@@ -37,10 +40,13 @@ class _SignInState extends State<SignIn> {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 16.0,
+                    color: emailText.hasFocus ? Colors.blue : Colors.black,
+                    fontFamily: "Graphik",
                   ),
                 ),
                 SizedBox(height: 8.0),
-                TextField(
+                TextFormField(
+                  focusNode: emailText,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     border: OutlineInputBorder(),
@@ -50,7 +56,13 @@ class _SignInState extends State<SignIn> {
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.blue)
                     ),
-                    hintText: 'Enter your email'
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red)
+                    ),
+                    hintText: 'Enter your email',
                   ),
                 )
               ],
@@ -65,10 +77,13 @@ class _SignInState extends State<SignIn> {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 16.0,
+                    color: passwordText.hasFocus ? Colors.blue : Colors.black,
+                    fontFamily: "Graphik",
                   ),
                 ),
                 SizedBox(height: 8.0),
-                TextField(
+                TextFormField(
+                  focusNode: passwordText,
                   obscureText: !isPasswordVisible,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -78,6 +93,12 @@ class _SignInState extends State<SignIn> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.blue)
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red),
                     ),
                     hintText: 'Enter your password',
                     suffixIcon: GestureDetector(
@@ -110,7 +131,7 @@ class _SignInState extends State<SignIn> {
                         color: Colors.blue,
                       )
                     )
-                  )             
+                  )
                 ),
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
@@ -124,7 +145,7 @@ class _SignInState extends State<SignIn> {
                         color: Colors.blue,
                       )
                     )
-                  )             
+                  )
                 ),
               ]
             ),
@@ -132,7 +153,7 @@ class _SignInState extends State<SignIn> {
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/sign-in-code');
-              }, 
+              },
               child: Text(
                 "Sign in",
                 style: TextStyle(
