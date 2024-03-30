@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/forgot-password',
+      initialRoute: '/welcome',
       routes: {
         // '/': 
         '/welcome': (context) => Welcome(),
@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
         '/verify-email':(context) => VerifyEmail(),
         '/forgot-password': (context) => ForgotPassword(),
       },
-
       // home: Splash()
     );
   }

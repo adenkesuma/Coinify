@@ -16,6 +16,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(""),
       ),
@@ -46,7 +47,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       errorText: _isPhoneNumber ? null : "Phone Number must not be empty",
                     ),
                     initialCountryCode: "US",
-
                   ),
                 ],
               ),
@@ -59,15 +59,20 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   child: ElevatedButton(
                     onPressed: (){
                       setState(() {
+                        // FocusScope.of(context).unfocus();
                         if(phoneNumberInput.text == ""){_isPhoneNumber = false;}
                         else{_isPhoneNumber = true;}
                       });
                     },
-                    style: ElevatedButton.styleFrom(foregroundColor: Colors.white,backgroundColor: Colors.blueAccent),
+                    style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.blueAccent,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                    ),
                     child: Text("Continue",style: TextStyle(fontSize: 17.0),),
                   ),
                 ),
-                SizedBox(height: 10.0,)
+                SizedBox(height: 10.0,),
               ],
             ),
           ],

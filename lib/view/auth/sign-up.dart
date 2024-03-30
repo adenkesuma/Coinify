@@ -48,30 +48,114 @@ class _SignUpState extends State<SignUp> {
           ),
         ),
       ),
-      body: Container(
-        padding: EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Create your account',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24.0
-                  )
-                ),
-                SizedBox(height: 20.0),
-                Column(
+      body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        child: Container(
+          height: MediaQuery.of(context).size.height-90,
+          padding: EdgeInsets.all(30.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'First Name',
+                        'Create your account',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24.0
+                        )
+                    ),
+                    SizedBox(height: 20.0),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'First Name',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                        SizedBox(height: 8.0),
+                        TextField(
+                          decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              border: OutlineInputBorder(),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue)
+                              ),
+                              hintText: 'Enter your first name'
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20.0),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Last Name',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                        SizedBox(height: 8.0),
+                        TextField(
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              border: OutlineInputBorder(),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue)
+                              ),
+                              hintText: 'Enter your last name',
+                            )
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20.0),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Email',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                        SizedBox(height: 8.0),
+                        TextField(
+                          decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              border: OutlineInputBorder(),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue)
+                              ),
+                              hintText: 'Enter your email'
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20.0),
+                    Text(
+                      'Password',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 16.0,
@@ -79,160 +163,82 @@ class _SignUpState extends State<SignUp> {
                     ),
                     SizedBox(height: 8.0),
                     TextField(
+                      obscureText: !isPasswordVisible,
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                         border: OutlineInputBorder(),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)
+                            borderSide: BorderSide(color: Colors.grey)
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue)
+                            borderSide: BorderSide(color: Colors.blue)
                         ),
-                        hintText: 'Enter your first name'
+                        hintText: 'Enter your password',
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isPasswordVisible = !isPasswordVisible;
+                            });
+                          },
+                          child: Icon(
+                            isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                          ),
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
-                SizedBox(height: 20.0),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Last Name',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.0,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.zero,
+                    child: CheckboxListTile(
+                      value: isChecked, 
+                      title: Text(
+                        'I certify that I am 18 years of age or older, and I agree to the User Agreement and Privacy Policy',
+                        style: TextStyle(fontSize: 14.0),
                       ),
-                    ),
-                    SizedBox(height: 8.0),
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                        border: OutlineInputBorder(),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue)
-                        ),
-                        hintText: 'Enter your last name',
-                    )
-                    )
-                  ],
-                ),  
-                SizedBox(height: 20.0),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    SizedBox(height: 8.0),
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                        border: OutlineInputBorder(),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue)
-                        ),
-                        hintText: 'Enter your email'
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(height: 20.0),
-                 Text(
-                  'Password',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16.0,
-                  ),
-                ),
-                SizedBox(height: 8.0),
-                TextField(
-                  obscureText: !isPasswordVisible,
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                    border: OutlineInputBorder(),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey)
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue)
-                    ),
-                    hintText: 'Enter your password',
-                    suffixIcon: GestureDetector(
-                      onTap: () {
+                      onChanged: (value) {
                         setState(() {
-                          isPasswordVisible = !isPasswordVisible;
+                          isChecked = !isChecked;
                         });
                       },
-                      child: Icon(
-                        isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      controlAffinity: ListTileControlAffinity.leading,
+                      activeColor: Colors.blue,
+                      checkColor: Colors.white,
+                      tristate: true,
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/verify-email');
+                    }, 
+                    child: Text(
+                      "Start",
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.white
                       ),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: EdgeInsets.zero,
-                  child: CheckboxListTile(
-                    value: isChecked, 
-                    title: Text(
-                      'I certify that I am 18 years of age or older, and I agree to the User Agreement and Privacy Policy',
-                      style: TextStyle(fontSize: 14.0),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      shadowColor: MaterialStateProperty.all(Colors.transparent)
                     ),
-                    onChanged: (value) {
-                      setState(() {
-                        isChecked = !isChecked;
-                      });
-                    },
-                    controlAffinity: ListTileControlAffinity.leading,
-                    activeColor: Colors.blue,
-                    checkColor: Colors.white,
-                    tristate: true,
-                  ),
-                ),
-                SizedBox(height: 20.0),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/verify-email');
-                  }, 
-                  child: Text(
-                    "Start",
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white
-                    ),
-                  ),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                    ),
-                    minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
-                    backgroundColor: MaterialStateProperty.all(Colors.blue),
-                    shadowColor: MaterialStateProperty.all(Colors.transparent)
-                  ),
-                )
-              ],
-            ),
-          ]
-        )
+                  )
+                ],
+              ),
+            ]
+          )
+        ),
       )
     );
   }
