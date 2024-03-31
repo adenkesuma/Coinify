@@ -172,6 +172,9 @@ class _VerificationState extends State<Verification> {
                             else{_iscode = true;}
                             if(codeInput.text.length != 7){_validcode = false;}
                             else{_validcode = true;}
+                            if(_iscode && _validcode){Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) => CreateNewPassword(),));
+                            }
                           });
                         },
                         style: ElevatedButton.styleFrom(
@@ -195,6 +198,129 @@ class _VerificationState extends State<Verification> {
                         child: Text("Resend Code",style: TextStyle(fontSize: 16.0),)),
                   ),
                 ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+class CreateNewPassword extends StatefulWidget {
+  const CreateNewPassword({super.key});
+
+  @override
+  State<CreateNewPassword> createState() => _CreateNewPasswordState();
+}
+
+class _CreateNewPasswordState extends State<CreateNewPassword> {
+  FocusNode newPasswordText = FocusNode();
+  FocusNode confirmNewPasswordText = FocusNode();
+  bool _isNewPasswordVisible = false;
+  bool _isConfirmNewPasswordVisible = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(""),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height - 100,
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Create New Password", style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                        fontFamily: "GraphikMedium"
+                    ),),
+                    SizedBox(height: 10.0,),
+                    Text("Create new password for your account", style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),),
+                    SizedBox(height: 20.0,),
+                    Text("New Password",style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      fontFamily: "GraphikMedium",
+                      color: newPasswordText.hasFocus ? Colors.blue : Colors.black,
+                    ),),
+                    SizedBox(height: 5.0,),
+                    Focus(
+                      onFocusChange: (focus){
+                        setState(() {});
+                      },
+                      child: TextFormField(
+                        obscureText: !_isNewPasswordVisible,
+                        focusNode: newPasswordText,
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                          suffixIcon: GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                _isNewPasswordVisible = !_isNewPasswordVisible;
+                              });
+                            },
+                            child: Icon(_isNewPasswordVisible ? Icons.visibility : Icons.visibility_off,),
+                          )
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 15.0,),
+                    Text("Confirm New Password",style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      fontFamily: "GraphikMedium",
+                      color: newPasswordText.hasFocus ? Colors.blue : Colors.black,
+                    ),),
+                    SizedBox(height: 5.0,),
+                    Focus(
+                      onFocusChange: (focus){
+                        setState(() {});
+                      },
+                      child: TextFormField(
+                        obscureText: !_isConfirmNewPasswordVisible,
+                        focusNode: confirmNewPasswordText,
+                        decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+                            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                            suffixIcon: GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  _isConfirmNewPasswordVisible = !_isConfirmNewPasswordVisible;
+                                });
+                              },
+                              child: Icon(_isConfirmNewPasswordVisible ? Icons.visibility : Icons.visibility_off,),
+                            )
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: (){},
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                  ),
+                  child: Text("Continue",style: TextStyle(fontSize: 16.0),),
+                ),
               )
             ],
           ),
