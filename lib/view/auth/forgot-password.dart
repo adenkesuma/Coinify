@@ -34,28 +34,33 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Forgot Password",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, fontFamily: "Graphik",),),
+                    Text("Forgot Password",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, fontFamily: "GraphikMedium",),),
                     SizedBox(height: 10.0,),
                     Text("Please enter your mobile number to get OTP.",style: TextStyle(fontSize: 16,color: Colors.grey),),
                     SizedBox(height: 20.0,),
                     Text("Phone Number",style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
-                        fontFamily: "Graphik",
+                        fontFamily: "GraphikMedium",
                         color: phoneNumberText.hasFocus ? Colors.blue : Colors.black),
                     ),
                     SizedBox(height: 5.0,),
-                    IntlPhoneField(
-                      focusNode: phoneNumberText,
-                      controller: phoneNumberInput,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-                        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-                        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                        errorText: _isPhoneNumber ? null : "Phone Number must not be empty",
+                    Focus(
+                      onFocusChange: (focus){
+                        setState(() {});
+                      },
+                      child: IntlPhoneField(
+                        focusNode: phoneNumberText,
+                        controller: phoneNumberInput,
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                          errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                          focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                          errorText: _isPhoneNumber ? null : "Phone Number must not be empty",
+                        ),
+                        initialCountryCode: "US",
                       ),
-                      initialCountryCode: "US",
                     ),
                   ],
                 ),
@@ -122,7 +127,7 @@ class _VerificationState extends State<Verification> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Verification",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,fontFamily: "Graphik"),),
+                  Text("Verification",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,fontFamily: "GraphikMedium"),),
                   SizedBox(height: 10.0,),
                   Text("Enter 7-digit code we just texted to your phone number",
                     style: TextStyle(fontSize: 16,color: Colors.grey),
@@ -131,21 +136,26 @@ class _VerificationState extends State<Verification> {
                   Text("Code",
                     style: TextStyle(
                       fontSize: 16,
-                      fontFamily: "Graphik",
+                      fontFamily: "GraphikMedium",
                       fontWeight: FontWeight.w500,
                       color: codeText.hasFocus ? Colors.blue : Colors.black
                     ),
                   ),
                   SizedBox(height: 5.0,),
-                  TextFormField(
-                    controller: codeInput,
-                    focusNode: codeText,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-                      errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                      focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                      errorText: _iscode ? _validcode ? null : "Code is not valid" : "Code must not be empty",
+                  Focus(
+                    onFocusChange: (focus){
+                      setState(() {});
+                    },
+                    child: TextFormField(
+                      controller: codeInput,
+                      focusNode: codeText,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+                        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                        errorText: _iscode ? _validcode ? null : "Code is not valid" : "Code must not be empty",
+                      ),
                     ),
                   )
                 ],

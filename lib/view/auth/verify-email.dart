@@ -61,7 +61,8 @@ class VerifyEmail extends StatelessWidget {
                     'Verify your email',
                     style: TextStyle(
                       fontSize: 24.0,
-                      fontWeight: FontWeight.w600
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "GraphikMedium"
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -90,7 +91,8 @@ class VerifyEmail extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14.0,
                       fontWeight: FontWeight.normal,
-                      color: Colors.white
+                      color: Colors.white,
+                      fontFamily: "GraphikMedium",
                     ),
                   ),
                   style: ButtonStyle(
@@ -112,7 +114,8 @@ class VerifyEmail extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14.0,
                       fontWeight: FontWeight.normal,
-                      color: Colors.black
+                      color: Colors.black,
+                      fontFamily: "GraphikMedium",
                     ),
                   ),
                   style: ButtonStyle(

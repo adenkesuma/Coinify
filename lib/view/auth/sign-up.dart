@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -81,7 +82,7 @@ class _SignUpState extends State<SignUp> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 24.0,
-                          fontFamily: "Graphik"
+                          fontFamily: "GraphikMedium"
                         )
                     ),
                     SizedBox(height: 20.0),
@@ -95,30 +96,35 @@ class _SignUpState extends State<SignUp> {
                             fontWeight: FontWeight.w600,
                             fontSize: 16.0,
                             color: firstNameText.hasFocus ? Colors.blue : Colors.black,
-                            fontFamily: "Graphik"
+                            fontFamily: "GraphikMedium"
                           ),
                         ),
                         SizedBox(height: 8.0),
-                        TextFormField(
-                          controller: firstNameInput,
-                          focusNode: firstNameText,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            border: OutlineInputBorder(),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey)
+                        Focus(
+                          onFocusChange: (focus){
+                            setState(() {});
+                          },
+                          child: TextFormField(
+                            controller: firstNameInput,
+                            focusNode: firstNameText,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              border: OutlineInputBorder(),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue)
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.red)
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.red)
+                              ),
+                              hintText: 'Enter your first name',
+                              errorText: _isFirstName ? null : "First Name must not be empty",
                             ),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue)
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.red)
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.red)
-                            ),
-                            hintText: 'Enter your first name',
-                            errorText: _isFirstName ? null : "First Name must not be empty",
                           ),
                         )
                       ],
@@ -134,31 +140,36 @@ class _SignUpState extends State<SignUp> {
                             fontWeight: FontWeight.w600,
                             fontSize: 16.0,
                             color: lastNameText.hasFocus ? Colors.blue : Colors.black,
-                            fontFamily: "Graphik",
+                            fontFamily: "GraphikMedium",
                           ),
                         ),
                         SizedBox(height: 8.0),
-                        TextField(
-                          controller: lastNameInput,
-                          focusNode: lastNameText,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            border: OutlineInputBorder(),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey)
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue)
-                            ),
-                            errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red)
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red)
-                            ),
-                            hintText: 'Enter your last name',
-                            errorText: _isLastName ? null : "Last Name must not be empty",
-                          )
+                        Focus(
+                          onFocusChange: (focus){
+                            setState(() {});
+                          },
+                          child: TextField(
+                            controller: lastNameInput,
+                            focusNode: lastNameText,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              border: OutlineInputBorder(),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue)
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.red)
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.red)
+                              ),
+                              hintText: 'Enter your last name',
+                              errorText: _isLastName ? null : "Last Name must not be empty",
+                            )
+                          ),
                         )
                       ],
                     ),
@@ -173,31 +184,36 @@ class _SignUpState extends State<SignUp> {
                             fontWeight: FontWeight.w600,
                             fontSize: 16.0,
                             color: emailText.hasFocus ? Colors.blue : Colors.black,
-                            fontFamily: "Graphik",
+                            fontFamily: "GraphikMedium",
                           ),
                         ),
                         SizedBox(height: 8.0),
-                        TextField(
-                          keyboardType: TextInputType.emailAddress,
-                          controller: emailInput,
-                          focusNode: emailText,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            border: OutlineInputBorder(),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey)
+                        Focus(
+                          onFocusChange: (focus){
+                            setState(() {});
+                          },
+                          child: TextField(
+                            keyboardType: TextInputType.emailAddress,
+                            controller: emailInput,
+                            focusNode: emailText,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              border: OutlineInputBorder(),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue)
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.red)
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.red)
+                              ),
+                              hintText: 'Enter your email',
+                              errorText: _isEmail ? null : "Email must not be empty",
                             ),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue)
-                            ),
-                            errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red)
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red)
-                            ),
-                            hintText: 'Enter your email',
-                            errorText: _isEmail ? null : "Email must not be empty",
                           ),
                         )
                       ],
@@ -209,39 +225,44 @@ class _SignUpState extends State<SignUp> {
                         fontWeight: FontWeight.w600,
                         fontSize: 16.0,
                         color: passwordText.hasFocus ? Colors.blue : Colors.black,
-                        fontFamily: "Graphik",
+                        fontFamily: "GraphikMedium",
                       ),
                     ),
                     SizedBox(height: 8.0),
-                    TextField(
-                      controller: passwordInput,
-                      focusNode: passwordText,
-                      obscureText: !isPasswordVisible,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                        border: OutlineInputBorder(),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey)
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue)
-                        ),
-                        errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.red)
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.red)
-                        ),
-                        hintText: 'Enter your password',
-                        errorText: _isPassword ? _validPassword ? null : "Password must be at least 8 characters" : "Password must not be empty",
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isPasswordVisible = !isPasswordVisible;
-                            });
-                          },
-                          child: Icon(
-                            isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    Focus(
+                      onFocusChange: (focus){
+                        setState(() {});
+                      },
+                      child: TextField(
+                        controller: passwordInput,
+                        focusNode: passwordText,
+                        obscureText: !isPasswordVisible,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                          border: OutlineInputBorder(),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey)
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue)
+                          ),
+                          errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.red)
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.red)
+                          ),
+                          hintText: 'Enter your password',
+                          errorText: _isPassword ? _validPassword ? null : "Password must be at least 8 characters" : "Password must not be empty",
+                          suffixIcon: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                isPasswordVisible = !isPasswordVisible;
+                              });
+                            },
+                            child: Icon(
+                              isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                            ),
                           ),
                         ),
                       ),
@@ -296,7 +317,8 @@ class _SignUpState extends State<SignUp> {
                       style: TextStyle(
                         fontSize: 14.0,
                         fontWeight: FontWeight.normal,
-                        color: Colors.white
+                        color: Colors.white,
+                        fontFamily: "GraphikMedium",
                       ),
                     ),
                     style: ButtonStyle(
