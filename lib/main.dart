@@ -1,8 +1,10 @@
+import 'package:defi/view/auth/authentication.code.dart';
 import 'package:defi/view/auth/forgot-password.dart';
 import 'package:defi/view/auth/secure-account.dart';
 import 'package:defi/view/auth/sign-in-code.dart';
 import 'package:defi/view/auth/sign-in.dart';
 import 'package:defi/view/auth/sign-up.dart';
+import 'package:defi/view/auth/two-step-verification.dart';
 import 'package:defi/view/auth/verify-email.dart';
 import 'package:defi/view/auth/verify-identity.dart';
 import 'package:defi/view/welcome.dart';
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         '/verify-email': (context) => VerifyEmail(),
         '/verify-identity': (context) => VerifyIdentity(),
         '/secure-account': (context) => SecureAccount(),
+        '/two-step-verification':(context) => TwoStepVerification(),
+        '/authentication-code': (context) => AuthenticationCode(),
         '/forgot-password': (context) => ForgotPassword(),
       },
       // home: Splash()

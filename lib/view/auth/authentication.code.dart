@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-class TwoStepVerification extends StatefulWidget {
-  const TwoStepVerification({Key? key}) : super(key: key);
+class AuthenticationCode extends StatefulWidget {
+  const AuthenticationCode({Key? key}) : super(key: key);
 
   @override
-  _TwoStepVerificationState createState() => _TwoStepVerificationState();
+  _AuthenticationCodeState createState() => _AuthenticationCodeState();
 }
 
-class _TwoStepVerificationState extends State<TwoStepVerification> {
+class _AuthenticationCodeState extends State<AuthenticationCode> {
   bool _isPhone = true;
 
   FocusNode phoneText = FocusNode();
@@ -36,7 +36,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
               SizedBox(width: 7.0),
               Expanded(
                 child: LinearProgressIndicator(
-                  value: 0.5, // Value for second step
+                  value: 0.8, // Value for second step
                   backgroundColor: Color(0xD9D9D9D9),
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                 ),
