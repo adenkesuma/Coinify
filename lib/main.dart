@@ -3,6 +3,7 @@ import 'package:defi/view/auth/sign-in-code.dart';
 import 'package:defi/view/auth/sign-in.dart';
 import 'package:defi/view/auth/sign-up.dart';
 import 'package:defi/view/auth/verify-email.dart';
+import 'package:defi/view/auth/verify-identity.dart';
 import 'package:defi/view/welcome.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         '/sign-up':(context) => SignUp(),
         '/sign-in': (context) => SignIn(),
         '/sign-in-code': (context) => SignInCode(),
-        '/verify-email':(context) => VerifyEmail(),
+        '/verify-email': (context) => VerifyEmail(),
+        '/verify-identity': (context) => VerifyIdentity(),
         '/forgot-password': (context) => ForgotPassword(),
       },
       // home: Splash()

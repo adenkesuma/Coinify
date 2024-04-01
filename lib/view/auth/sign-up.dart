@@ -17,10 +17,12 @@ class _SignUpState extends State<SignUp> {
   bool _isEmail = true;
   bool _isPassword = true;
   bool _validPassword = true;
+
   FocusNode firstNameText = FocusNode();
   FocusNode lastNameText = FocusNode();
   FocusNode emailText = FocusNode();
   FocusNode passwordText = FocusNode();
+
   TextEditingController firstNameInput = TextEditingController();
   TextEditingController lastNameInput = TextEditingController();
   TextEditingController emailInput = TextEditingController();

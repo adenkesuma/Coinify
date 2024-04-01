@@ -52,7 +52,7 @@ class VerifyEmail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/VerifyEmail.png',
+                  'assets/images/VerifyEmail.png',
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 20.0),
@@ -84,7 +84,7 @@ class VerifyEmail extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/');
+                    Navigator.pushNamed(context, '/verify-identity');
                   }, 
                   child: Text(
                     'Check my inbox',
@@ -107,7 +107,7 @@ class VerifyEmail extends StatelessWidget {
                 SizedBox(height: 14),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/sign-up');
+                    Navigator.pushNamed(context, '');
                   }, 
                   child: Text(
                     'Resend email',
