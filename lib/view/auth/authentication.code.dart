@@ -11,11 +11,11 @@ class AuthenticationCode extends StatefulWidget {
 }
 
 class _AuthenticationCodeState extends State<AuthenticationCode> {
-  bool _isPhone = true;
+  bool _isDigitCode = true;
 
-  FocusNode phoneText = FocusNode();
+  FocusNode digitCodeText = FocusNode();
 
-  TextEditingController phoneInput = TextEditingController();
+  TextEditingController digitCodeInput = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,7 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                        'Set up 2-step verification',
+                        'Enter authentication code',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 24.0,
@@ -78,7 +78,7 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
                     ),
                     SizedBox(height: 10.0),
                     Text(
-                      'Enter your phone number so we can text you an authentication code.',
+                      'Enter the 7-digit code we just texted to your phone number',
                       style: TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.normal,
@@ -91,11 +91,11 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Phone',
+                          'Code',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 16.0,
-                            color: phoneText.hasFocus ? Colors.blue : Colors.black,
+                            color: digitCodeText.hasFocus ? Colors.blue : Colors.black,
                             fontFamily: "GraphikMedium"
                           ),
                         ),
@@ -105,8 +105,8 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
                             setState(() {});
                           },
                           child: TextFormField(
-                            controller: phoneInput,
-                            focusNode: phoneText,
+                            controller: digitCodeInput,
+                            focusNode: digitCodeText,
                             keyboardType: TextInputType.number,
                             inputFormatters: <TextInputFormatter>[
                               FilteringTextInputFormatter.digitsOnly
@@ -126,8 +126,8 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.red)
                               ),
-                              hintText: 'Your phone number',
-                              errorText: _isPhone ? null : "Phone number must not be empty",
+                              hintText: 'Your digit code',
+                              errorText: _isDigitCode ? null : "Digit code must not be empty",
                             ),
                           ),
                         )
@@ -136,34 +136,65 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
                   ]
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    if(phoneInput.text == ""){_isPhone = false;}
-                    else{_isPhone = true;}
+              Column(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        if(digitCodeInput.text == ""){_isDigitCode = false;}
+                        else{_isDigitCode = true;}
 
-                    if(_isPhone == true){
-                      Navigator.pushNamed(context, '/authentication-code');
-                    }
-                  });
-                },
-                child: Text(
-                  'Continue',
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.white,
-                    fontFamily: "GraphikMedium",
+                        if(_isDigitCode == true){
+                          Navigator.pushNamed(context, '/authentication-code');
+                        }
+                      });
+                    },
+                    child: Text(
+                      'Continue',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.white,
+                        fontFamily: "GraphikMedium",
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      shadowColor: MaterialStateProperty.all(Colors.transparent)
+                    ),
                   ),
-                ),
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                  SizedBox(height: 14),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '');
+                    }, 
+                    child: Text(
+                      'Resend code',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                        fontFamily: "GraphikMedium",
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        )
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                      shadowColor: MaterialStateProperty.all(Colors.transparent),
+                      side: MaterialStateProperty.all(
+                        BorderSide(color: Colors.grey, width: 1)
+                      )
+                    ),
                   ),
-                  minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  shadowColor: MaterialStateProperty.all(Colors.transparent)
-                ),
+                ],
               )
             ],
           )
