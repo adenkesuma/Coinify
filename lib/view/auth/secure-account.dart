@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class VerifyEmail extends StatelessWidget {
-  const VerifyEmail({super.key});
+class SecureAccount extends StatelessWidget {
+  const SecureAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class VerifyEmail extends StatelessWidget {
               SizedBox(width: 120.0),
               Expanded(
                 child: LinearProgressIndicator(
-                  value: 0.65, // Value for first step
+                  value: 1, // Value for first step
                   backgroundColor: Color(0xD9D9D9D9),
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                 ),
@@ -23,7 +23,7 @@ class VerifyEmail extends StatelessWidget {
               SizedBox(width: 7.0),
               Expanded(
                 child: LinearProgressIndicator(
-                  value: 0.0, // Value for second step
+                  value: 0.2, // Value for second step
                   backgroundColor: Color(0xD9D9D9D9),
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                 ),
@@ -52,13 +52,13 @@ class VerifyEmail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/VerifyEmail.png',
+                  'assets/images/Scan.png',
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 20.0),
                 Center(
                   child: Text(
-                    'Verify your email',
+                    'Secure your account',
                     style: TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.w600,
@@ -70,7 +70,7 @@ class VerifyEmail extends StatelessWidget {
                 SizedBox(height: 10.0),
                 Center(
                   child: Text(
-                    'We sent a verification email to. Please tap the link inside that email to continue',
+                    'One way we keep your account secure is with 2-step verification, which requires your phone number. We will never call you or use your number without your permission',
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.normal,
@@ -81,59 +81,28 @@ class VerifyEmail extends StatelessWidget {
                 )  
               ],
             ),
-            Column(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/verify-identity');
-                  }, 
-                  child: Text(
-                    'Check my inbox',
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white,
-                      fontFamily: "GraphikMedium",
-                    ),
-                  ),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                    ),
-                    minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
-                    backgroundColor: MaterialStateProperty.all(Colors.blue),
-                    shadowColor: MaterialStateProperty.all(Colors.transparent)
-                  ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/two-step-verification');
+              }, 
+              child: Text(
+                'Continue',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                  fontFamily: "GraphikMedium",
                 ),
-                SizedBox(height: 14),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '');
-                  }, 
-                  child: Text(
-                    'Resend email',
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black,
-                      fontFamily: "GraphikMedium",
-                    ),
-                  ),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      )
-                    ),
-                    minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
-                    shadowColor: MaterialStateProperty.all(Colors.transparent),
-                    side: MaterialStateProperty.all(
-                      BorderSide(color: Colors.grey, width: 1)
-                    )
-                  ),
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                 ),
-              ],
-            )
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.blue),
+                shadowColor: MaterialStateProperty.all(Colors.transparent)
+              ),
+            ),
           ]
         ) 
       ),

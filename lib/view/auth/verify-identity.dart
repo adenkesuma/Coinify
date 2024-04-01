@@ -247,7 +247,7 @@ class VerifyIdentity extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/verify-identity');
+                Navigator.pushNamed(context, '/secure-account');
               }, 
               child: Text(
                 'Start',

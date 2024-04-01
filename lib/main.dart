@@ -1,4 +1,5 @@
 import 'package:defi/view/auth/forgot-password.dart';
+import 'package:defi/view/auth/secure-account.dart';
 import 'package:defi/view/auth/sign-in-code.dart';
 import 'package:defi/view/auth/sign-in.dart';
 import 'package:defi/view/auth/sign-up.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/sign-in-code': (context) => SignInCode(),
         '/verify-email': (context) => VerifyEmail(),
         '/verify-identity': (context) => VerifyIdentity(),
+        '/secure-account': (context) => SecureAccount(),
         '/forgot-password': (context) => ForgotPassword(),
       },
       // home: Splash()
