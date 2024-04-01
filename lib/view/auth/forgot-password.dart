@@ -1,5 +1,7 @@
+import 'package:defi/view/auth/sign-in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -60,6 +62,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           errorText: _isPhoneNumber ? null : "Phone Number must not be empty",
                         ),
                         initialCountryCode: "US",
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
                       ),
                     ),
                   ],
@@ -173,7 +178,7 @@ class _VerificationState extends State<Verification> {
                             if(codeInput.text.length != 7){_validcode = false;}
                             else{_validcode = true;}
                             if(_iscode && _validcode){Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) => CreateNewPassword(),));
+                              MaterialPageRoute(builder: (context) => CreateNewPassword(),));
                             }
                           });
                         },
@@ -220,6 +225,10 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
   FocusNode confirmNewPasswordText = FocusNode();
   bool _isNewPasswordVisible = false;
   bool _isConfirmNewPasswordVisible = false;
+  bool _isNewPassword = true;
+  bool _isConfirmNewPassword = true;
+  TextEditingController newPasswordInput = TextEditingController();
+  TextEditingController confirmNewPasswordInput = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -263,9 +272,13 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                       child: TextFormField(
                         obscureText: !_isNewPasswordVisible,
                         focusNode: newPasswordText,
+                        controller: newPasswordInput,
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                          errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                          focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                          errorText: _isNewPassword ? null : "New Password must not be empty",
                           suffixIcon: GestureDetector(
                             onTap: (){
                               setState(() {
@@ -291,10 +304,12 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                       },
                       child: TextFormField(
                         obscureText: !_isConfirmNewPasswordVisible,
+                        controller: confirmNewPasswordInput,
                         focusNode: confirmNewPasswordText,
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                            errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
                             suffixIcon: GestureDetector(
                               onTap: (){
                                 setState(() {
@@ -313,7 +328,18 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                 width: MediaQuery.of(context).size.width,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    setState(() {
+                      if(newPasswordInput.text == ""){_isNewPassword = false;}
+                      else{_isNewPassword = true;}
+                      if(confirmNewPasswordInput.text == ""){_isConfirmNewPassword = false;}
+                      else{_isConfirmNewPassword = true;}
+                      print(_isNewPassword);
+                      if(_isNewPassword && _isConfirmNewPassword){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignIn(),));
+                      }
+                    });
+                  },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.blue,
