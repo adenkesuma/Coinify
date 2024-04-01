@@ -1,4 +1,5 @@
 import 'package:defi/view/auth/authentication.code.dart';
+import 'package:defi/view/auth/citizenship.dart';
 import 'package:defi/view/auth/forgot-password.dart';
 import 'package:defi/view/auth/secure-account.dart';
 import 'package:defi/view/auth/sign-in-code.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/secure-account': (context) => SecureAccount(),
         '/two-step-verification':(context) => TwoStepVerification(),
         '/authentication-code': (context) => AuthenticationCode(),
+        '/citizenship':(context) => Citizenship(),
         '/forgot-password': (context) => ForgotPassword(),
       },
       // home: Splash()

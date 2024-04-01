@@ -145,7 +145,7 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
                         else{_isDigitCode = true;}
 
                         if(_isDigitCode == true){
-                          Navigator.pushNamed(context, '/authentication-code');
+                          Navigator.pushNamed(context, '/citizenship');
                         }
                       });
                     },
