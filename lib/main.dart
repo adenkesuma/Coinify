@@ -1,6 +1,8 @@
-import 'package:defi/view/auth/authentication.code.dart';
+import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
+import 'package:defi/view/auth/authentication-code.dart';
 import 'package:defi/view/auth/citizenship.dart';
 import 'package:defi/view/auth/forgot-password.dart';
+import 'package:defi/view/auth/personal-information.dart';
 import 'package:defi/view/auth/secure-account.dart';
 import 'package:defi/view/auth/sign-in-code.dart';
 import 'package:defi/view/auth/sign-in.dart';
@@ -11,7 +13,9 @@ import 'package:defi/view/auth/verify-identity.dart';
 import 'package:defi/view/welcome.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await findSystemLocale();
   runApp(const MyApp());
 }
 
@@ -34,7 +38,8 @@ class MyApp extends StatelessWidget {
         '/secure-account': (context) => SecureAccount(),
         '/two-step-verification':(context) => TwoStepVerification(),
         '/authentication-code': (context) => AuthenticationCode(),
-        '/citizenship':(context) => Citizenship(),
+        '/citizenship': (context) => Citizenship(),
+        '/personal-information': (context) => PersonalInformation(),
         '/forgot-password': (context) => ForgotPassword(),
       },
       // home: Splash()

@@ -170,7 +170,7 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
                   SizedBox(height: 14),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '');
+                      Navigator.pushNamed(context, '/citizenship');
                     }, 
                     child: Text(
                       'Resend code',

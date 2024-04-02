@@ -290,12 +290,12 @@ class _CitizenshipState extends State<Citizenship> {
                   ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        if(CitizenInput.text == ""){_isCitizenValid = false;}
-                        else{_isCitizenValid = true;}
+                        // if(CitizenInput.text == ""){_isCitizenValid = false;}
+                        // else{_isCitizenValid = true;}
 
-                        if(_isCitizenValid == true){
-                          Navigator.pushNamed(context, '/authentication-code');
-                        }
+                        // if(_isCitizenValid == true){
+                          Navigator.pushNamed(context, '/personal-information');
+                        // }
                       });
                     },
                     child: Text(
