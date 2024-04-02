@@ -108,7 +108,7 @@ class VerifyEmail extends StatelessWidget {
                 SizedBox(height: 14),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '');
+                    Navigator.pushNamed(context, '/verify-identity');
                   }, 
                   child: Text(
                     'Resend email',
