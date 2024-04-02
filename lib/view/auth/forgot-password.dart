@@ -65,6 +65,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         inputFormatters: <TextInputFormatter>[
                           FilteringTextInputFormatter.digitsOnly
                         ],
+
                       ),
                     ),
                   ],

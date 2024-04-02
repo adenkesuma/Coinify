@@ -1,6 +1,7 @@
 import 'package:defi/view/auth/authentication.code.dart';
 import 'package:defi/view/auth/citizenship.dart';
 import 'package:defi/view/auth/forgot-password.dart';
+import 'package:defi/view/auth/privacy-policy.dart';
 import 'package:defi/view/auth/secure-account.dart';
 import 'package:defi/view/auth/sign-in-code.dart';
 import 'package:defi/view/auth/sign-in.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/authentication-code': (context) => AuthenticationCode(),
         '/citizenship':(context) => Citizenship(),
         '/forgot-password': (context) => ForgotPassword(),
+        '/privacy-policy': (context) => PrivacyPolicy(),
       },
       // home: Splash()
     );
