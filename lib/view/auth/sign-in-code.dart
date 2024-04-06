@@ -66,7 +66,7 @@ class SignInCode extends StatelessWidget {
                     ),
                     minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
                     backgroundColor: MaterialStateProperty.all(Colors.blue),
-                    shadowColor: MaterialStateProperty.all(Colors.transparent)
+                    shadowColor: MaterialStateProperty.all(Colors.transparent),
                   ),
                 ),
                 SizedBox(height: 14),
