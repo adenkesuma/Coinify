@@ -1,3 +1,4 @@
+import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
 import 'package:defi/view/auth/verified.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/all-done',
+      initialRoute: '/address',
       routes: {
         // '/': 
         '/welcome': (context) => Welcome(),
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         '/privacy-policy': (context) => PrivacyPolicy(),
         '/verified' : (context) => Verified(),
         '/all-done' : (context) => AllDone(),
+        '/address' : (context) => Address(),
       },
       // home: Splash()
     );
