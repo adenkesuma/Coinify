@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Verified extends StatelessWidget {
-  const Verified({super.key});
+class AllDone extends StatelessWidget {
+  const AllDone({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class Verified extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*1/5),
-                  child: Image.asset("assets/images/Verified.png"),
+                  child: Image.asset("assets/images/AllDone.png"),
                 ),
                 SizedBox(height: 32.0,),
                 Container(
@@ -27,11 +27,11 @@ class Verified extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("You're verified!",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
+                      Text("All Done",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
                       SizedBox(height: 8.0,),
-                      Text("Now you can fund your account so you're ready to invest in crypto",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16.0,color: Colors.grey),),
+                      Text("Congratulations! Your account has been successfully added",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 16.0,color: Colors.grey),),
                     ],
                   ),
                 ),
@@ -44,11 +44,11 @@ class Verified extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: (){},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                   ),
-                  child: Text("Let's go",style: TextStyle(fontSize: 16.0),)
+                  child: Text("Done",style: TextStyle(fontSize: 16.0),)
               ),
             )
           ],

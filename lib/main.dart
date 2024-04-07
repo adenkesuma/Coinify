@@ -1,3 +1,4 @@
+import 'package:defi/view/auth/all-done.dart';
 import 'package:defi/view/auth/verified.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
 import 'package:defi/view/auth/authentication-code.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/welcome',
+      initialRoute: '/all-done',
       routes: {
         // '/': 
         '/welcome': (context) => Welcome(),
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         '/forgot-password': (context) => ForgotPassword(),
         '/privacy-policy': (context) => PrivacyPolicy(),
         '/verified' : (context) => Verified(),
+        '/all-done' : (context) => AllDone(),
       },
       // home: Splash()
     );
