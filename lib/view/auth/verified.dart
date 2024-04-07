@@ -18,7 +18,7 @@ class Verified extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*1/5),
-                  child: Image.asset("assets/images/VerifyEmail.png"),
+                  child: Image.asset("assets/images/Verified.png"),
                 ),
                 SizedBox(height: 32.0,),
                 Container(
