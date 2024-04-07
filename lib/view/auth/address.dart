@@ -52,9 +52,9 @@ class _AddressState extends State<Address> {
         padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Enter your address",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
                 SizedBox(height: 12,),
