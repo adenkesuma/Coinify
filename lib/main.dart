@@ -1,3 +1,4 @@
+import 'package:defi/view/auth/verified.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
 import 'package:defi/view/auth/authentication-code.dart';
 import 'package:defi/view/auth/citizenship.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/welcome',
+      initialRoute: '/verified',
       routes: {
         // '/': 
         '/welcome': (context) => Welcome(),
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/personal-information': (context) => PersonalInformation(),
         '/forgot-password': (context) => ForgotPassword(),
         '/privacy-policy': (context) => PrivacyPolicy(),
+        '/verified' : (context) => Verified(),
       },
       // home: Splash()
     );
