@@ -51,53 +51,66 @@ class _AddressState extends State<Address> {
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Enter your address",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
-            SizedBox(height: 12,),
-            Text("Enter the street address of your primary residence. Please do not use a PO box or business address",
-            style: TextStyle(color: Colors.grey,fontSize: 16),),
-            SizedBox(height: 24,),
-            Text("Search for Address",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikMedium",
-                color: addressText.hasFocus ? Colors.blue : Colors.black),
-            ),
-            SizedBox(height: 8.0,),
-            Focus(
-              onFocusChange: (focus){
-                setState(() {});
-              },
-              child: TextFormField(
-                focusNode: addressText,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue)
-                  ),
-                  hintText: "Enter your address",
-                  hintStyle: TextStyle(color: Colors.grey)
+            Column(
+              children: [
+                Text("Enter your address",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
+                SizedBox(height: 12,),
+                Text("Enter the street address of your primary residence. Please do not use a PO box or business address",
+                style: TextStyle(color: Colors.grey,fontSize: 16),),
+                SizedBox(height: 24,),
+                Text("Search for Address",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikMedium",
+                    color: addressText.hasFocus ? Colors.blue : Colors.black),
                 ),
-              ),
+                SizedBox(height: 8.0,),
+                Focus(
+                  onFocusChange: (focus){
+                    setState(() {});
+                  },
+                  child: TextFormField(
+                    focusNode: addressText,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue)
+                      ),
+                      hintText: "Enter your address",
+                      hintStyle: TextStyle(color: Colors.grey)
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40,),
+                Container(
+                  height: 50,
+                  child: InkWell(
+                    onTap: (){
+                    },
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                        Text("Enter Address Manually",style: TextStyle(fontSize: 16),),
+                        Icon(Icons.arrow_forward_ios),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 40,),
-            ElevatedButton(
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 60,
+              child: ElevatedButton(
                 onPressed: (){},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.black,
-                  side: BorderSide(color: Colors.transparent),
-                  shadowColor: Colors.transparent,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Enter Address Mnaually",style: TextStyle(fontSize: 16),),
-                    Icon(Icons.arrow_forward_ios),
-                  ],
-                )
-            ),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,foregroundColor: Colors.white),
+                child: Text("Continue",style: TextStyle(fontSize: 16.0),),
+              ),
+            )
           ],
         ),
       ),

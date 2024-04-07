@@ -75,7 +75,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 50,
+                    height: 60,
                     child: ElevatedButton(
                       onPressed: (){
                         setState(() {
