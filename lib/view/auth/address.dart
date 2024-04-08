@@ -12,41 +12,41 @@ class _AddressState extends State<Address> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-          backgroundColor: Colors.white,
-          bottom: const PreferredSize(
-            preferredSize: Size.fromHeight(10.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(width: 120.0),
-                Expanded(
-                  child: LinearProgressIndicator(
-                    value: 1, // Value for first step
-                    backgroundColor: Color(0xD9D9D9D9),
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-                  ),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(10.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(width: 120.0),
+              Expanded(
+                child: LinearProgressIndicator(
+                  value: 1, // Value for first step
+                  backgroundColor: Color(0xD9D9D9D9),
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                 ),
-                SizedBox(width: 7.0),
-                Expanded(
-                  child: LinearProgressIndicator(
-                    value: 1, // Value for second step
-                    backgroundColor: Color(0xD9D9D9D9),
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-                  ),
+              ),
+              SizedBox(width: 7.0),
+              Expanded(
+                child: LinearProgressIndicator(
+                  value: 1, // Value for second step
+                  backgroundColor: Color(0xD9D9D9D9),
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                 ),
-                SizedBox(width: 7.0),
-                Expanded(
-                  child: LinearProgressIndicator(
-                    value: 0.15, // Value for third step
-                    backgroundColor: Color(0xD9D9D9D9),
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-                  ),
+              ),
+              SizedBox(width: 7.0),
+              Expanded(
+                child: LinearProgressIndicator(
+                  value: 0.15, // Value for third step
+                  backgroundColor: Color(0xD9D9D9D9),
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                 ),
-                SizedBox(width: 120.0),
-              ],
-            ),
-          )
+              ),
+              SizedBox(width: 120.0),
+            ],
+          ),
+        )
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
@@ -93,7 +93,7 @@ class _AddressState extends State<Address> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                        Text("Enter Address Manually",style: TextStyle(fontSize: 16),),
+                        Text("Enter Address Manually",style: TextStyle(fontSize: 16,fontFamily: "GraphikRegular"),),
                         Icon(Icons.arrow_forward_ios),
                         ],
                       ),
@@ -107,7 +107,11 @@ class _AddressState extends State<Address> {
               height: 60,
               child: ElevatedButton(
                 onPressed: (){},
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,foregroundColor: Colors.white),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
                 child: Text("Continue",style: TextStyle(fontSize: 16.0),),
               ),
             )

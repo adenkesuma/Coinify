@@ -81,6 +81,9 @@ flutter:
         - asset: assets/fonts/Graphik-Medium-Trial.otf
 #       - asset: fonts/Schyler-Italic.ttf
 #         style: italic
+    - family: GraphikRegular
+      fonts:
+        - asset: assets/fonts/Graphik-Regular-Trial.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

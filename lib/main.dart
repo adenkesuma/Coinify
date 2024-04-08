@@ -1,5 +1,6 @@
 import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
+import 'package:defi/view/auth/user-purpose.dart';
 import 'package:defi/view/auth/verified.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
 import 'package:defi/view/auth/authentication-code.dart';
@@ -29,8 +30,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          color: Colors.white
+        )
+      ),
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/address',
+      initialRoute: '/welcome',
       routes: {
         // '/': 
         '/welcome': (context) => Welcome(),
@@ -49,6 +55,7 @@ class MyApp extends StatelessWidget {
         '/verified' : (context) => Verified(),
         '/all-done' : (context) => AllDone(),
         '/address' : (context) => Address(),
+        '/user-purpose' : (context) => UserPurpose(),
       },
       // home: Splash()
     );

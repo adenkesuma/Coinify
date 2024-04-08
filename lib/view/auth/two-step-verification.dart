@@ -20,6 +20,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(10.0),
