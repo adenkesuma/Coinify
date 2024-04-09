@@ -12,6 +12,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Privacy Policy",style: TextStyle(fontFamily: "GraphikMedium"),),
       ),

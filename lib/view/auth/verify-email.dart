@@ -10,36 +10,38 @@ class VerifyEmail extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(10.0),
-          child: Row(
-            children: [
-              SizedBox(width: 120.0),
-              Expanded(
-                child: LinearProgressIndicator(
-                  value: 0.65, // Value for first step
-                  backgroundColor: Color(0xD9D9D9D9),
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+        centerTitle: true ,
+        title: Container(
+          width: 200,
+          child: PreferredSize(
+            preferredSize: Size.fromHeight(10.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.65, // Value for first step
+                    backgroundColor: Color(0xD9D9D9D9),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                  ),
                 ),
-              ),
-              SizedBox(width: 7.0),
-              Expanded(
-                child: LinearProgressIndicator(
-                  value: 0.0, // Value for second step
-                  backgroundColor: Color(0xD9D9D9D9),
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                SizedBox(width: 7.0),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.0, // Value for second step
+                    backgroundColor: Color(0xD9D9D9D9),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                  ),
                 ),
-              ),
-              SizedBox(width: 7.0),
-              Expanded(
-                child: LinearProgressIndicator(
-                  value: 0.0, // Value for third step
-                  backgroundColor: Color(0xD9D9D9D9),
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                SizedBox(width: 7.0),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.0, // Value for third step
+                    backgroundColor: Color(0xD9D9D9D9),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                  ),
                 ),
-              ),
-              SizedBox(width: 120.0),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/user-purpose',
+      initialRoute: '/privacy-policy',
       routes: {
         // '/': 
         '/welcome': (context) => Welcome(),

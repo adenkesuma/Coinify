@@ -22,36 +22,38 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(10.0),
-          child: Row(
-            children: [
-              SizedBox(width: 120.0),
-              Expanded(
-                child: LinearProgressIndicator(
-                  value: 1, // Value for first step
-                  backgroundColor: Color(0xD9D9D9D9),
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+        centerTitle: true,
+        title: Container(
+          width: 200,
+          child: PreferredSize(
+            preferredSize: Size.fromHeight(10.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 1, // Value for first step
+                    backgroundColor: Color(0xD9D9D9D9),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                  ),
                 ),
-              ),
-              SizedBox(width: 7.0),
-              Expanded(
-                child: LinearProgressIndicator(
-                  value: 0.8, // Value for second step
-                  backgroundColor: Color(0xD9D9D9D9),
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                SizedBox(width: 7.0),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.8, // Value for second step
+                    backgroundColor: Color(0xD9D9D9D9),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                  ),
                 ),
-              ),
-              SizedBox(width: 7.0),
-              Expanded(
-                child: LinearProgressIndicator(
-                  value: 0.0, // Value for third step
-                  backgroundColor: Color(0xD9D9D9D9),
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                SizedBox(width: 7.0),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.0, // Value for third step
+                    backgroundColor: Color(0xD9D9D9D9),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                  ),
                 ),
-              ),
-              SizedBox(width: 120.0),
-            ],
+              ],
+            ),
           ),
         ),
       ),
