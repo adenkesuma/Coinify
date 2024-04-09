@@ -1,5 +1,6 @@
 import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
+import 'package:defi/view/auth/id-type.dart';
 import 'package:defi/view/auth/user-purpose.dart';
 import 'package:defi/view/auth/verified.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/welcome',
+      initialRoute: '/user-purpose',
       routes: {
         // '/': 
         '/welcome': (context) => Welcome(),
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
         '/all-done' : (context) => AllDone(),
         '/address' : (context) => Address(),
         '/user-purpose' : (context) => UserPurpose(),
+        '/id-type' : (context) => IdType(),
       },
       // home: Splash()
     );

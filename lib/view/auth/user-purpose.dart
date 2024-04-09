@@ -8,7 +8,7 @@ class UserPurpose extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        bottom: const PreferredSize(
+       title: const PreferredSize(
           preferredSize: Size.fromHeight(10.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,7 +61,7 @@ class UserPurpose extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Investing",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                   ],
                 ),
               ),
@@ -75,7 +75,7 @@ class UserPurpose extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Trading on Coinbase",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                   ],
                 ),
               ),
@@ -89,7 +89,7 @@ class UserPurpose extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Trading on other exchanges",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                   ],
                 ),
               ),
@@ -103,7 +103,7 @@ class UserPurpose extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Online purchases",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                   ],
                 ),
               ),
@@ -117,7 +117,7 @@ class UserPurpose extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Payment to friends",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                   ],
                 ),
               ),
@@ -131,7 +131,7 @@ class UserPurpose extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Online payments",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                   ],
                 ),
               ),
@@ -145,7 +145,7 @@ class UserPurpose extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Business",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                   ],
                 ),
               ),
