@@ -1,6 +1,7 @@
 import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
 import 'package:defi/view/auth/id-type.dart';
+import 'package:defi/view/auth/trade-amount.dart';
 import 'package:defi/view/auth/user-purpose.dart';
 import 'package:defi/view/auth/verified.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false, 
-      initialRoute: '/privacy-policy',
+      initialRoute: '/trade-amount',
       routes: {
         // '/': 
         '/welcome': (context) => Welcome(),
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
         '/address' : (context) => Address(),
         '/user-purpose' : (context) => UserPurpose(),
         '/id-type' : (context) => IdType(),
+        '/trade-amount' : (context) => TradeAmount(),
       },
       // home: Splash()
     );

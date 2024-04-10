@@ -70,7 +70,7 @@ class UserPurpose extends StatelessWidget {
             ),
             SizedBox(height: 16.0,),
             Container(
-              height: 50,
+              height: 40,
               child: InkWell(
                 onTap: (){},
                 child: Row(
@@ -84,7 +84,7 @@ class UserPurpose extends StatelessWidget {
             ),
             SizedBox(height: 16.0,),
             Container(
-              height: 50,
+              height: 40,
               child: InkWell(
                 onTap: (){},
                 child: Row(
@@ -98,7 +98,7 @@ class UserPurpose extends StatelessWidget {
             ),
             SizedBox(height: 16.0,),
             Container(
-              height: 50,
+              height: 40,
               child: InkWell(
                 onTap: (){},
                 child: Row(
@@ -112,7 +112,7 @@ class UserPurpose extends StatelessWidget {
             ),
             SizedBox(height: 16.0,),
             Container(
-              height: 50,
+              height: 40,
               child: InkWell(
                 onTap: (){},
                 child: Row(
@@ -126,7 +126,7 @@ class UserPurpose extends StatelessWidget {
             ),
             SizedBox(height: 16.0,),
             Container(
-              height: 50,
+              height: 40,
               child: InkWell(
                 onTap: (){},
                 child: Row(
@@ -140,7 +140,7 @@ class UserPurpose extends StatelessWidget {
             ),
             SizedBox(height: 16.0,),
             Container(
-              height: 50,
+              height: 40,
               child: InkWell(
                 onTap: (){},
                 child: Row(

@@ -87,7 +87,7 @@ class _AddressState extends State<Address> {
                 ),
                 SizedBox(height: 40,),
                 Container(
-                  height: 50,
+                  height: 40,
                   child: InkWell(
                     onTap: (){
                     },
