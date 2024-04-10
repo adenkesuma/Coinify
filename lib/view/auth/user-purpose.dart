@@ -46,6 +46,8 @@ class UserPurpose extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

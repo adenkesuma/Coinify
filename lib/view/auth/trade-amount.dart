@@ -46,6 +46,8 @@ class TradeAmount extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

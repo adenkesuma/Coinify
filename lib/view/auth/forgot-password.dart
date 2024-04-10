@@ -172,7 +172,7 @@ class _VerificationState extends State<Verification> {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 50,
+                    height: 60,
                     child: ElevatedButton(
                         onPressed: (){
                           setState(() {
@@ -195,7 +195,7 @@ class _VerificationState extends State<Verification> {
                   SizedBox(height: 15,),
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 50,
+                    height: 60,
                     child: ElevatedButton(
                         onPressed: (){},
                         style: ElevatedButton.styleFrom(
@@ -330,7 +330,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: 50,
+                height: 60,
                 child: ElevatedButton(
                   onPressed: (){
                     setState(() {
