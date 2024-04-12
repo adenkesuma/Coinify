@@ -5,6 +5,7 @@ import 'package:defi/view/auth/trade-amount.dart';
 import 'package:defi/view/auth/upload-photo.dart';
 import 'package:defi/view/auth/user-purpose.dart';
 import 'package:defi/view/auth/verified.dart';
+import 'package:defi/view/auth/verify-photo-id.dart';
 import 'package:defi/view/security-alerts-settings.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
 import 'package:defi/view/auth/authentication-code.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/security-alerts-settings',
+      initialRoute: '/verify-photo-id',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -64,6 +65,7 @@ class MyApp extends StatelessWidget {
         '/trade-amount' : (context) => TradeAmount(),
         '/upload-photo' : (context) => UploadPhoto(),
         '/security-alerts-settings' : (context) => SecurityAlertsSettings(),
+        '/verify-photo-id' : (context) => VerifyPhotoId(),
       },
       // home: Splash()
     );

@@ -9,63 +9,121 @@ class SecurityAlertsSettings extends StatefulWidget {
 }
 
 class _SecurityAlertSettingsState extends State<SecurityAlertsSettings> {
-  bool _push = false;
-  int _selectedIndex = 4;
-  final List<Widget> _pages = [
-    Container(child: Text("Home"),),
-    Container(child: Text("Portfolio"),),
-    Container(child: Text("hehehehe"),),
-    Container(child: Text("Prices"),),
-    Builder(builder: (context) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.fromLTRB(16, 14, 0, 16),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.all(Radius.circular(10.0))
+  late bool _push=false;
+  late bool _email=false;
+  late bool _sms=false;
+  late bool _inApp=false;
+  late int _selectedIndex=4;
+  late List<Widget> _pages;
+  @override
+  void initState() {
+    super.initState();
+    _pages = [
+      Container(child: Text("Home"),),
+      Container(child: Text("Portfolio"),),
+      Container(child: Text("hehehehe"),),
+      Container(child: Text("Prices"),),
+      StatefulBuilder(builder: (context, setState) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.fromLTRB(16, 14, 0, 16),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.all(Radius.circular(10.0))
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Security alert(preview)",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14.0,color: Colors.grey),),
+                  SizedBox(height: 8.0,),
+                  Text("Your password has been reset",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                  Text("Jan 1",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),)
+                ],
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            SizedBox(height: 8.0,),
+            Text("Get notified about important security alerts such as password resets",
+              style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),
+            ),
+            SizedBox(height: 40,),
+            Text("Preferences",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22.0),),
+            SizedBox(height: 4.0,),
+            Text("Tell us how you'd like to be notified",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),),
+            SizedBox(height: 12.0,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Security alert(preview)",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14.0,color: Colors.grey),),
-                SizedBox(height: 8.0,),
-                Text("Your password has been reset",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
-                Text("Jan 1",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),)
-              ],
-            ),
-          ),
-          SizedBox(height: 8.0,),
-          Text("Get notified about important security alerts such as password resets",
-            style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),
-          ),
-          SizedBox(height: 40,),
-          Text("Preferences",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22.0),),
-          SizedBox(height: 4.0,),
-          Text("Tell us how you'd like to be notified",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),),
-          SizedBox(height: 12.0,),
-          Row(
-            children: [
-              Text("Push"),
-              Switch(
+                Text("Push",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                Switch(
+                  activeColor: Colors.blue,
                   value: _push,
                   onChanged: (bool value){
-                    setState((){
+                    setState(() {
                       _push = value;
                     });
                   }
-              )
-            ],
-          )
-        ],
-      );
-    },)
-  ];
+                )
+              ],
+            ),
+            SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Email",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                Switch(
+                    activeColor: Colors.blue,
+                    value: _email,
+                    onChanged: (bool value){
+                      setState(() {
+                        _email = value;
+                      });
+                    }
+                )
+              ],
+            ),
+            SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("SMS (required)",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                Switch(
+                    activeColor: Colors.blue,
+                    value: _sms,
+                    onChanged: (bool value){
+                      setState(() {
+                        _sms = value;
+                      });
+                    }
+                )
+              ],
+            ),
+            SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("In app",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                Switch(
+                    activeColor: Colors.blue,
+                    value: _inApp,
+                    onChanged: (bool value){
+                      setState(() {
+                        _inApp = value;
+                      });
+                    }
+                )
+              ],
+            ),
+          ],
+        );
+      },)
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
