@@ -1,6 +1,7 @@
 import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
 import 'package:defi/view/auth/id-type.dart';
+import 'package:defi/view/auth/order-submitted.dart';
 import 'package:defi/view/auth/trade-amount.dart';
 import 'package:defi/view/auth/upload-photo.dart';
 import 'package:defi/view/auth/user-purpose.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/verify-photo-id',
+      initialRoute: '/order-submitted',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
         '/upload-photo' : (context) => UploadPhoto(),
         '/security-alerts-settings' : (context) => SecurityAlertsSettings(),
         '/verify-photo-id' : (context) => VerifyPhotoId(),
+        '/order-submitted' : (context) => OrderSubmitted(),
       },
       // home: Splash()
     );
