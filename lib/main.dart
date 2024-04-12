@@ -5,6 +5,7 @@ import 'package:defi/view/auth/trade-amount.dart';
 import 'package:defi/view/auth/upload-photo.dart';
 import 'package:defi/view/auth/user-purpose.dart';
 import 'package:defi/view/auth/verified.dart';
+import 'package:defi/view/security-alerts-settings.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
 import 'package:defi/view/auth/authentication-code.dart';
 import 'package:defi/view/auth/citizenship.dart';
@@ -38,10 +39,10 @@ class MyApp extends StatelessWidget {
           color: Colors.white
         )
       ),
-      debugShowCheckedModeBanner: false, 
-      initialRoute: '/upload-photo',
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/security-alerts-settings',
       routes: {
-        // '/': 
+        // '/':
         '/welcome': (context) => Welcome(),
         '/sign-up':(context) => SignUp(),
         '/sign-in': (context) => SignIn(),
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
         '/id-type' : (context) => IdType(),
         '/trade-amount' : (context) => TradeAmount(),
         '/upload-photo' : (context) => UploadPhoto(),
+        '/security-alerts-settings' : (context) => SecurityAlertsSettings(),
       },
       // home: Splash()
     );

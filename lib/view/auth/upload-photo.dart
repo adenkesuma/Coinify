@@ -11,7 +11,7 @@ class UploadPhoto extends StatelessWidget {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.fromLTRB(24, 24, 24, 24),
+        padding: EdgeInsets.fromLTRB(24, 22, 24, 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,

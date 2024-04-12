@@ -299,7 +299,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
                       fontFamily: "GraphikMedium",
-                      color: newPasswordText.hasFocus ? Colors.blue : Colors.black,
+                      color: confirmNewPasswordText.hasFocus ? Colors.blue : Colors.black,
                     ),),
                     SizedBox(height: 5.0,),
                     Focus(
