@@ -45,9 +45,11 @@ class IdType extends StatelessWidget {
         ),
       ),
       body: Container(
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
+        height: MediaQuery.of(context).size.height-30,
+        // height: MediaQuery.of(context).size.height,
+        // padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,6 +82,7 @@ class IdType extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 10.0),
                 Container(
                   height: 50,
                   child: InkWell(
@@ -106,6 +109,7 @@ class IdType extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 10.0,),
                 Container(
                   height: 50,
                   child: InkWell(

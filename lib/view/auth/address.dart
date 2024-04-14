@@ -51,9 +51,11 @@ class _AddressState extends State<Address> {
         )
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
+        // padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height-30,
+        // height: MediaQuery.of(context).size.height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -110,7 +112,9 @@ class _AddressState extends State<Address> {
               width: MediaQuery.of(context).size.width,
               height: 60,
               child: ElevatedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamed(context, '/user-purpose');
+                },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,

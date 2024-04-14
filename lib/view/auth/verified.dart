@@ -8,8 +8,11 @@ class Verified extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height-30,
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +41,7 @@ class Verified extends StatelessWidget {
               ],
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(24, 0, 24, 10),
+              // padding: EdgeInsets.fromLTRB(24, 0, 24, 10),
               width: MediaQuery.of(context).size.width,
               height: 60,
               child: ElevatedButton(

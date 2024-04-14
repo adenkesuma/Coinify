@@ -28,8 +28,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height-100,
-          padding: EdgeInsets.symmetric(horizontal: 24,vertical: 12),
+          height: MediaQuery.of(context).size.height-30,
+          padding: EdgeInsets.symmetric(horizontal: 30,vertical: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -127,7 +127,7 @@ class _VerificationState extends State<Verification> {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height-100,
+          height: MediaQuery.of(context).size.height-30,
           padding: EdgeInsets.symmetric(horizontal: 24,vertical: 12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

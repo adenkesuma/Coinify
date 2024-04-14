@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class SecureAccount extends StatelessWidget {
-  const SecureAccount({super.key});
+class ReceiveBitcoin extends StatelessWidget {
+  const ReceiveBitcoin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,42 +10,9 @@ class SecureAccount extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Container(
-          width: 200,
-          child: PreferredSize(
-            preferredSize: Size.fromHeight(10.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: LinearProgressIndicator(
-                    value: 1, // Value for first step
-                    backgroundColor: Color(0xD9D9D9D9),
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-                  ),
-                ),
-                SizedBox(width: 7.0),
-                Expanded(
-                  child: LinearProgressIndicator(
-                    value: 0.2, // Value for second step
-                    backgroundColor: Color(0xD9D9D9D9),
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-                  ),
-                ),
-                SizedBox(width: 7.0),
-                Expanded(
-                  child: LinearProgressIndicator(
-                    value: 0.0, // Value for third step
-                    backgroundColor: Color(0xD9D9D9D9),
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        title: Text('Receive Bitcoin', style: TextStyle(fontFamily: "GraphikMedium", fontWeight: FontWeight.w600),)
       ),
       body: Container(
-        // padding: EdgeInsets.all(30.0),
         padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height-30,
@@ -58,13 +25,13 @@ class SecureAccount extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/Scan.png',
+                  'assets/images/ReceiveBitcoin.png',
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 20.0),
                 Center(
                   child: Text(
-                    'Secure your account',
+                    'Be sure to select the right cryptocurrency',
                     style: TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.w600,
@@ -76,7 +43,7 @@ class SecureAccount extends StatelessWidget {
                 SizedBox(height: 10.0),
                 Center(
                   child: Text(
-                    'One way we keep your account secure is with 2-step verification, which requires your phone number. We will never call you or use your number without your permission',
+                    'If you send crypto to the wrong address (eg, Bitcoin to a Bitcoin Cash address), your crypto will be lost.',
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.normal,
@@ -89,10 +56,10 @@ class SecureAccount extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/two-step-verification');
+                Navigator.pushNamed(context, '/');
               }, 
               child: Text(
-                'Continue',
+                'I understand',
                 style: TextStyle(
                   fontSize: 14.0,
                   fontWeight: FontWeight.normal,

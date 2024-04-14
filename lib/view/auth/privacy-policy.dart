@@ -19,7 +19,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.symmetric(horizontal: 24,vertical: 12),
+          padding: EdgeInsets.symmetric(horizontal: 30,vertical: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

@@ -3,6 +3,7 @@ import 'package:defi/view/auth/all-done.dart';
 import 'package:defi/view/auth/get-bitcoin.dart';
 import 'package:defi/view/auth/id-type.dart';
 import 'package:defi/view/auth/order-submitted.dart';
+import 'package:defi/view/auth/receive-bitcoin.dart';
 import 'package:defi/view/auth/trade-amount.dart';
 import 'package:defi/view/auth/upload-photo.dart';
 import 'package:defi/view/auth/user-purpose.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/get-bitcoin',
+      initialRoute: '/receive-bitcoin',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
         '/verify-photo-id' : (context) => VerifyPhotoId(),
         '/order-submitted' : (context) => OrderSubmitted(),
         '/get-bitcoin' : (context) => GetBitcoin(),
+        '/receive-bitcoin' : (context) => ReceiveBitcoin(),
       },
       // home: Splash()
     );

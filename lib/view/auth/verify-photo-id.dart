@@ -44,8 +44,11 @@ class VerifyPhotoId extends StatelessWidget {
         ),
       ),
       body: Container(
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.all(24.0),
+        height: MediaQuery.of(context).size.height-30,
+        // width: MediaQuery.of(context).size.width,
+        // padding: EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,9 +61,9 @@ class VerifyPhotoId extends StatelessWidget {
                 SizedBox(height: 12.0,),
                 Text("Financial regulations require us to verify your ID. This helps prevent someone else from creating a "
                     "Coinbase account in your name",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),),
-                SizedBox(height: 6.0,),
+                SizedBox(height: 12.0,),
                 Text("After this step, you'll be ready to start trading crypto!",
-                  style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),
+                  style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0, color: Colors.grey),
                 ),
               ],
             ),

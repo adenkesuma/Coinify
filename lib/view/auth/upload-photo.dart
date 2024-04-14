@@ -9,9 +9,12 @@ class UploadPhoto extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(),
       body: Container(
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.fromLTRB(24, 22, 24, 24),
+        height: MediaQuery.of(context).size.height-30,
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
+        // padding: EdgeInsets.fromLTRB(24, 22, 24, 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,

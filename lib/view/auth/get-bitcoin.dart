@@ -9,8 +9,11 @@ class GetBitcoin extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(),
       body: Container(
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.all(24.0),
+        height: MediaQuery.of(context).size.height-30,
+        // width: MediaQuery.of(context).size.width,
+        // padding: EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

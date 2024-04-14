@@ -188,7 +188,7 @@ class _CitizenshipState extends State<Citizenship> {
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
         child: Container(
-          height: MediaQuery.of(context).size.height-90,
+          height: MediaQuery.of(context).size.height-30,
           padding: EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

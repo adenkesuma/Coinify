@@ -9,9 +9,12 @@ class OrderSubmitted extends StatelessWidget {
       backgroundColor: Colors.white   ,
       appBar: AppBar(),
       body: Container(
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
+        // padding: EdgeInsets.all(24.0),
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.all(24.0),
+        height: MediaQuery.of(context).size.height-30,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

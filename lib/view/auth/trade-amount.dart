@@ -45,9 +45,12 @@ class TradeAmount extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height-30,
+        // padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -59,7 +62,9 @@ class TradeAmount extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/id-type');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -73,7 +78,9 @@ class TradeAmount extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.pushNamed(context, '/id-type');
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -87,7 +94,9 @@ class TradeAmount extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.pushNamed(context, '/id-type');
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -101,7 +110,9 @@ class TradeAmount extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.pushNamed(context, '/id-type');
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

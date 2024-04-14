@@ -45,9 +45,12 @@ class UserPurpose extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
+        padding: EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height-30,
+        // padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -60,7 +63,9 @@ class UserPurpose extends StatelessWidget {
             Container(
               height: 50,
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/trade-amount');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -74,7 +79,9 @@ class UserPurpose extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/trade-amount');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -88,7 +95,9 @@ class UserPurpose extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/trade-amount');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -102,7 +111,9 @@ class UserPurpose extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/trade-amount');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -116,7 +127,9 @@ class UserPurpose extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/trade-amount');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -130,7 +143,9 @@ class UserPurpose extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/trade-amount');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -144,7 +159,9 @@ class UserPurpose extends StatelessWidget {
             Container(
               height: 40,
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/trade-amount');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

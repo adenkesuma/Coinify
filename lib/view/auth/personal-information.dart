@@ -68,7 +68,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
         child: Container(
-          height: MediaQuery.of(context).size.height-90,
+          height: MediaQuery.of(context).size.height-30,
           padding: EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -230,17 +230,17 @@ class _PersonalInformationState extends State<PersonalInformation> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                    if(firstNameInput.text == ""){_isFirstName = false;}
-                    else{_isFirstName = true;}
-                    if(lastNameInput.text == ""){_isLastName = false;}
-                    else{_isLastName = true;}
-                    if(birthdateInput.text == ""){_isBirthDate = false;}
-                    else{_isBirthDate = true;}
-                    if(_isFirstName && _isLastName && _isBirthDate){
-                      Navigator.pushNamed(context, '/verify-email');
-                    }
-                  });
+                  // setState(() {
+                  //   if(firstNameInput.text == ""){_isFirstName = false;}
+                  //   else{_isFirstName = true;}
+                  //   if(lastNameInput.text == ""){_isLastName = false;}
+                  //   else{_isLastName = true;}
+                  //   if(birthdateInput.text == ""){_isBirthDate = false;}
+                  //   else{_isBirthDate = true;}
+                  //   if(_isFirstName && _isLastName && _isBirthDate){
+                  //   }
+                  // });
+                      Navigator.pushNamed(context, '/address');
                 },
                 child: Text(
                   "Continue",
