@@ -37,32 +37,36 @@ class UploadPhoto extends StatelessWidget {
             ),
             Column(
               children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 60,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: Colors.blue,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                      ),
-                      onPressed: (){},
-                      child: Text("Continue",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),),
-                    )
+                ElevatedButton(
+                  onPressed: (){},
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),
+                  ),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                    ),
+                    minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                    backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                  ),
                 ),
                 SizedBox(height: 16.0,),
-                Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 60,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                      ),
-                      onPressed: (){},
-                      child: Text("View lesson without learning ",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),),
-                    )
+                ElevatedButton(
+                  onPressed: (){},
+                  child: Text(
+                    "View lesson without learning",
+                    style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),
+                  ),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                    ),
+                    minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                    foregroundColor: MaterialStateProperty.all(Colors.blue),
+                  ),
                 ),
               ],
             )

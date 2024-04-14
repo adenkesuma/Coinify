@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/info-lesson',
+      initialRoute: '/verified',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),

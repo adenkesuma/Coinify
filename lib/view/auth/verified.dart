@@ -40,20 +40,21 @@ class Verified extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              // padding: EdgeInsets.fromLTRB(24, 0, 24, 10),
-              width: MediaQuery.of(context).size.width,
-              height: 60,
-              child: ElevatedButton(
-                  onPressed: (){},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                  ),
-                  child: Text("Let's go",style: TextStyle(fontSize: 16.0),)
+            ElevatedButton(
+              onPressed: (){},
+              child: Text(
+                "Let's go",
+                style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),
               ),
-            )
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.blue),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+              ),
+            ),
           ],
         ),
       ),

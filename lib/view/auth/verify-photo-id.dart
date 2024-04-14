@@ -67,19 +67,22 @@ class VerifyPhotoId extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 60,
-              child: ElevatedButton(
+            ElevatedButton(
                 onPressed: (){},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                child: Text(
+                  "Continue",
+                  style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0,),
                 ),
-                child: Text("Continue",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.blue),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+                shadowColor: MaterialStateProperty.all(Colors.transparent)
               ),
-            )
+            ),
           ],
         ),
       ),

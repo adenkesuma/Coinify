@@ -32,19 +32,22 @@ class OrderSubmitted extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 60,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                ),
-                onPressed: (){},
-                child: Text("View account",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                "View Account",
+                style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0,),
               ),
-            )
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                  ),
+                  minimumSize: MaterialStateProperty.all(Size.fromHeight(60)),
+                  backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+              ),
+            ),
           ],
         ),
       ),
