@@ -11,6 +11,7 @@ import 'package:defi/view/auth/user-purpose.dart';
 import 'package:defi/view/auth/verified.dart';
 import 'package:defi/view/auth/verify-photo-id.dart';
 import 'package:defi/view/auth/verify-user-identity.dart';
+import 'package:defi/view/home.dart';
 import 'package:defi/view/security-alerts-settings.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
 import 'package:defi/view/auth/authentication-code.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/welcome',
+      initialRoute: '/home',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -75,7 +76,8 @@ class MyApp extends StatelessWidget {
         '/get-bitcoin' : (context) => GetBitcoin(),
         '/receive-bitcoin' : (context) => ReceiveBitcoin(),
         '/info-lesson': (context) => InfoLesson(),
-        '/verify-user-identity' : (context) => VerifyUserIdentity()
+        '/verify-user-identity' : (context) => VerifyUserIdentity(),
+        '/home': (context) => HomePage()
       },
       // home: Splash()
     );
