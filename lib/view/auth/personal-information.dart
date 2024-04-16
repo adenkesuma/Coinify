@@ -65,9 +65,9 @@ class _PersonalInformationState extends State<PersonalInformation> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        child: Container(
+      body:
+        // physics: NeverScrollableScrollPhysics(),
+        Container(
           height: MediaQuery.of(context).size.height-30,
           padding: EdgeInsets.all(30.0),
           child: Column(
@@ -263,7 +263,6 @@ class _PersonalInformationState extends State<PersonalInformation> {
             ]
           )
         ),
-      )
     );
   }
 }

@@ -69,12 +69,13 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
         ),
-        body: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
-          child: Container(
-              height: MediaQuery.of(context).size.height-30,
-              padding: EdgeInsets.all(30.0),
-              child: Column(
+        body: 
+          // physics: NeverScrollableScrollPhysics(),
+          Container(
+            padding: EdgeInsets.all(30.0),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height-30,
+            child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -340,7 +341,6 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ]
               )
-          ),
         )
     );
   }

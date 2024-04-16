@@ -110,17 +110,27 @@ class _AddressState extends State<Address> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 60,
               child: ElevatedButton(
                 onPressed: (){
                   Navigator.pushNamed(context, '/user-purpose');
                 },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                child: Text(
+                  "Continue",
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white,
+                    fontFamily: "GraphikMedium",
+                  ),
                 ),
-                child: Text("Continue",style: TextStyle(fontSize: 16.0),),
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                  ),
+                  minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                  backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  shadowColor: MaterialStateProperty.all(Colors.transparent)
+                ),
               ),
             )
           ],
