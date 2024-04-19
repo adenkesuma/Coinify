@@ -185,10 +185,17 @@ class _CitizenshipState extends State<Citizenship> {
           ),
         ),
       ),
+<<<<<<< HEAD
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
         child: Container(
           height: MediaQuery.of(context).size.height-(1/9*MediaQuery.of(context).size.height),
+=======
+      body:
+        // physics: NeverScrollableScrollPhysics(),
+        Container(
+          height: MediaQuery.of(context).size.height-30,
+>>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
           padding: EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -275,7 +282,7 @@ class _CitizenshipState extends State<Citizenship> {
                             color: Colors.grey,
                             size: 24.0
                           ),
-                          SizedBox(width: 10),
+                          SizedBox(width: 20),
                           Expanded(
                             child: Text(
                               'This info is used only for identity verification and is transmitted securely ysing 128-bit encryption',
@@ -297,7 +304,7 @@ class _CitizenshipState extends State<Citizenship> {
                         // else{_isCitizenValid = true;}
 
                         // if(_isCitizenValid == true){
-                          Navigator.pushNamed(context, '/personal-information');
+                          Navigator.pushNamed(context, '/verify-user-identity');
                         // }
                       });
                     },
@@ -323,7 +330,6 @@ class _CitizenshipState extends State<Citizenship> {
               )
             ],
           )
-        ),
       )
     );
   }

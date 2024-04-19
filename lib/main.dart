@@ -11,6 +11,8 @@ import 'package:defi/view/auth/upload-photo.dart';
 import 'package:defi/view/auth/user-purpose.dart';
 import 'package:defi/view/auth/verified.dart';
 import 'package:defi/view/auth/verify-photo-id.dart';
+import 'package:defi/view/auth/verify-user-identity.dart';
+import 'package:defi/view/home.dart';
 import 'package:defi/view/security-alerts-settings.dart';
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
 import 'package:defi/view/auth/authentication-code.dart';
@@ -46,7 +48,11 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
       initialRoute: '/address',
+=======
+      initialRoute: '/home',
+>>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -75,7 +81,12 @@ class MyApp extends StatelessWidget {
         '/get-bitcoin' : (context) => GetBitcoin(),
         '/receive-bitcoin' : (context) => ReceiveBitcoin(),
         '/info-lesson': (context) => InfoLesson(),
+<<<<<<< HEAD
         '/card-info' : (context) => CardInfo(),
+=======
+        '/verify-user-identity' : (context) => VerifyUserIdentity(),
+        '/home': (context) => HomePage()
+>>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
       },
       // home: Splash()
     );
