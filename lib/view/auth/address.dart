@@ -9,6 +9,7 @@ class Address extends StatefulWidget {
 
 class _AddressState extends State<Address> {
   FocusNode addressText = FocusNode();
+  bool _enterAddressManually = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,80 +51,124 @@ class _AddressState extends State<Address> {
           ),
         )
       ),
-      body: Container(
-        // padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
-        padding: EdgeInsets.all(30.0),
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height-30,
-        // height: MediaQuery.of(context).size.height,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Enter your address",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
-                SizedBox(height: 12,),
-                Text("Enter the street address of your primary residence. Please do not use a PO box or business address",
-                style: TextStyle(color: Colors.grey,fontSize: 16),),
-                SizedBox(height: 24,),
-                Text("Search for Address",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikMedium",
-                    color: addressText.hasFocus ? Colors.blue : Colors.black),
-                ),
-                SizedBox(height: 8.0,),
-                Focus(
-                  onFocusChange: (focus){
-                    setState(() {});
-                  },
-                  child: TextFormField(
-                    focusNode: addressText,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+      body: SingleChildScrollView(
+        child: Container(
+          // padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
+          padding: EdgeInsets.all(30.0),
+          width: MediaQuery.of(context).size.width,
+          height: _enterAddressManually ? MediaQuery.of(context).size.height : MediaQuery.of(context).size.height-(1/9*MediaQuery.of(context).size.height),
+          // height: MediaQuery.of(context).size.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Enter your address",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
+                  SizedBox(height: 12,),
+                  Text("Enter the street address of your primary residence. Please do not use a PO box or business address",
+                  style: TextStyle(color: Colors.grey,fontSize: 16),),
+                  SizedBox(height: 24,),
+                  Text("Search for Address",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikMedium",
+                      color: addressText.hasFocus ? Colors.blue : Colors.black),
+                  ),
+                  SizedBox(height: 8.0,),
+                  Focus(
+                    onFocusChange: (focus){
+                      setState(() {});
+                    },
+                    child: TextFormField(
+                      focusNode: addressText,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue)
+                        ),
+                        hintText: "Enter your address",
+                        hintStyle: TextStyle(color: Colors.grey)
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue)
-                      ),
-                      hintText: "Enter your address",
-                      hintStyle: TextStyle(color: Colors.grey)
                     ),
                   ),
-                ),
-                SizedBox(height: 40,),
-                Container(
-                  height: 40,
-                  child: InkWell(
-                    onTap: (){
-                    },
-                    child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  SizedBox(height: 40,),
+                  Theme(
+                    data: ThemeData().copyWith(dividerColor: Colors.transparent),
+                    child: ListTileTheme(
+                      contentPadding: EdgeInsets.all(0.0),
+                      child: ExpansionTile(
+                        title: Text("Enter Address Manually",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                        onExpansionChanged: (bool value) {
+                          setState(() {
+                            _enterAddressManually = value;
+                          });
+                        },
                         children: [
-                        Text("Enter Address Manually",style: TextStyle(fontSize: 16,fontFamily: "GraphikRegular"),),
-                        Icon(Icons.arrow_forward_ios),
+                          ListTile(
+                            title: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Street address",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),),
+                                SizedBox(height: 8.0,),
+                                TextFormField(
+                                  decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))
+                                  ),
+                                ),
+                                SizedBox(height: 16.0,),
+                                Text("Apt, suite, etc (optional)",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),),
+                                SizedBox(height: 8.0,),
+                                TextFormField(
+                                  decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))
+                                  ),
+                                ),
+                                SizedBox(height: 16.0,),
+                                Text("City",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),),
+                                SizedBox(height: 8.0,),
+                                TextFormField(
+                                  decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))
+                                  ),
+                                ),
+                                SizedBox(height: 16.0,),
+                                Text("Country",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16.0),),
+                                SizedBox(height: 8.0,),
+                                TextFormField(
+                                  decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 60,
-              child: ElevatedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/user-purpose');
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                ),
-                child: Text("Continue",style: TextStyle(fontSize: 16.0),),
+                ],
               ),
-            )
-          ],
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/user-purpose');
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                  ),
+                  child: Text("Continue",style: TextStyle(fontSize: 16.0),),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

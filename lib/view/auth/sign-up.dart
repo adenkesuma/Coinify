@@ -200,14 +200,15 @@ class _SignUpState extends State<SignUp> {
                 ],
               ),
               ElevatedButton(
-                onPressed: (){},
+                onPressed: (){Navigator.pushNamed(context, '/verify-email');},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                   ),
                   minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
                   backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  foregroundColor: MaterialStateProperty.all(Colors.white)
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
                 ),
                 child: Text(
                   "Continue",

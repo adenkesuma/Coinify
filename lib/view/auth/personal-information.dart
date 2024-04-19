@@ -68,7 +68,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
         child: Container(
-          height: MediaQuery.of(context).size.height-30,
+          height: MediaQuery.of(context).size.height-(1/9*MediaQuery.of(context).size.height),
           padding: EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
