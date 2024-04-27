@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/address',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
