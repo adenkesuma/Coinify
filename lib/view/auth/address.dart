@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Address extends StatefulWidget {
   const Address({super.key});
@@ -16,6 +17,7 @@ class _AddressState extends State<Address> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Container(
           width: 200,
@@ -61,39 +63,39 @@ class _AddressState extends State<Address> {
           // height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Enter your address",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
-                  SizedBox(height: 12,),
-                  Text("Enter the street address of your primary residence. Please do not use a PO box or business address",
-                  style: TextStyle(color: Colors.grey,fontSize: 16),),
-                  SizedBox(height: 24,),
-                  Text("Search for Address",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikMedium",
-                      color: addressText.hasFocus ? Colors.blue : Colors.black),
-                  ),
-                  SizedBox(height: 8.0,),
-                  Focus(
-                    onFocusChange: (focus){
-                      setState(() {});
-                    },
-                    child: TextFormField(
-                      focusNode: addressText,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue)
-                        ),
-                        hintText: "Enter your address",
-                        hintStyle: TextStyle(color: Colors.grey)
-                      ),
+              Text("Enter your address",style: TextStyle(fontSize: 22,fontFamily: "GraphikMedium"),),
+              SizedBox(height: 12,),
+              Text("Enter the street address of your primary residence. Please do not use a PO box or business address",
+              style: TextStyle(color: Colors.grey,fontSize: 16),),
+              SizedBox(height: 24,),
+              Text("Search for Address",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikMedium",
+                  color: addressText.hasFocus ? Colors.blue : Colors.black),
+              ),
+              SizedBox(height: 8.0,),
+              Focus(
+                onFocusChange: (focus){
+                  setState(() {});
+                },
+                child: TextFormField(
+                  focusNode: addressText,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue)
+                    ),
+                    hintText: "Enter your address",
+                    hintStyle: TextStyle(color: Colors.grey)
                   ),
-                  SizedBox(height: 40,),
-                  Theme(
+                ),
+              ),
+              SizedBox(height: 40,),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Theme(
                     data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
                     child: ListTileTheme(
                       contentPadding: EdgeInsets.all(0),
@@ -164,8 +166,8 @@ class _AddressState extends State<Address> {
                         ],
                       ),
                     ),
-                  )
-                ],
+                  ),
+                ),
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -191,11 +193,18 @@ class _AddressState extends State<Address> {
                     shadowColor: MaterialStateProperty.all(Colors.transparent)
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
-      )
+      ),
+      // floatingActionButton: Container(
+      //   width: MediaQuery.of(context).size.width,
+      //   padding: EdgeInsets.fromLTRB(60, 0, 30, 0),
+      //   child: FloatingActionButton(
+      //     onPressed: (){},
+      //   ),
+      // )
     );
   }
 }
