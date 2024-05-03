@@ -612,7 +612,7 @@ class VerticalNews extends StatelessWidget {
         return Card(
           elevation: 0, // Menghilangkan bayangan default Card
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 20),
+            padding: EdgeInsets.symmetric(vertical: 15),
             child: Row(
               children: [
                 Expanded(
