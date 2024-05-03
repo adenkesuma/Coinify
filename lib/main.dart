@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/address',
+      initialRoute: '/home',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
         '/privacy-policy': (context) => PrivacyPolicy(),
         '/verified' : (context) => Verified(),
         '/all-done' : (context) => AllDone(),
-        '/address' : (context) => Address(),
+        // '/address' : (context) => Address(),
         '/user-purpose' : (context) => UserPurpose(),
         '/id-type' : (context) => IdType(),
         '/trade-amount' : (context) => TradeAmount(),
