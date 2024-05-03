@@ -1,3 +1,4 @@
+import 'package:defi/view/CardTerms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'CustomTextField-LinkYourCard.dart';
@@ -126,7 +127,12 @@ class _LinkYourCardState extends State<LinkYourCard> {
                     ),
                     const Text("By adding a new card, you agree to the"),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CardTerms()));
+                      },
                       child: const Text(
                         'credit/debit card terms.',
                         style: TextStyle(
