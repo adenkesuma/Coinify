@@ -70,7 +70,6 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
         ),
-<<<<<<< HEAD
       ),
       body: SingleChildScrollView(
         // reverse: true,
@@ -105,214 +104,214 @@ class _SignUpState extends State<SignUp> {
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-=======
-        body: 
-          // physics: NeverScrollableScrollPhysics(),
-          Container(
-            padding: EdgeInsets.all(30.0),
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height-30,
-            child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                              'Create your account',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24.0,
-                                  fontFamily: "GraphikMedium"
-                              )
-                          ),
-                          SizedBox(height: 20.0),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'First Name',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16.0,
-                                    color: firstNameText.hasFocus ? Colors.blue : Colors.black,
-                                    fontFamily: "GraphikMedium"
-                                ),
-                              ),
-                              SizedBox(height: 8.0),
-                              Focus(
-                                onFocusChange: (focus){
-                                  setState(() {});
-                                },
-                                child: TextFormField(
-                                  controller: firstNameInput,
-                                  focusNode: firstNameText,
-                                  decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                    border: OutlineInputBorder(),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.grey)
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.blue)
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.red)
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.red)
-                                    ),
-                                    hintText: 'Enter your first name',
-                                    errorText: _isFirstName ? null : "First Name must not be empty",
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 20.0),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Last Name',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16.0,
-                                  color: lastNameText.hasFocus ? Colors.blue : Colors.black,
-                                  fontFamily: "GraphikMedium",
-                                ),
-                              ),
-                              SizedBox(height: 8.0),
-                              Focus(
-                                onFocusChange: (focus){
-                                  setState(() {});
-                                },
-                                child: TextField(
-                                    controller: lastNameInput,
-                                    focusNode: lastNameText,
-                                    decoration: InputDecoration(
-                                      contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                      border: OutlineInputBorder(),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.grey)
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.blue)
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.red)
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.red)
-                                      ),
-                                      hintText: 'Enter your last name',
-                                      errorText: _isLastName ? null : "Last Name must not be empty",
-                                    )
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 20.0),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Email',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16.0,
-                                  color: emailText.hasFocus ? Colors.blue : Colors.black,
-                                  fontFamily: "GraphikMedium",
-                                ),
-                              ),
-                              SizedBox(height: 8.0),
-                              Focus(
-                                onFocusChange: (focus){
-                                  setState(() {});
-                                },
-                                child: TextField(
-                                  keyboardType: TextInputType.emailAddress,
-                                  controller: emailInput,
-                                  focusNode: emailText,
-                                  decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                    border: OutlineInputBorder(),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.grey)
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.blue)
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.red)
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.red)
-                                    ),
-                                    hintText: 'Enter your email',
-                                    errorText: _isEmail ? null : "Email must not be empty",
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 20.0),
-                          Text(
-                            'Password',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16.0,
-                              color: passwordText.hasFocus ? Colors.blue : Colors.black,
-                              fontFamily: "GraphikMedium",
-                            ),
-                          ),
-                          SizedBox(height: 8.0),
-                          Focus(
-                            onFocusChange: (focus){
-                              setState(() {});
-                            },
-                            child: TextField(
-                              controller: passwordInput,
-                              focusNode: passwordText,
-                              obscureText: !isPasswordVisible,
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                border: OutlineInputBorder(),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.grey)
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.blue)
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.red)
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.red)
-                                ),
-                                hintText: 'Enter your password',
-                                errorText: _isPassword ? _validPassword ? null : "Password must be at least 8 characters" : "Password must not be empty",
-                                suffixIcon: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      isPasswordVisible = !isPasswordVisible;
-                                    });
-                                  },
-                                  child: Icon(
-                                    isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
->>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
+// =======
+//         body: 
+//           // physics: NeverScrollableScrollPhysics(),
+//           Container(
+//             padding: EdgeInsets.all(30.0),
+//             width: MediaQuery.of(context).size.width,
+//             height: MediaQuery.of(context).size.height-30,
+//             child: Column(
+//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   children: [
+//                     Container(
+//                       child: Column(
+//                         mainAxisAlignment: MainAxisAlignment.start,
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                           Text(
+//                               'Create your account',
+//                               style: TextStyle(
+//                                   fontWeight: FontWeight.bold,
+//                                   fontSize: 24.0,
+//                                   fontFamily: "GraphikMedium"
+//                               )
+//                           ),
+//                           SizedBox(height: 20.0),
+//                           Column(
+//                             mainAxisAlignment: MainAxisAlignment.start,
+//                             crossAxisAlignment: CrossAxisAlignment.start,
+//                             children: [
+//                               Text(
+//                                 'First Name',
+//                                 style: TextStyle(
+//                                     fontWeight: FontWeight.w600,
+//                                     fontSize: 16.0,
+//                                     color: firstNameText.hasFocus ? Colors.blue : Colors.black,
+//                                     fontFamily: "GraphikMedium"
+//                                 ),
+//                               ),
+//                               SizedBox(height: 8.0),
+//                               Focus(
+//                                 onFocusChange: (focus){
+//                                   setState(() {});
+//                                 },
+//                                 child: TextFormField(
+//                                   controller: firstNameInput,
+//                                   focusNode: firstNameText,
+//                                   decoration: InputDecoration(
+//                                     contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+//                                     border: OutlineInputBorder(),
+//                                     enabledBorder: OutlineInputBorder(
+//                                         borderSide: BorderSide(color: Colors.grey)
+//                                     ),
+//                                     focusedBorder: OutlineInputBorder(
+//                                         borderSide: BorderSide(color: Colors.blue)
+//                                     ),
+//                                     errorBorder: OutlineInputBorder(
+//                                         borderSide: BorderSide(color: Colors.red)
+//                                     ),
+//                                     focusedErrorBorder: OutlineInputBorder(
+//                                         borderSide: BorderSide(color: Colors.red)
+//                                     ),
+//                                     hintText: 'Enter your first name',
+//                                     errorText: _isFirstName ? null : "First Name must not be empty",
+//                                   ),
+//                                 ),
+//                               )
+//                             ],
+//                           ),
+//                           SizedBox(height: 20.0),
+//                           Column(
+//                             mainAxisAlignment: MainAxisAlignment.start,
+//                             crossAxisAlignment: CrossAxisAlignment.start,
+//                             children: [
+//                               Text(
+//                                 'Last Name',
+//                                 style: TextStyle(
+//                                   fontWeight: FontWeight.w600,
+//                                   fontSize: 16.0,
+//                                   color: lastNameText.hasFocus ? Colors.blue : Colors.black,
+//                                   fontFamily: "GraphikMedium",
+//                                 ),
+//                               ),
+//                               SizedBox(height: 8.0),
+//                               Focus(
+//                                 onFocusChange: (focus){
+//                                   setState(() {});
+//                                 },
+//                                 child: TextField(
+//                                     controller: lastNameInput,
+//                                     focusNode: lastNameText,
+//                                     decoration: InputDecoration(
+//                                       contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+//                                       border: OutlineInputBorder(),
+//                                       enabledBorder: OutlineInputBorder(
+//                                           borderSide: BorderSide(color: Colors.grey)
+//                                       ),
+//                                       focusedBorder: OutlineInputBorder(
+//                                           borderSide: BorderSide(color: Colors.blue)
+//                                       ),
+//                                       errorBorder: OutlineInputBorder(
+//                                           borderSide: BorderSide(color: Colors.red)
+//                                       ),
+//                                       focusedErrorBorder: OutlineInputBorder(
+//                                           borderSide: BorderSide(color: Colors.red)
+//                                       ),
+//                                       hintText: 'Enter your last name',
+//                                       errorText: _isLastName ? null : "Last Name must not be empty",
+//                                     )
+//                                 ),
+//                               )
+//                             ],
+//                           ),
+//                           SizedBox(height: 20.0),
+//                           Column(
+//                             mainAxisAlignment: MainAxisAlignment.start,
+//                             crossAxisAlignment: CrossAxisAlignment.start,
+//                             children: [
+//                               Text(
+//                                 'Email',
+//                                 style: TextStyle(
+//                                   fontWeight: FontWeight.w600,
+//                                   fontSize: 16.0,
+//                                   color: emailText.hasFocus ? Colors.blue : Colors.black,
+//                                   fontFamily: "GraphikMedium",
+//                                 ),
+//                               ),
+//                               SizedBox(height: 8.0),
+//                               Focus(
+//                                 onFocusChange: (focus){
+//                                   setState(() {});
+//                                 },
+//                                 child: TextField(
+//                                   keyboardType: TextInputType.emailAddress,
+//                                   controller: emailInput,
+//                                   focusNode: emailText,
+//                                   decoration: InputDecoration(
+//                                     contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+//                                     border: OutlineInputBorder(),
+//                                     enabledBorder: OutlineInputBorder(
+//                                         borderSide: BorderSide(color: Colors.grey)
+//                                     ),
+//                                     focusedBorder: OutlineInputBorder(
+//                                         borderSide: BorderSide(color: Colors.blue)
+//                                     ),
+//                                     errorBorder: OutlineInputBorder(
+//                                         borderSide: BorderSide(color: Colors.red)
+//                                     ),
+//                                     focusedErrorBorder: OutlineInputBorder(
+//                                         borderSide: BorderSide(color: Colors.red)
+//                                     ),
+//                                     hintText: 'Enter your email',
+//                                     errorText: _isEmail ? null : "Email must not be empty",
+//                                   ),
+//                                 ),
+//                               )
+//                             ],
+//                           ),
+//                           SizedBox(height: 20.0),
+//                           Text(
+//                             'Password',
+//                             style: TextStyle(
+//                               fontWeight: FontWeight.w600,
+//                               fontSize: 16.0,
+//                               color: passwordText.hasFocus ? Colors.blue : Colors.black,
+//                               fontFamily: "GraphikMedium",
+//                             ),
+//                           ),
+//                           SizedBox(height: 8.0),
+//                           Focus(
+//                             onFocusChange: (focus){
+//                               setState(() {});
+//                             },
+//                             child: TextField(
+//                               controller: passwordInput,
+//                               focusNode: passwordText,
+//                               obscureText: !isPasswordVisible,
+//                               decoration: InputDecoration(
+//                                 contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+//                                 border: OutlineInputBorder(),
+//                                 enabledBorder: OutlineInputBorder(
+//                                     borderSide: BorderSide(color: Colors.grey)
+//                                 ),
+//                                 focusedBorder: OutlineInputBorder(
+//                                     borderSide: BorderSide(color: Colors.blue)
+//                                 ),
+//                                 errorBorder: OutlineInputBorder(
+//                                     borderSide: BorderSide(color: Colors.red)
+//                                 ),
+//                                 focusedErrorBorder: OutlineInputBorder(
+//                                     borderSide: BorderSide(color: Colors.red)
+//                                 ),
+//                                 hintText: 'Enter your password',
+//                                 errorText: _isPassword ? _validPassword ? null : "Password must be at least 8 characters" : "Password must not be empty",
+//                                 suffixIcon: GestureDetector(
+//                                   onTap: () {
+//                                     setState(() {
+//                                       isPasswordVisible = !isPasswordVisible;
+//                                     });
+//                                   },
+//                                   child: Icon(
+//                                     isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+//                                   ),
+//                                 ),
+//                               ),
+//                             ),
+//                           ),
+//                         ],
+// >>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
                       ),
                     )
                   ),
@@ -378,7 +377,6 @@ class _SignUpState extends State<SignUp> {
                         )
                       ),
                     ),
-<<<<<<< HEAD
                   ),
                   SizedBox(height: 36.0,),
                   Row(
@@ -429,11 +427,6 @@ class _SignUpState extends State<SignUp> {
           ),
         ),
       ),
-=======
-                  ]
-              )
-        )
->>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
     );
   }
 }

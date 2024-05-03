@@ -57,17 +57,10 @@ class _AuthenticationCodeState extends State<AuthenticationCode> {
           ),
         ),
       ),
-<<<<<<< HEAD
-      body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        child: Container(
-          height: MediaQuery.of(context).size.height-(1/9*MediaQuery.of(context).size.height),
-=======
       body:
         // physics: NeverScrollableScrollPhysics(),
         Container(
           height: MediaQuery.of(context).size.height-30,
->>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
           padding: EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

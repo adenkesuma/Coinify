@@ -48,11 +48,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-<<<<<<< HEAD
-      initialRoute: '/address',
-=======
       initialRoute: '/home',
->>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -81,12 +77,9 @@ class MyApp extends StatelessWidget {
         '/get-bitcoin' : (context) => GetBitcoin(),
         '/receive-bitcoin' : (context) => ReceiveBitcoin(),
         '/info-lesson': (context) => InfoLesson(),
-<<<<<<< HEAD
         '/card-info' : (context) => CardInfo(),
-=======
         '/verify-user-identity' : (context) => VerifyUserIdentity(),
         '/home': (context) => HomePage()
->>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
       },
       // home: Splash()
     );

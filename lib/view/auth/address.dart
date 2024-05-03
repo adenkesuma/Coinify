@@ -150,56 +150,38 @@ class _AddressState extends State<Address> {
                       ),
                     ),
                   ),
-<<<<<<< HEAD
                 ],
-=======
                 ),
               ],
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: ElevatedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/user-purpose');
-                },
-                child: Text(
-                  "Continue",
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.white,
-                    fontFamily: "GraphikMedium",
-                  ),
-                ),
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                  ),
-                  minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  shadowColor: MaterialStateProperty.all(Colors.transparent)
-                ),
->>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 60,
-                child: ElevatedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/user-purpose');
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                  ),
-                  child: Text("Continue",style: TextStyle(fontSize: 16.0),),
-                ),
-              )
-            ],
+            // Container(
+            //   width: MediaQuery.of(context).size.width,
+            //   child: ElevatedButton(
+            //     onPressed: (){
+            //       Navigator.pushNamed(context, '/user-purpose');
+            //     },
+            //     child: Text(
+            //       "Continue",
+            //       style: TextStyle(
+            //         fontSize: 14.0,
+            //         fontWeight: FontWeight.normal,
+            //         color: Colors.white,
+            //         fontFamily: "GraphikMedium",
+            //       ),
+            //     ),
+            //     style: ButtonStyle(
+            //       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            //         RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+            //       ),
+            //       minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+            //       backgroundColor: MaterialStateProperty.all(Colors.blue),
+            //       shadowColor: MaterialStateProperty.all(Colors.transparent)
+            //     ),
+            //   ),
+            // )
           ),
         ),
-      ),
+      // ),
     );
   }
 }
