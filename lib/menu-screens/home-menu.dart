@@ -404,6 +404,7 @@ class _HomeMenuState extends State<HomeMenu> {
                                       Image.asset(
                                         'assets/images/gift.png',
                                         fit: BoxFit.cover,
+                                        width: 80,
                                       ),
                                     ]
                                   )

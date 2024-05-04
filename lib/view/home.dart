@@ -1,4 +1,5 @@
 import 'package:defi/menu-screens/home-menu.dart';
+import 'package:defi/menu-screens/portfolio-menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -12,12 +13,7 @@ class _HomePageState extends State<HomePage> {
 
   static List<Widget Function(BuildContext)> _widgetOptions = <Widget Function(BuildContext)>[
     (BuildContext context) => HomeMenu(),
-    (BuildContext context) => Center(
-      child: Text(
-        'Explore Page',
-        style: TextStyle(fontSize: 30),
-      ),
-    ),
+    (BuildContext context) => PortfolioMenu(),
     (BuildContext context) => Center(
       child: Text(
         'Switch',
