@@ -1,3 +1,4 @@
+import 'package:defi/view/LimitsAndFeatures.dart';
 import 'package:defi/view/LinkYourCard.dart';
 import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
@@ -31,6 +32,7 @@ import 'package:defi/view/auth/verify-email.dart';
 import 'package:defi/view/auth/verify-identity.dart';
 import 'package:defi/view/welcome.dart';
 import 'package:flutter/material.dart';
+import '';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,8 +49,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white)),
       debugShowCheckedModeBanner: false,
 
-      initialRoute: '/link-your-card',
-
+      initialRoute: '/limits-and-features',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -59,14 +60,14 @@ class MyApp extends StatelessWidget {
         '/verify-identity': (context) => VerifyIdentity(),
         '/secure-account': (context) => SecureAccount(),
         // '/two-step-verification':(context) => TwoStepVerification(),
-        '/authentication-code': (context) => AuthenticationCode(),
-        '/citizenship': (context) => Citizenship(),
-        '/personal-information': (context) => PersonalInformation(),
+        // '/authentication-code': (context) => AuthenticationCode(),
+        // '/citizenship': (context) => Citizenship(),
+        // '/personal-information': (context) => PersonalInformation(),
         '/forgot-password': (context) => ForgotPassword(),
         '/privacy-policy': (context) => PrivacyPolicy(),
         '/verified': (context) => Verified(),
         '/all-done': (context) => AllDone(),
-        '/address': (context) => Address(),
+        // '/address': (context) => Address(),
         '/user-purpose': (context) => UserPurpose(),
         '/id-type': (context) => IdType(),
         '/trade-amount': (context) => TradeAmount(),
@@ -81,6 +82,23 @@ class MyApp extends StatelessWidget {
         '/card-info': (context) => CardInfo(),
 
         '/verify-user-identity': (context) => VerifyUserIdentity(),
+
+        '/verified' : (context) => Verified(),
+        '/all-done' : (context) => AllDone(),
+        // '/address' : (context) => Address(),
+        '/user-purpose' : (context) => UserPurpose(),
+        '/id-type' : (context) => IdType(),
+        '/trade-amount' : (context) => TradeAmount(),
+        '/upload-photo' : (context) => UploadPhoto(),
+        '/security-alerts-settings' : (context) => SecurityAlertsSettings(),
+        '/verify-photo-id' : (context) => VerifyPhotoId(),
+        '/order-submitted' : (context) => OrderSubmitted(),
+        '/get-bitcoin' : (context) => GetBitcoin(),
+        '/receive-bitcoin' : (context) => ReceiveBitcoin(),
+        '/info-lesson': (context) => InfoLesson(),
+        '/card-info' : (context) => CardInfo(),
+        '/verify-user-identity' : (context) => VerifyUserIdentity(),
+        '/limits-and-features' : (context) => Limits_Features(),
         '/home': (context) => HomePage()
       },
       // home: Splash()
