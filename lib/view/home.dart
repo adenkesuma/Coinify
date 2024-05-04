@@ -1,5 +1,6 @@
 import 'package:defi/menu-screens/home-menu.dart';
 import 'package:defi/menu-screens/portfolio-menu.dart';
+import 'package:defi/menu-screens/settings-menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -22,16 +23,11 @@ class _HomePageState extends State<HomePage> {
     ),
     (BuildContext context) => Center(
       child: Text(
-        'Settings Page',
-        style: TextStyle(fontSize: 30),
-      ),
-    ),
-    (BuildContext context) => Center(
-      child: Text(
         'Price Page',
         style: TextStyle(fontSize: 30),
       ),
     ),
+    (BuildContext context) => SettingsMenu(),
   ];
 
   void _onItemTapped(int index) {
