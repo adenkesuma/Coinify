@@ -90,3 +90,44 @@ List<Coins> coins = [
   Coins(imageUrl: 'assets/images/ETH.png', name: 'Ethereum', price: '\$0.00', myAsset: '0', nameCoin: 'ETH'),
   Coins(imageUrl: 'assets/images/ETC.png', name: 'Ethereum Classic', price: '\$0.00', myAsset: '0', nameCoin: 'ETC'),
 ];
+
+List<Coins> allCoins = [
+  Coins(imageUrl: 'assets/images/USDC.png', name: 'USD Coin', price: '\$0.00', myAsset: '0', nameCoin: 'USDC'),
+  Coins(imageUrl: 'assets/images/MATIC.png', name: 'Polygon', price: '\$13.80', myAsset: '8.93221123', nameCoin: 'MATIC'),
+  Coins(imageUrl: 'assets/images/Ox-zrx.png', name: 'Ox', price: '\$0.00', myAsset: '0', nameCoin: 'ZRX'),
+  Coins(imageUrl: 'assets/images/AAVE.png', name: 'Aave', price: '\$0.00', myAsset: '0', nameCoin: 'AAVE'),
+  Coins(imageUrl: 'assets/images/ALGO.png', name: 'Algorand', price: '\$0.00', myAsset: '0', nameCoin: 'ALGO'),
+  Coins(imageUrl: 'assets/images/ampl.png', name: 'Ampleforth Governance', price: '\$0.00', myAsset: '0', nameCoin: 'FORTH'),
+  Coins(imageUrl: 'assets/images/ANKR.png', name: 'Ankr', price: '\$0.00', myAsset: '0', nameCoin: 'ANKR'),
+  Coins(imageUrl: 'assets/images/Bitcoin.png', name: 'Bitcoin', price: '\$75.000', myAsset: '1', nameCoin: 'BTC'),
+  Coins(imageUrl: 'assets/images/1INCH.png', name: '1Inch', price: '\$0.00', myAsset: '0', nameCoin: '1INC'),
+  Coins(imageUrl: 'assets/images/bch.png', name: 'Bitcoin Cash', price: '\$0.00', myAsset: '0', nameCoin: 'BTH'),
+  Coins(imageUrl: 'assets/images/ETH.png', name: 'Ethereum', price: '\$0.00', myAsset: '0', nameCoin: 'ETH'),
+  Coins(imageUrl: 'assets/images/ETC.png', name: 'Ethereum Classic', price: '\$0.00', myAsset: '0', nameCoin: 'ETC'),
+];
+
+List<Coins> tradableCoins = [
+  Coins(imageUrl: 'assets/images/USDC.png', name: 'USD Coin', price: '\$0.00', myAsset: '0', nameCoin: 'USDC'),
+  Coins(imageUrl: 'assets/images/MATIC.png', name: 'Polygon', price: '\$13.80', myAsset: '8.93221123', nameCoin: 'MATIC'),
+  Coins(imageUrl: 'assets/images/Ox-zrx.png', name: 'Ox', price: '\$0.00', myAsset: '0', nameCoin: 'ZRX'),
+  Coins(imageUrl: 'assets/images/AAVE.png', name: 'Aave', price: '\$0.00', myAsset: '0', nameCoin: 'AAVE'),
+  Coins(imageUrl: 'assets/images/ALGO.png', name: 'Algorand', price: '\$0.00', myAsset: '0', nameCoin: 'ALGO'),
+  Coins(imageUrl: 'assets/images/ampl.png', name: 'Ampleforth Governance', price: '\$0.00', myAsset: '0', nameCoin: 'FORTH'),
+  Coins(imageUrl: 'assets/images/ANKR.png', name: 'Ankr', price: '\$0.00', myAsset: '0', nameCoin: 'ANKR'),
+];
+
+List<Coins> gainersCoins = [
+  Coins(imageUrl: 'assets/images/USDC.png', name: 'USD Coin', price: '\$0.00', myAsset: '0', nameCoin: 'USDC'),
+  Coins(imageUrl: 'assets/images/MATIC.png', name: 'Polygon', price: '\$13.80', myAsset: '8.93221123', nameCoin: 'MATIC'),
+  Coins(imageUrl: 'assets/images/ALGO.png', name: 'Algorand', price: '\$0.00', myAsset: '0', nameCoin: 'ALGO'),
+  Coins(imageUrl: 'assets/images/ampl.png', name: 'Ampleforth Governance', price: '\$0.00', myAsset: '0', nameCoin: 'FORTH'),
+  Coins(imageUrl: 'assets/images/ANKR.png', name: 'Ankr', price: '\$0.00', myAsset: '0', nameCoin: 'ANKR'),
+];
+
+List<Coins> losersCoins = [
+  Coins(imageUrl: 'assets/images/USDC.png', name: 'USD Coin', price: '\$0.00', myAsset: '0', nameCoin: 'USDC'),
+  Coins(imageUrl: 'assets/images/ALGO.png', name: 'Algorand', price: '\$0.00', myAsset: '0', nameCoin: 'ALGO'),
+  Coins(imageUrl: 'assets/images/ampl.png', name: 'Ampleforth Governance', price: '\$0.00', myAsset: '0', nameCoin: 'FORTH'),
+  Coins(imageUrl: 'assets/images/ANKR.png', name: 'Ankr', price: '\$0.00', myAsset: '0', nameCoin: 'ANKR'),
+];
+
