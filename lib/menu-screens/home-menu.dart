@@ -1,4 +1,5 @@
 import 'package:defi/constant/coins.dart';
+import 'package:defi/view/detail-coin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -88,80 +89,85 @@ class _HomeMenuState extends State<HomeMenu> {
                       ), 
                     ),
                     SizedBox(height: 8.0,),
-                    Container(
-                      padding: EdgeInsets.all(14.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.grey.shade500,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(6)
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Image.asset(
-                                'assets/images/Bitcoin.png',
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(width: 10.0,),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Bitcoin',
-                                    style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: "GraphikMedium" 
-                                    ), 
-                                  ),
-                                  Text(
-                                    'BTC',
-                                    style: TextStyle(
-                                      fontSize: 12.0,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.grey.shade600,
-                                      fontFamily: "GraphikMedium" 
-                                    ), 
-                                  ),
-                                ]
-                              )
-                            ]
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => ChartCoin()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(14.0),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey.shade500,
+                            width: 1,
                           ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    '\$38,650.31',
-                                    style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: "GraphikMedium" 
-                                    ), 
-                                  ),
-                                  Text(
-                                    '+3.88 %',
-                                    style: TextStyle(
-                                      fontSize: 12.0,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.green.shade700,
-                                      fontFamily: "GraphikMedium" 
-                                    ), 
-                                  ),
-                                ]
-                              )
-                            ],
-                          )
-                        ]
+                          borderRadius: BorderRadius.circular(6)
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/Bitcoin.png',
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(width: 10.0,),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Bitcoin',
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontFamily: "GraphikMedium" 
+                                      ), 
+                                    ),
+                                    Text(
+                                      'BTC',
+                                      style: TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.grey.shade600,
+                                        fontFamily: "GraphikMedium" 
+                                      ), 
+                                    ),
+                                  ]
+                                )
+                              ]
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '\$38,650.31',
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontFamily: "GraphikMedium" 
+                                      ), 
+                                    ),
+                                    Text(
+                                      '+3.88 %',
+                                      style: TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.green.shade700,
+                                        fontFamily: "GraphikMedium" 
+                                      ), 
+                                    ),
+                                  ]
+                                )
+                              ],
+                            )
+                          ]
+                        ),
                       ),
                     )
                   ]
