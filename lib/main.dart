@@ -6,6 +6,7 @@ import 'package:defi/view/auth/id-type.dart';
 import 'package:defi/view/auth/info-lesson.dart';
 import 'package:defi/view/auth/order-submitted.dart';
 import 'package:defi/view/auth/receive-bitcoin.dart';
+import 'package:defi/view/auth/take-photo-of-your-bill.dart';
 import 'package:defi/view/auth/trade-amount.dart';
 import 'package:defi/view/auth/upload-photo.dart';
 import 'package:defi/view/auth/user-purpose.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/take-photo-of-your-bill',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -79,7 +80,8 @@ class MyApp extends StatelessWidget {
         '/info-lesson': (context) => InfoLesson(),
         '/card-info' : (context) => CardInfo(),
         '/verify-user-identity' : (context) => VerifyUserIdentity(),
-        '/home': (context) => HomePage()
+        '/home': (context) => HomePage(),
+        '/take-photo-of-your-bill': (context) => CameraApp(),
       },
       // home: Splash()
     );
