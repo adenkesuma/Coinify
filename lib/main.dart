@@ -1,5 +1,6 @@
 import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
+import 'package:defi/view/auth/card-info.dart';
 import 'package:defi/view/auth/get-bitcoin.dart';
 import 'package:defi/view/auth/id-type.dart';
 import 'package:defi/view/auth/info-lesson.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/address',
+      initialRoute: '/home',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -65,7 +66,7 @@ class MyApp extends StatelessWidget {
         '/privacy-policy': (context) => PrivacyPolicy(),
         '/verified' : (context) => Verified(),
         '/all-done' : (context) => AllDone(),
-        '/address' : (context) => Address(),
+        // '/address' : (context) => Address(),
         '/user-purpose' : (context) => UserPurpose(),
         '/id-type' : (context) => IdType(),
         '/trade-amount' : (context) => TradeAmount(),
@@ -76,6 +77,7 @@ class MyApp extends StatelessWidget {
         '/get-bitcoin' : (context) => GetBitcoin(),
         '/receive-bitcoin' : (context) => ReceiveBitcoin(),
         '/info-lesson': (context) => InfoLesson(),
+        '/card-info' : (context) => CardInfo(),
         '/verify-user-identity' : (context) => VerifyUserIdentity(),
         '/home': (context) => HomePage()
       },

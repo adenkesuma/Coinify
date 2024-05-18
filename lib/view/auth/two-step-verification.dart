@@ -57,10 +57,11 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
           ),
         ),
       ),
-      body: 
-        // physics: NeverScrollableScrollPhysics(),
-        Container(
-          height: MediaQuery.of(context).size.height-30,
+      body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height-(1/9*MediaQuery.of(context).size.height),
           padding: EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -170,6 +171,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
               )
             ],
           )
+        )
       )
     );
   }

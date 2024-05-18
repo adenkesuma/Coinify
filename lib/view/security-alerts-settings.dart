@@ -74,13 +74,13 @@ class _SecurityAlertSettingsState extends State<SecurityAlertsSettings> {
               children: [
                 Text("Email",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
                 Switch(
-                    activeColor: Colors.blue,
-                    value: _email,
-                    onChanged: (bool value){
-                      setState(() {
-                        _email = value;
-                      });
-                    }
+                  activeColor: Colors.blue,
+                  value: _email,
+                  onChanged: (bool value){
+                    setState(() {
+                      _email = value;
+                    });
+                  }
                 )
               ],
             ),
@@ -90,13 +90,13 @@ class _SecurityAlertSettingsState extends State<SecurityAlertsSettings> {
               children: [
                 Text("SMS (required)",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
                 Switch(
-                    activeColor: Colors.blue,
-                    value: _sms,
-                    onChanged: (bool value){
-                      setState(() {
-                        _sms = value;
-                      });
-                    }
+                  activeColor: Colors.blue,
+                  value: _sms,
+                  onChanged: (bool value){
+                    setState(() {
+                      _sms = value;
+                    });
+                  }
                 )
               ],
             ),
@@ -106,13 +106,13 @@ class _SecurityAlertSettingsState extends State<SecurityAlertsSettings> {
               children: [
                 Text("In app",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
                 Switch(
-                    activeColor: Colors.blue,
-                    value: _inApp,
-                    onChanged: (bool value){
-                      setState(() {
-                        _inApp = value;
-                      });
-                    }
+                  activeColor: Colors.blue,
+                  value: _inApp,
+                  onChanged: (bool value){
+                    setState(() {
+                      _inApp = value;
+                    });
+                  }
                 )
               ],
             ),
