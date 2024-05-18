@@ -59,7 +59,7 @@ class _AddressState extends State<Address> {
           // padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
           padding: EdgeInsets.all(30.0),
           width: MediaQuery.of(context).size.width,
-          height: _open ? MediaQuery.of(context).size.height-1/9*(MediaQuery.of(context).size.height)+100 : MediaQuery.of(context).size.height-1/9*(MediaQuery.of(context).size.height),
+          // height: _open ? MediaQuery.of(context).size.height-1/9*(MediaQuery.of(context).size.height)+100 : MediaQuery.of(context).size.height-1/9*(MediaQuery.of(context).size.height),
           // height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,79 +93,177 @@ class _AddressState extends State<Address> {
                 ),
               ),
               SizedBox(height: 40,),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Theme(
-                    data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-                    child: ListTileTheme(
-                      contentPadding: EdgeInsets.all(0),
-                      dense: true,
-                      child: ExpansionTile(
-                        title: Text("Enter Address Manually",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
-                        onExpansionChanged: (bool value) {
-                          setState(() {
-                            _open = value;
-                          });
-                        },
-                        children: [
-                          Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 8.0,),
-                                Text("Address line 1",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
-                                TextFormField(
-                                  decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
+              // Expanded(
+              //   child: SingleChildScrollView(
+              //     child: Theme(
+              //       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+              //       child: ListTileTheme(
+              //         contentPadding: EdgeInsets.all(0),
+              //         dense: true,
+              //         child: ExpansionTile(
+              //           title: Text("Enter Address Manually",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+              //           onExpansionChanged: (bool value) {
+              //             setState(() {
+              //               _open = value;
+              //             });
+              //           },
+              //           children: [
+              //             Container(
+              //               child: Column(
+              //                 crossAxisAlignment: CrossAxisAlignment.start,
+              //                 children: [
+              //                   SizedBox(height: 8.0,),
+              //                   Text("Address line 1",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+              //                   TextFormField(
+              //                     decoration: InputDecoration(
+              //                       enabledBorder: OutlineInputBorder(
+              //                         borderSide: BorderSide(color: Colors.grey)
+              //                       ),
+              //                       focusedBorder: OutlineInputBorder(
+              //                         borderSide: BorderSide(color: Colors.blue),
+              //                       )
+              //                     ),
+              //                   ),
+              //                   SizedBox(height: 8.0,),
+              //                   Text("Address line 2 (optional)",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+              //                   TextFormField(
+              //                     decoration: InputDecoration(
+              //                         enabledBorder: OutlineInputBorder(
+              //                             borderSide: BorderSide(color: Colors.grey)
+              //                         ),
+              //                         focusedBorder: OutlineInputBorder(
+              //                           borderSide: BorderSide(color: Colors.blue),
+              //                         )
+              //                     ),
+              //                   ),
+              //                   SizedBox(height: 8.0,),
+              //                   Text("City",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+              //                   TextFormField(
+              //                     decoration: InputDecoration(
+              //                         enabledBorder: OutlineInputBorder(
+              //                             borderSide: BorderSide(color: Colors.grey)
+              //                         ),
+              //                         focusedBorder: OutlineInputBorder(
+              //                           borderSide: BorderSide(color: Colors.blue),
+              //                         )
+              //                     ),
+              //                   ),
+              //                   SizedBox(height: 8.0,),
+              //                   Text("City",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+              //                   TextFormField(
+              //                     decoration: InputDecoration(
+              //                         enabledBorder: OutlineInputBorder(
+              //                             borderSide: BorderSide(color: Colors.grey)
+              //                         ),
+              //                         focusedBorder: OutlineInputBorder(
+              //                           borderSide: BorderSide(color: Colors.blue),
+              //                         )
+              //                     ),
+              //                   ),
+              //                   SizedBox(height: 8.0,),
+              //                   Text("City",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+              //                   TextFormField(
+              //                     decoration: InputDecoration(
+              //                         enabledBorder: OutlineInputBorder(
+              //                             borderSide: BorderSide(color: Colors.grey)
+              //                         ),
+              //                         focusedBorder: OutlineInputBorder(
+              //                           borderSide: BorderSide(color: Colors.blue),
+              //                         )
+              //                     ),
+              //                   ),
+              //                   SizedBox(height: 8.0,),
+              //                 ],
+              //               ),
+              //             )
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              Theme(
+                data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                child: ListTileTheme(
+                  contentPadding: EdgeInsets.all(0),
+                  dense: true,
+                  child: ExpansionTile(
+                    title: Text("Enter Address Manually",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                    onExpansionChanged: (bool value) {
+                      setState(() {
+                        _open = value;
+                      });
+                    },
+                    children: [
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 8.0,),
+                            Text("Address line 1",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(color: Colors.grey)
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.blue),
-                                    )
                                   ),
-                                ),
-                                SizedBox(height: 8.0,),
-                                Text("Address line 2 (optional)",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
-                                TextFormField(
-                                  decoration: InputDecoration(
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.grey)
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.blue),
-                                      )
-                                  ),
-                                ),
-                                SizedBox(height: 8.0,),
-                                Text("City",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
-                                TextFormField(
-                                  decoration: InputDecoration(
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.grey)
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.blue),
-                                      )
-                                  ),
-                                ),
-                                SizedBox(height: 8.0,),
-                                Text("City",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
-                                TextFormField(
-                                  decoration: InputDecoration(
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.grey)
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.blue),
-                                      )
-                                  ),
-                                ),
-                              ],
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  )
+                              ),
                             ),
-                          )
-                        ],
-                      ),
-                    ),
+                            SizedBox(height: 8.0,),
+                            Text("Address line 2 (optional)",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.grey)
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  )
+                              ),
+                            ),
+                            SizedBox(height: 8.0,),
+                            Text("City",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.grey)
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  )
+                              ),
+                            ),
+                            SizedBox(height: 8.0,),
+                            Text("City",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.grey)
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  )
+                              ),
+                            ),
+                            SizedBox(height: 8.0,),
+                            Text("City",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0),),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.grey)
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  )
+                              ),
+                            ),
+                            SizedBox(height: 8.0,),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
