@@ -4,9 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 class TwoStepVerification extends StatefulWidget {
-  const TwoStepVerification({Key? key}) : super(key: key);
+  const TwoStepVerification({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _TwoStepVerificationState createState() => _TwoStepVerificationState();
 }
 
@@ -25,7 +26,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
         centerTitle: true,
         title: Container(
           width: 200,
-          child: PreferredSize(
+          child: const PreferredSize(
             preferredSize: Size.fromHeight(10.0),
             child: Row(
               children: [
@@ -33,7 +34,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
                   child: LinearProgressIndicator(
                     value: 1, // Value for first step
                     backgroundColor: Color(0xD9D9D9D9),
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
                   ),
                 ),
                 SizedBox(width: 7.0),
@@ -58,11 +59,11 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
         ),
       ),
       body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height-(1/9*MediaQuery.of(context).size.height),
-          padding: EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +73,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                         'Set up 2-step verification',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -80,7 +81,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
                           fontFamily: "GraphikMedium"
                         )
                     ),
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     Text(
                       'Enter your phone number so we can text you an authentication code.',
                       style: TextStyle(
@@ -89,7 +90,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
                         color: Colors.grey[700]
                       ),
                     ),
-                    SizedBox(height: 30.0),
+                    const SizedBox(height: 30.0),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,7 +104,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
                             fontFamily: "GraphikMedium"
                           ),
                         ),
-                        SizedBox(height: 8.0),
+                        const SizedBox(height: 8.0),
                         Focus(
                           onFocusChange: (focus){
                             setState(() {});
@@ -116,18 +117,18 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
                               FilteringTextInputFormatter.digitsOnly
                             ],
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                              border: OutlineInputBorder(),
-                              enabledBorder: OutlineInputBorder(
+                              contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              border: const OutlineInputBorder(),
+                              enabledBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.grey)
                               ),
-                              focusedBorder: OutlineInputBorder(
+                              focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.blue)
                               ),
-                              errorBorder: OutlineInputBorder(
+                              errorBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.red)
                               ),
-                              focusedErrorBorder: OutlineInputBorder(
+                              focusedErrorBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.red)
                               ),
                               hintText: 'Your phone number',
@@ -151,7 +152,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
                     }
                   });
                 },
-                child: Text(
+                child: const Text(
                   'Continue',
                   style: TextStyle(
                     fontSize: 14.0,
@@ -164,7 +165,7 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                   ),
-                  minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                  minimumSize: MaterialStateProperty.all(const Size.fromHeight(60.0)),
                   backgroundColor: MaterialStateProperty.all(Colors.blue),
                   shadowColor: MaterialStateProperty.all(Colors.transparent)
                 ),

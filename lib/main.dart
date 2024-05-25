@@ -15,7 +15,8 @@ import 'package:defi/view/auth/verify-photo-id.dart';
 import 'package:defi/view/auth/verify-user-identity.dart';
 import 'package:defi/view/home.dart';
 import 'package:defi/view/security-alerts-settings.dart';
-import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
+import 'package:intl/intl_standalone.dart'
+    if (dart.library.html) 'package:intl/intl_browser.dart';
 import 'package:defi/view/auth/authentication-code.dart';
 import 'package:defi/view/auth/citizenship.dart';
 import 'package:defi/view/auth/forgot-password.dart';
@@ -43,43 +44,40 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          color: Colors.white
-        )
-      ),
+      theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white)),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/take-photo-of-your-bill',
+      // initialRoute: '/take-photo-of-your-bill',
+      initialRoute: '/verify-email',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
-        '/sign-up':(context) => SignUp(),
+        '/sign-up': (context) => SignUp(),
         '/sign-in': (context) => SignIn(),
         '/sign-in-code': (context) => SignInCode(),
         '/verify-email': (context) => VerifyEmail(),
         '/verify-identity': (context) => VerifyIdentity(),
         '/secure-account': (context) => SecureAccount(),
-        '/two-step-verification':(context) => TwoStepVerification(),
+        '/two-step-verification': (context) => TwoStepVerification(),
         '/authentication-code': (context) => AuthenticationCode(),
         '/citizenship': (context) => Citizenship(),
         '/personal-information': (context) => PersonalInformation(),
         '/forgot-password': (context) => ForgotPassword(),
         '/privacy-policy': (context) => PrivacyPolicy(),
-        '/verified' : (context) => Verified(),
-        '/all-done' : (context) => AllDone(),
+        '/verified': (context) => Verified(),
+        '/all-done': (context) => AllDone(),
         // '/address' : (context) => Address(),
-        '/user-purpose' : (context) => UserPurpose(),
-        '/id-type' : (context) => IdType(),
-        '/trade-amount' : (context) => TradeAmount(),
-        '/upload-photo' : (context) => UploadPhoto(),
-        '/security-alerts-settings' : (context) => SecurityAlertsSettings(),
-        '/verify-photo-id' : (context) => VerifyPhotoId(),
-        '/order-submitted' : (context) => OrderSubmitted(),
-        '/get-bitcoin' : (context) => GetBitcoin(),
-        '/receive-bitcoin' : (context) => ReceiveBitcoin(),
+        '/user-purpose': (context) => UserPurpose(),
+        '/id-type': (context) => IdType(),
+        '/trade-amount': (context) => TradeAmount(),
+        '/upload-photo': (context) => UploadPhoto(),
+        '/security-alerts-settings': (context) => SecurityAlertsSettings(),
+        '/verify-photo-id': (context) => VerifyPhotoId(),
+        '/order-submitted': (context) => OrderSubmitted(),
+        '/get-bitcoin': (context) => GetBitcoin(),
+        '/receive-bitcoin': (context) => ReceiveBitcoin(),
         '/info-lesson': (context) => InfoLesson(),
-        '/card-info' : (context) => CardInfo(),
-        '/verify-user-identity' : (context) => VerifyUserIdentity(),
+        '/card-info': (context) => CardInfo(),
+        '/verify-user-identity': (context) => VerifyUserIdentity(),
         '/home': (context) => HomePage(),
         '/take-photo-of-your-bill': (context) => CameraApp(),
       },
