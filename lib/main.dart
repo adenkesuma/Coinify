@@ -46,8 +46,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white)),
       debugShowCheckedModeBanner: false,
-      // initialRoute: '/take-photo-of-your-bill',
-      initialRoute: '/verify-email',
+      initialRoute: '/take-photo-of-your-bill',
+      // initialRoute: '/verify-email',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
