@@ -1,8 +1,16 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
-class IdType extends StatelessWidget {
+class IdType extends StatefulWidget {
   const IdType({super.key});
 
+  @override
+  State<IdType> createState() => _IdTypeState();
+}
+
+class _IdTypeState extends State<IdType> {
+  File? _selectedImage;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +74,9 @@ class IdType extends StatelessWidget {
                 Container(
                   height: 50,
                   child: InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      _pickImageFromCamera();
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -86,7 +96,9 @@ class IdType extends StatelessWidget {
                 Container(
                   height: 50,
                   child: InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      _pickImageFromCamera();
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -113,7 +125,9 @@ class IdType extends StatelessWidget {
                 Container(
                   height: 50,
                   child: InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      _pickImageFromCamera();
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -144,5 +158,20 @@ class IdType extends StatelessWidget {
         ),
       ),
     );
+  }
+  Future _pickImageFromCamera() async {
+    try {
+      final returnedImage =
+          await ImagePicker().pickImage(source: ImageSource.camera);
+      if (returnedImage == null) {
+        print("No image selected.");
+        return;
+      }
+      setState(() {
+        _selectedImage = File(returnedImage.path);
+      });
+    } catch (e) {
+      print("Error picking image from camera: $e");
+    }
   }
 }

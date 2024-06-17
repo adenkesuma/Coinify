@@ -19,33 +19,33 @@ class _CameraAppState extends State<CameraApp> {
         title: const Text("Tester"),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            ElevatedButton(
-                onPressed: () {
-                  _pickImageFromGallery();
-                },
-                child: Text("Hello World")),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       _pickImageFromGallery();
+            //     },
+            //     child: const Text("Hello World")),
             ElevatedButton(
                 onPressed: () {
                   _pickImageFromCamera();
                 },
-                child: Text("Hello"))
+                child: const Text("Hello"))
           ],
         ),
       ),
     );
   }
 
-  Future _pickImageFromGallery() async {
-    final returnedImage =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-    if (returnedImage == null) return;
-    setState(() {
-      _selectedImage = File(returnedImage!.path);
-    });
-  }
+  // Future _pickImageFromGallery() async {
+  //   final returnedImage =
+  //       await ImagePicker().pickImage(source: ImageSource.gallery);
+  //   if (returnedImage == null) return;
+  //   setState(() {
+  //     _selectedImage = File(returnedImage!.path);
+  //   });
+  // }
 
   Future _pickImageFromCamera() async {
     try {
