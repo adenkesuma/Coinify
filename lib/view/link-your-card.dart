@@ -1,7 +1,7 @@
-import 'package:defi/view/CardTerms.dart';
+import 'package:defi/view/card-terms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'CustomTextField-LinkYourCard.dart';
+import 'custom-text-field.dart';
 
 class LinkYourCard extends StatefulWidget {
   const LinkYourCard({super.key});
