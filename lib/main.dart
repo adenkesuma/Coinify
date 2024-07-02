@@ -1,5 +1,7 @@
-import 'package:defi/view/LimitsAndFeatures.dart';
-import 'package:defi/view/LinkYourCard.dart';
+import 'package:defi/view/buy-polygon.dart';
+import 'package:defi/view/convert-bitcoin.dart';
+import 'package:defi/view/limits-and-features.dart';
+import 'package:defi/view/link-your-card.dart';
 import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
 import 'package:defi/view/auth/card-info.dart';
@@ -99,6 +101,8 @@ class MyApp extends StatelessWidget {
         '/card-info' : (context) => CardInfo(),
         '/verify-user-identity' : (context) => VerifyUserIdentity(),
         '/limits-and-features' : (context) => Limits_Features(),
+        '/buy-polygon' : (context) => BuyPolygon(),
+        '/convert-bitcoin' : (context) => ConvertBitcoin(),
         '/home': (context) => HomePage()
       },
       // home: Splash()
