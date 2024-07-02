@@ -13,8 +13,8 @@ class _ConvertBitcoinState extends State<ConvertBitcoin> {
   String _selectedCurrency = 'IDR';
   String fromCrypto = "BTC";
   String toCrypto = "ETH";
-  String fromLogo = 'assets/Bitcoin.svg.png';
-  String toLogo = 'assets/ethereum3649.jpg';
+  String fromLogo = 'assets/coints/BTC.png';
+  String toLogo = 'assets/coints/ETH.png';
 
   void swapCrypto() {
     setState(() {
