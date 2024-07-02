@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white)),
       debugShowCheckedModeBanner: false,
 
-      initialRoute: '/limits-and-features',
+      initialRoute: '/convert-bitcoin',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
