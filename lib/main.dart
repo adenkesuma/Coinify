@@ -17,6 +17,7 @@ import 'package:defi/view/auth/verified.dart';
 import 'package:defi/view/auth/verify-photo-id.dart';
 import 'package:defi/view/auth/verify-user-identity.dart';
 import 'package:defi/view/home.dart';
+import 'package:defi/view/share-address.dart';
 import 'package:defi/view/security-alerts-settings.dart';
 import 'package:intl/intl_standalone.dart'
     if (dart.library.html) 'package:intl/intl_browser.dart';
@@ -34,7 +35,7 @@ import 'package:defi/view/auth/verify-email.dart';
 import 'package:defi/view/auth/verify-identity.dart';
 import 'package:defi/view/welcome.dart';
 import 'package:flutter/material.dart';
-import '';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white)),
       debugShowCheckedModeBanner: false,
 
-      initialRoute: '/convert-bitcoin',
+      initialRoute: '/share-address',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -103,6 +104,7 @@ class MyApp extends StatelessWidget {
         '/limits-and-features' : (context) => Limits_Features(),
         '/buy-polygon' : (context) => BuyPolygon(),
         '/convert-bitcoin' : (context) => ConvertBitcoin(),
+        '/share-address' : (context) => ShareAddress(),
         '/home': (context) => HomePage()
       },
       // home: Splash()
