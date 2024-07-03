@@ -43,7 +43,7 @@ class _ShareAddressState extends State<ShareAddress> {
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 50),
-                        child: Image.asset("assets/Qrcode_wikipedia.jpg", 
+                        child: Image.asset("assets/images/Qrcode_wikipedia.jpg", 
                           width: 300, height: 300)
                         ),
                       Container(
