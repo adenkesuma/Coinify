@@ -17,6 +17,7 @@ import 'package:defi/view/auth/verified.dart';
 import 'package:defi/view/auth/verify-photo-id.dart';
 import 'package:defi/view/auth/verify-user-identity.dart';
 import 'package:defi/view/home.dart';
+import 'package:defi/view/order-preview.dart';
 import 'package:defi/view/share-address.dart';
 import 'package:defi/view/security-alerts-settings.dart';
 import 'package:intl/intl_standalone.dart'
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white)),
       debugShowCheckedModeBanner: false,
 
-      initialRoute: '/share-address',
+      initialRoute: '/order-preview',
       routes: {
         // '/':
         '/welcome': (context) => Welcome(),
@@ -105,6 +106,7 @@ class MyApp extends StatelessWidget {
         '/buy-polygon' : (context) => BuyPolygon(),
         '/convert-bitcoin' : (context) => ConvertBitcoin(),
         '/share-address' : (context) => ShareAddress(),
+        '/order-preview' : (context) => OrderPreview(),
         '/home': (context) => HomePage()
       },
       // home: Splash()
