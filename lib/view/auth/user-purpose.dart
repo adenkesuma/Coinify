@@ -9,7 +9,7 @@ class UserPurpose extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Container(
+        title: const SizedBox(
           width: 200,
           child: PreferredSize(
             preferredSize: Size.fromHeight(10.0),
@@ -45,7 +45,7 @@ class UserPurpose extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height-30,
         // padding: EdgeInsets.symmetric(horizontal: 24.0,vertical: 12.0),
@@ -54,19 +54,19 @@ class UserPurpose extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("What will you use Coinbase for?",style: TextStyle(fontSize: 22.0,fontFamily: "GraphikMedium"),),
-            SizedBox(height: 12.0,),
-            Text("Federal regulations require us to ask this question",
+            const Text("What will you use Coinbase for?",style: TextStyle(fontSize: 22.0,fontFamily: "GraphikMedium"),),
+            const SizedBox(height: 12.0,),
+            const Text("Federal regulations require us to ask this question",
               style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular",color: Colors.grey),
             ),
-            SizedBox(height: 32.0,),
-            Container(
+            const SizedBox(height: 32.0,),
+            SizedBox(
               height: 50,
               child: InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, '/trade-amount');
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Investing",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
@@ -75,14 +75,14 @@ class UserPurpose extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, '/trade-amount');
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Trading on Coinbase",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
@@ -91,14 +91,14 @@ class UserPurpose extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, '/trade-amount');
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Trading on other exchanges",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
@@ -107,14 +107,14 @@ class UserPurpose extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, '/trade-amount');
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Online purchases",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
@@ -123,14 +123,14 @@ class UserPurpose extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, '/trade-amount');
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Payment to friends",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
@@ -139,14 +139,14 @@ class UserPurpose extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, '/trade-amount');
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Online payments",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
@@ -155,14 +155,14 @@ class UserPurpose extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, '/trade-amount');
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Business",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),

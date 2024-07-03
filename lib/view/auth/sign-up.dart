@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 
 class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+  SignUp({Key? key}) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();
@@ -13,11 +13,12 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   bool isPasswordVisible = false;
   bool isChecked = false;
-  bool _isFirstName = true;
-  bool _isLastName = true;
-  bool _isEmail = true;
-  bool _isPassword = true;
-  bool _validPassword = true;
+  bool isFirstName = true;
+  bool isLastName = true;
+  bool isEmail = true;
+  bool validEmail = true;
+  bool isPassword = true;
+  bool validPassword = true;
 
   FocusNode firstNameText = FocusNode();
   FocusNode lastNameText = FocusNode();
@@ -36,7 +37,7 @@ class _SignUpState extends State<SignUp> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: Container(
+        title: SizedBox(
           width: 200,
           child: PreferredSize(
             preferredSize: Size.fromHeight(10.0),
@@ -100,218 +101,14 @@ class _SignUpState extends State<SignUp> {
                       setState(() {});
                     },
                     child: TextFormField(
+                      controller: firstNameInput,
                       focusNode: firstNameText,
                       decoration: InputDecoration(
+                        errorText: isFirstName ? null : "This field must not be empty",
                         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-// =======
-//         body: 
-//           // physics: NeverScrollableScrollPhysics(),
-//           Container(
-//             padding: EdgeInsets.all(30.0),
-//             width: MediaQuery.of(context).size.width,
-//             height: MediaQuery.of(context).size.height-30,
-//             child: Column(
-//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   children: [
-//                     Container(
-//                       child: Column(
-//                         mainAxisAlignment: MainAxisAlignment.start,
-//                         crossAxisAlignment: CrossAxisAlignment.start,
-//                         children: [
-//                           Text(
-//                               'Create your account',
-//                               style: TextStyle(
-//                                   fontWeight: FontWeight.bold,
-//                                   fontSize: 24.0,
-//                                   fontFamily: "GraphikMedium"
-//                               )
-//                           ),
-//                           SizedBox(height: 20.0),
-//                           Column(
-//                             mainAxisAlignment: MainAxisAlignment.start,
-//                             crossAxisAlignment: CrossAxisAlignment.start,
-//                             children: [
-//                               Text(
-//                                 'First Name',
-//                                 style: TextStyle(
-//                                     fontWeight: FontWeight.w600,
-//                                     fontSize: 16.0,
-//                                     color: firstNameText.hasFocus ? Colors.blue : Colors.black,
-//                                     fontFamily: "GraphikMedium"
-//                                 ),
-//                               ),
-//                               SizedBox(height: 8.0),
-//                               Focus(
-//                                 onFocusChange: (focus){
-//                                   setState(() {});
-//                                 },
-//                                 child: TextFormField(
-//                                   controller: firstNameInput,
-//                                   focusNode: firstNameText,
-//                                   decoration: InputDecoration(
-//                                     contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-//                                     border: OutlineInputBorder(),
-//                                     enabledBorder: OutlineInputBorder(
-//                                         borderSide: BorderSide(color: Colors.grey)
-//                                     ),
-//                                     focusedBorder: OutlineInputBorder(
-//                                         borderSide: BorderSide(color: Colors.blue)
-//                                     ),
-//                                     errorBorder: OutlineInputBorder(
-//                                         borderSide: BorderSide(color: Colors.red)
-//                                     ),
-//                                     focusedErrorBorder: OutlineInputBorder(
-//                                         borderSide: BorderSide(color: Colors.red)
-//                                     ),
-//                                     hintText: 'Enter your first name',
-//                                     errorText: _isFirstName ? null : "First Name must not be empty",
-//                                   ),
-//                                 ),
-//                               )
-//                             ],
-//                           ),
-//                           SizedBox(height: 20.0),
-//                           Column(
-//                             mainAxisAlignment: MainAxisAlignment.start,
-//                             crossAxisAlignment: CrossAxisAlignment.start,
-//                             children: [
-//                               Text(
-//                                 'Last Name',
-//                                 style: TextStyle(
-//                                   fontWeight: FontWeight.w600,
-//                                   fontSize: 16.0,
-//                                   color: lastNameText.hasFocus ? Colors.blue : Colors.black,
-//                                   fontFamily: "GraphikMedium",
-//                                 ),
-//                               ),
-//                               SizedBox(height: 8.0),
-//                               Focus(
-//                                 onFocusChange: (focus){
-//                                   setState(() {});
-//                                 },
-//                                 child: TextField(
-//                                     controller: lastNameInput,
-//                                     focusNode: lastNameText,
-//                                     decoration: InputDecoration(
-//                                       contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-//                                       border: OutlineInputBorder(),
-//                                       enabledBorder: OutlineInputBorder(
-//                                           borderSide: BorderSide(color: Colors.grey)
-//                                       ),
-//                                       focusedBorder: OutlineInputBorder(
-//                                           borderSide: BorderSide(color: Colors.blue)
-//                                       ),
-//                                       errorBorder: OutlineInputBorder(
-//                                           borderSide: BorderSide(color: Colors.red)
-//                                       ),
-//                                       focusedErrorBorder: OutlineInputBorder(
-//                                           borderSide: BorderSide(color: Colors.red)
-//                                       ),
-//                                       hintText: 'Enter your last name',
-//                                       errorText: _isLastName ? null : "Last Name must not be empty",
-//                                     )
-//                                 ),
-//                               )
-//                             ],
-//                           ),
-//                           SizedBox(height: 20.0),
-//                           Column(
-//                             mainAxisAlignment: MainAxisAlignment.start,
-//                             crossAxisAlignment: CrossAxisAlignment.start,
-//                             children: [
-//                               Text(
-//                                 'Email',
-//                                 style: TextStyle(
-//                                   fontWeight: FontWeight.w600,
-//                                   fontSize: 16.0,
-//                                   color: emailText.hasFocus ? Colors.blue : Colors.black,
-//                                   fontFamily: "GraphikMedium",
-//                                 ),
-//                               ),
-//                               SizedBox(height: 8.0),
-//                               Focus(
-//                                 onFocusChange: (focus){
-//                                   setState(() {});
-//                                 },
-//                                 child: TextField(
-//                                   keyboardType: TextInputType.emailAddress,
-//                                   controller: emailInput,
-//                                   focusNode: emailText,
-//                                   decoration: InputDecoration(
-//                                     contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-//                                     border: OutlineInputBorder(),
-//                                     enabledBorder: OutlineInputBorder(
-//                                         borderSide: BorderSide(color: Colors.grey)
-//                                     ),
-//                                     focusedBorder: OutlineInputBorder(
-//                                         borderSide: BorderSide(color: Colors.blue)
-//                                     ),
-//                                     errorBorder: OutlineInputBorder(
-//                                         borderSide: BorderSide(color: Colors.red)
-//                                     ),
-//                                     focusedErrorBorder: OutlineInputBorder(
-//                                         borderSide: BorderSide(color: Colors.red)
-//                                     ),
-//                                     hintText: 'Enter your email',
-//                                     errorText: _isEmail ? null : "Email must not be empty",
-//                                   ),
-//                                 ),
-//                               )
-//                             ],
-//                           ),
-//                           SizedBox(height: 20.0),
-//                           Text(
-//                             'Password',
-//                             style: TextStyle(
-//                               fontWeight: FontWeight.w600,
-//                               fontSize: 16.0,
-//                               color: passwordText.hasFocus ? Colors.blue : Colors.black,
-//                               fontFamily: "GraphikMedium",
-//                             ),
-//                           ),
-//                           SizedBox(height: 8.0),
-//                           Focus(
-//                             onFocusChange: (focus){
-//                               setState(() {});
-//                             },
-//                             child: TextField(
-//                               controller: passwordInput,
-//                               focusNode: passwordText,
-//                               obscureText: !isPasswordVisible,
-//                               decoration: InputDecoration(
-//                                 contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-//                                 border: OutlineInputBorder(),
-//                                 enabledBorder: OutlineInputBorder(
-//                                     borderSide: BorderSide(color: Colors.grey)
-//                                 ),
-//                                 focusedBorder: OutlineInputBorder(
-//                                     borderSide: BorderSide(color: Colors.blue)
-//                                 ),
-//                                 errorBorder: OutlineInputBorder(
-//                                     borderSide: BorderSide(color: Colors.red)
-//                                 ),
-//                                 focusedErrorBorder: OutlineInputBorder(
-//                                     borderSide: BorderSide(color: Colors.red)
-//                                 ),
-//                                 hintText: 'Enter your password',
-//                                 errorText: _isPassword ? _validPassword ? null : "Password must be at least 8 characters" : "Password must not be empty",
-//                                 suffixIcon: GestureDetector(
-//                                   onTap: () {
-//                                     setState(() {
-//                                       isPasswordVisible = !isPasswordVisible;
-//                                     });
-//                                   },
-//                                   child: Icon(
-//                                     isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-//                                   ),
-//                                 ),
-//                               ),
-//                             ),
-//                           ),
-//                         ],
-// >>>>>>> f7984bf6eeab31312d83bb691b287f41cdc1e3e3
+                        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
                       ),
                     )
                   ),
@@ -325,11 +122,15 @@ class _SignUpState extends State<SignUp> {
                     onFocusChange: (focus){
                       setState(() {});
                     },
-                    focusNode: lastNameText,
                     child: TextFormField(
+                      focusNode: lastNameText,
+                      controller: lastNameInput,
                       decoration: InputDecoration(
+                        errorText: isLastName ? null : "This field must not be empty",
                         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
                       ),
                     )
                   ),
@@ -345,9 +146,13 @@ class _SignUpState extends State<SignUp> {
                     },
                     child: TextFormField(
                       focusNode: emailText,
+                      controller: emailInput,
                       decoration: InputDecoration(
+                        errorText: isEmail ? validEmail ? null : "Please input a valid email" : "This field must not be empty",
                         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
                       ),
                     )
                   ),
@@ -363,10 +168,14 @@ class _SignUpState extends State<SignUp> {
                     },
                     child: TextFormField(
                       focusNode: passwordText,
+                      controller: passwordInput,
                       obscureText: !isPasswordVisible,
                       decoration: InputDecoration(
+                        errorText: isPassword ? null : "This field must not be empty",
                         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
                         suffixIcon: GestureDetector(
                           onTap: (){
                             setState(() {
@@ -408,7 +217,25 @@ class _SignUpState extends State<SignUp> {
                 ],
               ),
               ElevatedButton(
-                onPressed: (){Navigator.pushNamed(context, '/verify-email');},
+                onPressed: (){
+                  setState(() {
+                    isFirstName = firstNameInput.text.isNotEmpty;
+                    isLastName = firstNameInput.text.isNotEmpty;
+                    isPassword = passwordInput.text.isNotEmpty;
+                    isEmail = emailInput.text.isNotEmpty;
+                    isPassword = passwordInput.text.isNotEmpty;
+                    const pattern = r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
+                      r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
+                      r'\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*'
+                      r'[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4]'
+                      r'[0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]'
+                      r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
+                      r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
+                    final regex = RegExp(pattern);
+                    validEmail = regex.hasMatch(emailInput.text);
+                    if(isFirstName && isLastName && isEmail && isPassword && isPassword && validEmail) Navigator.pushNamed(context, '/verify-email');
+                  });
+                },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))

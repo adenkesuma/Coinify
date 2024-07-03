@@ -9,7 +9,7 @@ class TradeAmount extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Container(
+        title: const SizedBox(
           width: 200,
           child: PreferredSize(
             preferredSize: Size.fromHeight(10.0),
@@ -45,7 +45,7 @@ class TradeAmount extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height-30,
         // padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -54,18 +54,18 @@ class TradeAmount extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("How much crypto do you expect to trade per year?",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22.0),),
-            SizedBox(height: 18.0,),
-            Text("Coinbase is legally required to collect this information. If you're not employed or your industry isn't, "
+            const Text("How much crypto do you expect to trade per year?",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22.0),),
+            const SizedBox(height: 18.0,),
+            const Text("Coinbase is legally required to collect this information. If you're not employed or your industry isn't, "
                 "select Other.",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),),
-            SizedBox(height: 32.0,),
-            Container(
+            const SizedBox(height: 32.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, '/id-type');
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("< \$1,000",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0)),
@@ -74,14 +74,14 @@ class TradeAmount extends StatelessWidget {
                 )
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                   onTap: (){
                     Navigator.pushNamed(context, '/id-type');
                   },
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("\$1,000 - \$9,999",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0)),
@@ -90,14 +90,14 @@ class TradeAmount extends StatelessWidget {
                   )
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                   onTap: (){
                     Navigator.pushNamed(context, '/id-type');
                   },
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("\$10,000 - \$99,999",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0)),
@@ -106,14 +106,14 @@ class TradeAmount extends StatelessWidget {
                   )
               ),
             ),
-            SizedBox(height: 16.0,),
-            Container(
+            const SizedBox(height: 16.0,),
+            SizedBox(
               height: 40,
               child: InkWell(
                   onTap: (){
                     Navigator.pushNamed(context, '/id-type');
                   },
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("> \$100,000",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0)),

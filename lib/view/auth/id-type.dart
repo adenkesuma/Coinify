@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:defi/view/auth/sign-in.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -17,7 +18,7 @@ class _IdTypeState extends State<IdType> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Container(
+        title: const SizedBox(
           width: 200,
           child: PreferredSize(
             preferredSize: Size.fromHeight(10.0),
@@ -53,7 +54,7 @@ class _IdTypeState extends State<IdType> {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30.0),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height-30,
         // height: MediaQuery.of(context).size.height,
@@ -65,13 +66,13 @@ class _IdTypeState extends State<IdType> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Select your ID type",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22.0),),
-                SizedBox(height: 12.0,),
-                Text("We'll take 2 pictures of your ID. What type of ID do you want to use?",
+                const Text("Select your ID type",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22.0),),
+                const SizedBox(height: 12.0,),
+                const Text("We'll take 2 pictures of your ID. What type of ID do you want to use?",
                   style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16.0,color: Colors.grey),
                 ),
-                SizedBox(height: 32.0,),
-                Container(
+                const SizedBox(height: 32.0,),
+                SizedBox(
                   height: 50,
                   child: InkWell(
                     onTap: (){
@@ -83,17 +84,17 @@ class _IdTypeState extends State<IdType> {
                         Row(
                           children: [
                             Image.asset("assets/images/fluent_contact-card-28-regular.png",width: 24,),
-                            SizedBox(width: 16.0,),
-                            Text("ID Card",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
+                            const SizedBox(width: 16.0,),
+                            const Text("ID Card",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
                           ],
                         ),
-                        Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                        const Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
-                Container(
+                const SizedBox(height: 10.0),
+                SizedBox(
                   height: 50,
                   child: InkWell(
                     onTap: (){
@@ -105,8 +106,8 @@ class _IdTypeState extends State<IdType> {
                         Row(
                           children: [
                             Image.asset("assets/images/fluent_contact-card-28-regular.png",width: 24,),
-                            SizedBox(width: 16.0,),
-                            Column(
+                            const SizedBox(width: 16.0,),
+                            const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -116,13 +117,13 @@ class _IdTypeState extends State<IdType> {
                             )
                           ],
                         ),
-                        Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                        const Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0,),
-                Container(
+                const SizedBox(height: 10.0,),
+                SizedBox(
                   height: 50,
                   child: InkWell(
                     onTap: (){
@@ -134,11 +135,11 @@ class _IdTypeState extends State<IdType> {
                         Row(
                           children: [
                             Image.asset("assets/images/fluent_contact-card-28-regular.png",width: 24,),
-                            SizedBox(width: 16.0,),
-                            Text("Passport",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
+                            const SizedBox(width: 16.0,),
+                            const Text("Passport",style: TextStyle(fontSize: 16.0,fontFamily: "GraphikRegular"),),
                           ],
                         ),
-                        Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                        const Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                       ],
                     ),
                   ),
@@ -147,7 +148,7 @@ class _IdTypeState extends State<IdType> {
             ),
             Column(
               children: [
-                Text("Your photo ID and actions captured during the ID verification process may constitute biometric data. "
+                const Text("Your photo ID and actions captured during the ID verification process may constitute biometric data. "
                     "Please see our Privacy Policy for more information about how we store and use your biometric data.",
                     style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14.0,color: Colors.grey),
                 ),
@@ -169,6 +170,7 @@ class _IdTypeState extends State<IdType> {
       }
       setState(() {
         _selectedImage = File(returnedImage.path);
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignIn(),));
       });
     } catch (e) {
       print("Error picking image from camera: $e");

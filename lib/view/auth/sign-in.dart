@@ -9,8 +9,10 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   bool isPasswordVisible = false;
-  bool _isEmail = true;
-  bool _isPassword = true;
+  bool isEmail = true;
+  bool validEmail = true;
+  bool isPassword = true;
+
   TextEditingController emailInput = TextEditingController();
   TextEditingController passwordInput = TextEditingController();
   FocusNode emailText = FocusNode();
@@ -23,12 +25,12 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Sign In to Coinify',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -36,7 +38,7 @@ class _SignInState extends State<SignIn> {
                   fontFamily: "GraphikMedium",
                 )
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +52,7 @@ class _SignInState extends State<SignIn> {
                       fontFamily: "GraphikMedium",
                     ),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Focus(
                     onFocusChange: (focus){
                       setState(() {});
@@ -59,28 +61,28 @@ class _SignInState extends State<SignIn> {
                       focusNode: emailText,
                       controller: emailInput,
                       decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                        border: OutlineInputBorder(),
-                        enabledBorder: OutlineInputBorder(
+                        contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                        border: const OutlineInputBorder(),
+                        enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey)
                         ),
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.blue)
                         ),
-                        errorBorder: OutlineInputBorder(
+                        errorBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.red),
                         ),
-                        focusedErrorBorder: OutlineInputBorder(
+                        focusedErrorBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.red)
                         ),
                         hintText: 'Enter your email',
-                        errorText: _isEmail ? null : "Email must not be empty",
+                        errorText: isEmail ? validEmail ? null : "Please input a valid email" : "Email must not be empty",
                       ),
                     ),
                   )
                 ],
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,7 +96,7 @@ class _SignInState extends State<SignIn> {
                       fontFamily: "GraphikMedium",
                     ),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Focus(
                     onFocusChange: (focus) {
                       setState(() {});
@@ -104,22 +106,22 @@ class _SignInState extends State<SignIn> {
                       controller: passwordInput,
                       obscureText: !isPasswordVisible,
                       decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                        border: OutlineInputBorder(),
-                        enabledBorder: OutlineInputBorder(
+                        contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                        border: const OutlineInputBorder(),
+                        enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey)
                         ),
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.blue)
                         ),
-                        errorBorder: OutlineInputBorder(
+                        errorBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.red),
                         ),
-                        focusedErrorBorder: OutlineInputBorder(
+                        focusedErrorBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.red),
                         ),
                         hintText: 'Enter your password',
-                        errorText: _isPassword ? null : "Password must not be empty",
+                        errorText: isPassword ? null : "Password must not be empty",
                         suffixIcon: GestureDetector(
                           onTap: () {
                             setState(() {
@@ -135,7 +137,7 @@ class _SignInState extends State<SignIn> {
                   )
                 ],
               ),
-              SizedBox(height: 50.0),
+              const SizedBox(height: 50.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -145,7 +147,7 @@ class _SignInState extends State<SignIn> {
                       onTap: () {
                         Navigator.pushNamed(context, '/forgot-password');
                       },
-                      child: Text(
+                      child: const Text(
                         'Forgot password?',
                         style: TextStyle(
                           color: Colors.blue,
@@ -159,7 +161,7 @@ class _SignInState extends State<SignIn> {
                       onTap: () {
                         Navigator.pushNamed(context, '/privacy-policy');
                       },
-                      child: Text(
+                      child: const Text(
                         'Privacy policy',
                         style: TextStyle(
                           color: Colors.blue,
@@ -169,18 +171,25 @@ class _SignInState extends State<SignIn> {
                   ),
                 ]
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    if(emailInput.text == ""){_isEmail = false;}
-                    else{_isEmail = true;}
-                    if(passwordInput.text == ""){_isPassword = false;}
-                    else{_isPassword = true;}
-                    if(_isEmail && _isPassword) {Navigator.pushNamed(context, '/sign-in-code');}
+                    isEmail = emailInput.text.isNotEmpty;
+                    isPassword = emailInput.text.isNotEmpty;
+                    const pattern = r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
+                      r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
+                      r'\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*'
+                      r'[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4]'
+                      r'[0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]'
+                      r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
+                      r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
+                    final regex = RegExp(pattern);
+                    validEmail = regex.hasMatch(emailInput.text);
+                    if(isEmail && isPassword && validEmail) {Navigator.pushNamed(context, '/sign-in-code');}
                   });
                 },
-                child: Text(
+                child: const Text(
                   "Sign in",
                   style: TextStyle(
                     fontSize: 14.0,
@@ -192,7 +201,7 @@ class _SignInState extends State<SignIn> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                   ),
-                  minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                  minimumSize: MaterialStateProperty.all(const Size.fromHeight(60.0)),
                   backgroundColor: MaterialStateProperty.all(Colors.blue),
                   shadowColor: MaterialStateProperty.all(Colors.transparent)
                 ),

@@ -51,7 +51,7 @@ class SignInCode extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/');
+                    Navigator.pushNamed(context, '/home');
                   }, 
                   child: Text(
                     "Submit",
