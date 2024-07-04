@@ -1,5 +1,7 @@
 import 'package:defi/menu-screens/home-menu.dart';
+import 'package:defi/menu-screens/notification-settings.dart';
 import 'package:defi/menu-screens/portfolio-menu.dart';
+import 'package:defi/menu-screens/specify-notification-settings.dart';
 import 'package:defi/menu-screens/settings-menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -10,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 4;
 
   static List<Widget Function(BuildContext)> _widgetOptions = <Widget Function(BuildContext)>[
     (BuildContext context) => HomeMenu(),
@@ -21,13 +23,14 @@ class _HomePageState extends State<HomePage> {
         style: TextStyle(fontSize: 30),
       ),
     ),
-    (BuildContext context) => Center(
-      child: Text(
-        'Price Page',
-        style: TextStyle(fontSize: 30),
-      ),
-    ),
+    // (BuildContext context) => Center(
+    //   child: Text(
+    //     'Price Page',
+    //     style: TextStyle(fontSize: 30),
+    //   ),
+    // ),
     (BuildContext context) => SettingsMenu(),
+    (BuildContext context) => NotificationSettings(),
   ];
 
   void _onItemTapped(int index) {
