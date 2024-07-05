@@ -47,10 +47,18 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                   Switch(
                     activeColor: Colors.blue,
                     value: Provider.of<NotificationProvider>(context).takeABreak,
-                    onChanged: (bool value){
-                      setState(() {
-                        Provider.of<NotificationProvider>(context,listen: false).changeTakeABreak();
-                      });
+                    onChanged: (bool value) async{
+                      if(value){
+                        await showMyModalBottomSheet(context);
+                        setState(() {
+                          
+                        });
+                      }
+                      else{
+                        setState(() {
+                          Provider.of<NotificationProvider>(context,listen: false).changeTakeABreak();
+                        });
+                      }
                     }
                   )
                 ],
@@ -181,4 +189,122 @@ class _NotificationSettingsState extends State<NotificationSettings> {
       ),
     );
   }
+}
+
+Future<void> showMyModalBottomSheet(BuildContext context){
+  return showModalBottomSheet<void>(
+    context: context,
+    builder: (BuildContext context){
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 8,vertical: 24),
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Want to take a break?",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22),),
+                  SizedBox(height: 12,),
+                  Text("You can pause push notification for up to a week. Email and SMS won't be affected",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16,color: Colors.grey),),
+                  SizedBox(height: 16,),
+                ],
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Provider.of<NotificationProvider>(context,listen: false).changeTakeABreak();
+                Navigator.pop(context);
+              }, 
+              child: Text("Unmuted"),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Provider.of<NotificationProvider>(context,listen: false).changeTakeABreak();
+                Navigator.pop(context);
+              }, 
+              child: Text("8 hours"),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Provider.of<NotificationProvider>(context,listen: false).changeTakeABreak();
+                Navigator.pop(context);
+              }, 
+              child: Text("1 day"),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Provider.of<NotificationProvider>(context,listen: false).changeTakeABreak();
+                Navigator.pop(context);
+              }, 
+              child: Text("1 week"),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        )
+      );
+    }
+  );
 }
