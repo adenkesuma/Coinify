@@ -1,4 +1,5 @@
 import 'package:defi/constant/coins.dart';
+import 'package:defi/view/account-settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,16 @@ class _SettingsMenuState extends State<SettingsMenu> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettings()));
+                    },
+                    child: CircleAvatar(
+                      radius: 30, 
+                      backgroundImage: AssetImage('assets/images/user.png'), 
+                    ),
+                  ),
+                  SizedBox(height: 30,),
                   Text(
                     'In the past 24 hours',
                     style: TextStyle(
