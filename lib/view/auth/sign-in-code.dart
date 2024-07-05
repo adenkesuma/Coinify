@@ -1,3 +1,5 @@
+import 'package:defi/menu-screens/home-menu.dart';
+import 'package:defi/view/home.dart';
 import 'package:flutter/material.dart';
 
 class SignInCode extends StatelessWidget {
@@ -51,7 +53,8 @@ class SignInCode extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/home');
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => HomePage(),), (Route<dynamic> route) => false);
                   }, 
                   child: Text(
                     "Submit",

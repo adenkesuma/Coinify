@@ -1,4 +1,5 @@
 import 'package:defi/data-provider.dart';
+import 'package:defi/menu-screens/price-menu.dart';
 import 'package:defi/view/auth/address.dart';
 import 'package:defi/view/auth/all-done.dart';
 import 'package:defi/view/auth/card-info.dart';
@@ -88,7 +89,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomePage(),
           '/take-photo-of-your-bill': (context) => CameraApp(),
         },
-        home: HomePage(),
+        home: Welcome(),
       ),
     );
   }

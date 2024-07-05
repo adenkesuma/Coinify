@@ -2,14 +2,14 @@ import 'package:defi/constant/coins.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SettingsMenu extends StatefulWidget {
-  const SettingsMenu({super.key});
+class PricesMenu extends StatefulWidget {
+  const PricesMenu({super.key});
 
   @override
-  State<SettingsMenu> createState() => _SettingsMenuState();
+  State<PricesMenu> createState() => _PricesMenuState();
 }
 
-class _SettingsMenuState extends State<SettingsMenu> {
+class _PricesMenuState extends State<PricesMenu> {
   String _selectedText = 'All assets';
 
   void _updateSelectedText(String newText) {
@@ -32,6 +32,16 @@ class _SettingsMenuState extends State<SettingsMenu> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  GestureDetector(
+                    onTap: () {
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettings()));
+                    },
+                    child: CircleAvatar(
+                      radius: 30, 
+                      backgroundImage: AssetImage('assets/images/user.png'), 
+                    ),
+                  ),
+                  SizedBox(height: 30,),
                   Text(
                     'In the past 24 hours',
                     style: TextStyle(
