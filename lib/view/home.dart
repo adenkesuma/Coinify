@@ -1,6 +1,7 @@
 import 'package:defi/menu-screens/home-menu.dart';
 import 'package:defi/menu-screens/portfolio-menu.dart';
 import 'package:defi/menu-screens/settings-menu.dart';
+import 'package:defi/view/account-settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -28,6 +29,7 @@ class _HomePageState extends State<HomePage> {
       ),
     ),
     (BuildContext context) => SettingsMenu(),
+    (BuildContext context) => AccountSettings(),
   ];
 
   void _onItemTapped(int index) {

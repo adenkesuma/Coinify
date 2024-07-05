@@ -33,6 +33,7 @@ dependencies:
 
   date_field: ^4.0.0
   syncfusion_flutter_charts:
+  provider:
   
 
   # The following adds the Cupertino Icons font to your application.
