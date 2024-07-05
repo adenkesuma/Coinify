@@ -1,3 +1,4 @@
+import 'package:defi/menu-screens/account-settings.dart';
 import 'package:defi/menu-screens/home-menu.dart';
 import 'package:defi/menu-screens/notification-settings.dart';
 import 'package:defi/menu-screens/portfolio-menu.dart';
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> {
     //   ),
     // ),
     (BuildContext context) => PricesMenu(),
-    (BuildContext context) => NotificationSettings(),
+    (BuildContext context) => AccountSettings(),
   ];
 
   void _onItemTapped(int index) {

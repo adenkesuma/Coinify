@@ -1,5 +1,19 @@
 import 'package:flutter/material.dart';
 
+class ProfileSecurityProvider extends ChangeNotifier{
+  bool requirePinFaceId = false;
+  void changeRequirePinFaceId(bool value){
+    requirePinFaceId = value;
+    notifyListeners();
+  }
+
+  bool privacyMode = false;
+  void changePrivacyMode(bool value){
+    privacyMode = value;
+    notifyListeners();
+  }
+}
+
 class NotificationProvider extends ChangeNotifier {
   bool takeABreak = false;
   void changeTakeABreak(){

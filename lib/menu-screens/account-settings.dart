@@ -1,7 +1,8 @@
-import 'package:defi/components/toggle.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import "package:defi/data-provider.dart";
+import "package:defi/menu-screens/notification-settings.dart";
+import "package:defi/view/welcome.dart";
+import "package:flutter/material.dart";
+import "package:provider/provider.dart";
 
 class AccountSettings extends StatefulWidget {
   const AccountSettings({super.key});
@@ -16,446 +17,262 @@ class _AccountSettingsState extends State<AccountSettings> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(top: 50.0, left: 30, right: 30),
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.symmetric(horizontal: 25,vertical: 68),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    'ivy.zuyp@gmail.com',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "GraphikMedium",
-                      color: Colors.grey.shade700
+              Text("test@gmail.com",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 14,color: Colors.grey),),
+              Text("Tester",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 30)),
+              SizedBox(height: 14,),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 24,vertical: 20),
+                width: MediaQuery.of(context).size.width,
+                height: 100,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(5.0)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Text("Share your love of crypto and get \$10 of free Bitcoin",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),)
                     ),
-                    textAlign: TextAlign.center,
-                  ),          
-                  Text(
-                    'YuanPin, Lvy Xu',
-                    style: TextStyle(
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.w800,
-                      fontFamily: "GraphikMedium"
-                    ),
-                    textAlign: TextAlign.center,
-                  ),  
-                ]
-              ),
-              SizedBox(height: 14.0,),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(14.0),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.grey.shade500,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Share your love of crypto and get \$10 of free Bitcoin',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Image.asset(
-                          'assets/images/clarity_bitcoin-solid.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ],
-                    ),
-                  ),
+                    SizedBox(child: Image.asset("assets/images/clarity_bitcoin-solid.png"),)
+                  ],
                 ),
               ),
-              SizedBox(height: 30,),
-              Text(
-                'Payment Methods',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: "GraphikMedium",
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 10,),
+              SizedBox(height: 32,),
+              Text("Payment Methods",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22),),
+              SizedBox(height: 12,),
               ElevatedButton(
-                onPressed: (){Navigator.pushNamed(context, '/verify-email');},
+                onPressed: (){},
+                child: Text("Add a payment method"),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                      side: BorderSide(color: Colors.grey),
+                    ),
                   ),
                   minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  backgroundColor: MaterialStateProperty.all(Colors.transparent),
                   foregroundColor: MaterialStateProperty.all(Colors.black),
                   shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  side: MaterialStateProperty.all(BorderSide(color: Colors.grey.shade500, width: 1))
-                ),
-                child: Text(
-                  "Add a payment method",
-                  style: TextStyle(fontFamily: "GraphikMedium",fontSize: 15.0),
-                ),
-              ),
-              SizedBox(height: 30,),
-              Text(
-                'Account',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: "GraphikMedium",
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 10,),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Limits and features',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 20,
-                        ) 
-                      ],
+                  textStyle: MaterialStateProperty.all(
+                    TextStyle(
+                      fontFamily: "GraphikRegular",
+                      fontSize: 16.0,
                     ),
                   ),
                 ),
               ),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Native currency',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 20,
-                        ) 
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Country',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 20,
-                        ) 
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Privacy',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 20,
-                        ) 
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Phone numbers',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 20,
-                        ) 
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Notification settings',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 20,
-                        ) 
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 30,),
-              Text(
-                'Security',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: "GraphikMedium",
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 20,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Require PIN / Face ID',
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium", 
-                      ), 
-                    ),
-                  ),
-                  SizedBox(width: 10.0,),
-                  // ToggleSwitch()
-                ],
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'PIN / Face ID settings',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 20,
-                        ) 
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: 
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              SizedBox(height: 32,),
+              Text("Account",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22),),
+              SizedBox(height: 12,),
+              SizedBox(
+                height: 50,
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Privacy mode',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: "GraphikMedium", 
-                        ), 
-                      ),
-                          Text(
-                            'Long press on your portfolio balance to hide your balances everywhere in the app',
-                            style: TextStyle(
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.grey.shade600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          )
+                      Text("Limits and features",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                      Icon(Icons.arrow_forward_ios,color: Colors.grey,)
                     ],
                   ),
-                  ),
-                  SizedBox(width: 10.0,),
-                  // ToggleSwitch()
-                ],
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Tambahkan fungsi untuk menangani ketika konten di klik di sini
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Support',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "GraphikMedium", 
-                            ), 
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 20,
-                        ) 
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 30.0,),
-              ElevatedButton(
-                onPressed: (){Navigator.pushNamed(context, '/verify-email');},
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
-                  ),
-                  minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
-                  foregroundColor: MaterialStateProperty.all(Colors.black),
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  side: MaterialStateProperty.all(BorderSide(color: Colors.grey.shade500, width: 1))
-                ),
-                child: Text(
-                  "Sign out",
-                  style: TextStyle(fontFamily: "GraphikMedium", fontSize: 15.0, color: Colors.red),
                 ),
               ),
               SizedBox(height: 16.0,),
-              Text(
-                'App Version: 9.26.4 (92604), production',
-                style: TextStyle(
-                  fontSize: 13.0,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: "GraphikMedium", 
-                ), 
+              SizedBox(
+                height: 50,
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Native currency",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                      Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                    ],
+                  ),
+                ),
               ),
-              SizedBox(height: 50,)
+              SizedBox(height: 16.0,),
+              SizedBox(
+                height: 50,
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Country",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                      Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0,),
+              SizedBox(
+                height: 50,
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Privacy",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                      Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0,),
+              SizedBox(
+                height: 50,
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Phone numbers",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                      Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0,),
+              SizedBox(
+                height: 50,
+                child: InkWell(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationSettings(),));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Notification settings",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                      Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 32.0,),
+              Text("Security",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22),),
+              SizedBox(height: 12,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Require PIN / Face ID",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                  Switch(
+                    activeColor: Colors.blue,
+                    value: Provider.of<ProfileSecurityProvider>(context).requirePinFaceId,
+                    onChanged: (bool value){
+                      Provider.of<ProfileSecurityProvider>(context,listen: false).changeRequirePinFaceId(value);
+                    }
+                  )
+                ],
+              ),
+              SizedBox(height: 16,),
+              SizedBox(
+                height: 50,
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("PIN / Face ID settings",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                      Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 16,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Privacy mode",style: TextStyle(fontSize: 16,fontFamily: "GraphikRegular"),),
+                      Text("Long press on your portfolio balance to",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),),
+                      Text("hide your balanceseverywhere in the app",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),)
+                    ],
+                  ),
+                  Switch(
+                    activeColor: Colors.blue,
+                    value: Provider.of<ProfileSecurityProvider>(context).privacyMode,
+                    onChanged: (bool value) {
+                      Provider.of<ProfileSecurityProvider>(context,listen: false).changePrivacyMode(value);
+                    }
+                  ),
+                ],
+              ),
+              SizedBox(height: 16,),
+              SizedBox(
+                height: 50,
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Support",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                      Icon(Icons.arrow_forward_ios,color: Colors.grey,)
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 40,),
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Welcome(),), (Route<dynamic> route) => false);
+                },
+                child: Text("Sign out"),
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                      side: BorderSide(color: Colors.grey),
+                    ),
+                  ),
+                  minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                  backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                  foregroundColor: MaterialStateProperty.all(Colors.red),
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+                  textStyle: MaterialStateProperty.all(
+                    TextStyle(
+                      fontFamily: "GraphikRegular",
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
-        )
-      )
+        ),
+      ),
     );
   }
 }

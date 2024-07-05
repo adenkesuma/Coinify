@@ -51,6 +51,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => NotificationProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => ProfileSecurityProvider(),
+        )
       ],
       child: MaterialApp(
         theme: ThemeData(appBarTheme: const AppBarTheme(color: Colors.white)),
@@ -89,7 +92,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomePage(),
           '/take-photo-of-your-bill': (context) => CameraApp(),
         },
-        home: Welcome(),
+        home: HomePage(),
       ),
     );
   }
