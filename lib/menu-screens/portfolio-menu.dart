@@ -53,9 +53,193 @@ class _PortfolioMenuState extends State<PortfolioMenu> {
             ],
           ),
         )
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: ()async{
+          print("Hello world");
+          await showPortfolioMenuBottomSheet(context);
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
+}
+
+Future<void> showPortfolioMenuBottomSheet(BuildContext context){
+  return showModalBottomSheet<dynamic>(
+    context: context,
+    isScrollControlled: true,
+    builder: (BuildContext context) {
+      return Container(
+        width: MediaQuery.of(context).size.width,
+        height: 445,
+        padding: EdgeInsets.symmetric(vertical: 24),
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: (){},
+              child: Row(
+                children: [
+                  Icon(Icons.add_rounded,color: Colors.blue,),
+                  SizedBox(width: 12,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Buy",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16),),
+                      Text("Buy crypto with cash",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),)
+                    ]
+                  )
+                ],
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 32,),
+            ElevatedButton(
+              onPressed: (){},
+              child: Row(
+                children: [
+                  Icon(Icons.add_rounded,color: Colors.blue,),
+                  SizedBox(width: 12,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Sell",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16),),
+                      Text("Sell crypto for cash",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),)
+                    ]
+                  )
+                ],
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 32,),
+            ElevatedButton(
+              onPressed: (){},
+              child: Row(
+                children: [
+                  Icon(Icons.add_rounded,color: Colors.blue,),
+                  SizedBox(width: 12,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Convert",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16),),
+                      Text("Convet one crypto to another",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),)
+                    ]
+                  )
+                ],
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 32,),
+            ElevatedButton(
+              onPressed: (){},
+              child: Row(
+                children: [
+                  Icon(Icons.add_rounded,color: Colors.blue,),
+                  SizedBox(width: 12,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Send",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16),),
+                      Text("Send crypto to another wallet",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),)
+                    ]
+                  )
+                ],
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 32,),
+            ElevatedButton(
+              onPressed: (){},
+              child: Row(
+                children: [
+                  Icon(Icons.add_rounded,color: Colors.blue,),
+                  SizedBox(width: 12,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Receive",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 16),),
+                      Text("Receive crypto from another wallet",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),)
+                    ]
+                  )
+                ],
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+                ),
+                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                shadowColor: MaterialStateProperty.all(Colors.transparent),
+                textStyle: MaterialStateProperty.all(
+                  TextStyle(
+                    fontFamily: "GraphikRegular",
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }
 
 class VerticalScrollCoins extends StatelessWidget {
@@ -127,5 +311,6 @@ class VerticalScrollCoins extends StatelessWidget {
         );
       },
     );
+    
   }
 }
