@@ -1,4 +1,7 @@
+
 import 'package:defi/constant/coins.dart';
+import 'package:defi/menu-screens/searching.dart';
+import 'package:defi/view/welcome.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -78,25 +81,30 @@ class _PricesMenuState extends State<PricesMenu> {
                           ) 
                         ],
                       ),
-                      Center(
-                        child: Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Colors.grey.shade600,
-                              width: 1
-                            )
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.search,
-                              size: 30,
-                              color: Colors.grey.shade900,
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => Searching(),));
+                        },
+                        child: Center(
+                          child: Container(
+                            width: 45,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.grey.shade600,
+                                width: 1
+                              )
                             ),
-                          ),
-                        ), 
+                            child: Center(
+                              child: Icon(
+                                Icons.search,
+                                size: 30,
+                                color: Colors.grey.shade900,
+                              ),
+                            ),
+                          ), 
+                        ),
                       )
                     ]
                   ),

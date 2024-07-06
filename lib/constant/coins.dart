@@ -3,12 +3,14 @@ class Crypto {
   final String logoUrl;
   final String price;
   final String percen;
+  final String fullName;
 
   Crypto({
     required this.name,
     required this.logoUrl,
     required this.price,
-    required this.percen
+    required this.percen,
+    required this.fullName
   });
 }
 
@@ -57,10 +59,29 @@ class Coins {
 }
 
 List<Crypto> cryptoList = [
-  Crypto(name: 'KNC', logoUrl: 'assets/images/KNC.png', price: '\$2,66', percen: '+22.37%'),
-  Crypto(name: 'ATOM', logoUrl: 'assets/images/ATOM.png', price: '\$16.39', percen: '+16.07%'),
-  Crypto(name: 'CRV', logoUrl: 'assets/images/CRV.png', price: '\$20.10', percen: '+13.30%'),
+  Crypto(name: 'KNC', logoUrl: 'assets/images/KNC.png', price: '\$2,66', percen: '+22.37%',fullName: 'KNC'),
+  Crypto(name: 'ATOM', logoUrl: 'assets/images/ATOM.png', price: '\$16.39', percen: '+16.07%',fullName: 'Atom'),
+  Crypto(name: 'CRV', logoUrl: 'assets/images/CRV.png', price: '\$20.10', percen: '+13.30%',fullName: 'CRV'),
+  Crypto(name: "BTC", logoUrl: "assets/images/Bitcoin.png", price: "\$36,701.78", percen: "-6,28%",fullName: "Bitcoin"),
+  Crypto(name: "BCH", logoUrl: "assets/images/bch.png", price: "\$666.25", percen: "-9,2%",fullName: "Bitcoin Cash"),
+  Crypto(name: "ETH", logoUrl: "assets/images/ETH.png", price: "\$2,629.70", percen: "-8,12%",fullName: "Ethereum"),
+  Crypto(name: "ETC", logoUrl: "assets/images/ETC.png", price: "\$63.94", percen: "-9.56%",fullName: "Ethereum Classic"),
+  Crypto(name: "LTC", logoUrl: "assets/images/LTC.png", price: "\$175.76", percen: "-10.01%",fullName: "Lite coin"),
+  Crypto(name: "BCH", logoUrl: "assets/images/0x-zrx.png", price: "\$1.07", percen: "-10.75%",fullName: "Ox"),
+  Crypto(name: "BAT", logoUrl: "assets/images/BAT.png", price: "\$1.07", percen: "-10.35%",fullName: "Basic Attention Token"),
 ];
+
+List<Crypto> filterCrypto = [];
+void filterTheCrypto(text){
+  filterCrypto.clear();
+  for(int i=0;i<cryptoList.length;i++){
+    if((cryptoList[i].name.toLowerCase().contains(text.toLowerCase()) || cryptoList[i].fullName.toLowerCase().contains(text.toLowerCase())) && text!=""){
+      print(text);
+      filterCrypto.add(cryptoList[i]);
+    }
+  }
+}
+
 
 List<PolygonLearner> polygonLearn = [
   PolygonLearner(imageUrl: 'assets/images/matic-learn.png', title: 'What is Polygon?', earn: 'earn \$3 MATIC', time: '1 min'),
