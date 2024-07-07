@@ -9,6 +9,7 @@ class Searching extends StatefulWidget {
 }
 
 class _SearchingState extends State<Searching> {
+  TextEditingController filterText = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +26,7 @@ class _SearchingState extends State<Searching> {
                   Expanded(
                     child: 
                       TextFormField(
+                        controller: filterText,
                         onChanged: (text){
                           setState(() {
                             print(filterCrypto);
@@ -33,13 +35,23 @@ class _SearchingState extends State<Searching> {
                         },
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))
+                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                          suffixIcon: GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                filterText.clear();
+                              });
+                            },
+                            child: Icon(Icons.clear),
+                          )
                         ),
                       ),
                   ),
                   SizedBox(width: 66,),
                   ElevatedButton(
                     onPressed: (){
+                      filterText.clear();
+                      filterCrypto.clear();
                       Navigator.pop(context);
                     },
                     child: Text("Cancel"),

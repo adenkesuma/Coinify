@@ -1,5 +1,9 @@
 import "package:defi/data-provider.dart";
+import "package:defi/menu-screens/choose-pinfaceid.dart";
+import "package:defi/menu-screens/limits-and-features.dart";
 import "package:defi/menu-screens/notification-settings.dart";
+import "package:defi/menu-screens/share-address.dart";
+import "package:defi/view/auth/receive-bitcoin.dart";
 import "package:defi/view/welcome.dart";
 import "package:flutter/material.dart";
 import "package:provider/provider.dart";
@@ -15,6 +19,7 @@ class _AccountSettingsState extends State<AccountSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
@@ -22,25 +27,42 @@ class _AccountSettingsState extends State<AccountSettings> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("test@gmail.com",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 14,color: Colors.grey),),
-              Text("Tester",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 30)),
+              Text(Provider.of<ProfileProvider>(context).userEmail,style: TextStyle(fontFamily: "GraphikMedium",fontSize: 14,color: Colors.grey),),
+              Text(Provider.of<ProfileProvider>(context).userUsername,style: TextStyle(fontFamily: "GraphikMedium",fontSize: 30)),
               SizedBox(height: 14,),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 24,vertical: 20),
-                width: MediaQuery.of(context).size.width,
+              SizedBox(
                 height: 100,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(5.0)
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Text("Share your love of crypto and get \$10 of free Bitcoin",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),)
+                child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ShareAddress(),));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text("Share your love of crypto and get \$10 of free Bitcoin",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),)
+                      ),
+                      SizedBox(child: Image.asset("assets/images/clarity_bitcoin-solid.png"),)
+                    ],
+                  ),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        side: BorderSide(color: Colors.grey),
+                      ),
                     ),
-                    SizedBox(child: Image.asset("assets/images/clarity_bitcoin-solid.png"),)
-                  ],
+                    minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                    backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                    foregroundColor: MaterialStateProperty.all(Colors.black),
+                    shadowColor: MaterialStateProperty.all(Colors.transparent),
+                    textStyle: MaterialStateProperty.all(
+                      TextStyle(
+                        fontFamily: "GraphikRegular",
+                        fontSize: 16.0,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 32,),
@@ -75,7 +97,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                 height: 50,
                 child: InkWell(
                   onTap: (){
-
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Limits_Features(),));
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -181,7 +203,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                   Text("Require PIN / Face ID",style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
                   Switch(
                     activeColor: Colors.blue,
-                    value: Provider.of<ProfileSecurityProvider>(context).requirePinFaceId,
+                    value: Provider.of<ProfileSecurityProvider>(context,listen: false).requirePinFaceId,
                     onChanged: (bool value){
                       Provider.of<ProfileSecurityProvider>(context,listen: false).changeRequirePinFaceId(value);
                     }
@@ -193,7 +215,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                 height: 50,
                 child: InkWell(
                   onTap: (){
-
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => choosePinFaceId(),));
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -215,7 +237,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                     children: [
                       Text("Privacy mode",style: TextStyle(fontSize: 16,fontFamily: "GraphikRegular"),),
                       Text("Long press on your portfolio balance to",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),),
-                      Text("hide your balanceseverywhere in the app",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),)
+                      Text("hide your balances everywhere in the app",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),)
                     ],
                   ),
                   Switch(
@@ -247,6 +269,7 @@ class _AccountSettingsState extends State<AccountSettings> {
               SizedBox(height: 40,),
               ElevatedButton(
                 onPressed: (){
+                  Provider.of<ProfileProvider>(context).resetWhole();
                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Welcome(),), (Route<dynamic> route) => false);
                 },
                 child: Text("Sign out"),

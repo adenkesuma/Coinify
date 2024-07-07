@@ -54,7 +54,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => ProfileSecurityProvider(),
-        )
+        ),
+        ChangeNotifierProvider(create: (context) => ProfileProvider(),
+        ),
       ],
       child: MaterialApp(
         theme: ThemeData(appBarTheme: const AppBarTheme(color: Colors.white)),

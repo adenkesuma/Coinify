@@ -22,7 +22,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Notification settings",),
+        title: Text("Notification settings",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 18),),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

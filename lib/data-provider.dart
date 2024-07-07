@@ -1,6 +1,30 @@
 import 'package:flutter/material.dart';
 
+class ProfileProvider extends ChangeNotifier{
+  String userEmail = "";
+  String userUsername = "";
+  void setUserEmail(text){
+    userEmail = text;
+  }
+  void setUserUsername(text){
+    for(int i=0;i<text.length;i++){
+      if(text[i]=="@") break;
+      else userUsername+=text[i];
+    }
+  }
+  void resetWhole(){
+    userEmail = "";
+    userUsername = "";
+  }
+}
+
 class ProfileSecurityProvider extends ChangeNotifier{
+  int pinOrFaceIdValue = 1;
+  void changePinOrFaceIdValue(int value){
+    pinOrFaceIdValue = value;
+    notifyListeners();
+  }
+
   bool requirePinFaceId = false;
   void changeRequirePinFaceId(bool value){
     requirePinFaceId = value;

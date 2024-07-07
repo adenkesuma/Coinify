@@ -1,4 +1,6 @@
+import 'package:defi/data-provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -186,7 +188,11 @@ class _SignInState extends State<SignIn> {
                       r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
                     final regex = RegExp(pattern);
                     validEmail = regex.hasMatch(emailInput.text);
-                    if(isEmail && isPassword && validEmail) {Navigator.pushNamed(context, '/sign-in-code');}
+                    if(isEmail && isPassword && validEmail) {
+                      Provider.of<ProfileProvider>(context,listen: false).setUserEmail(emailInput.text);
+                      Provider.of<ProfileProvider>(context,listen: false).setUserUsername(emailInput.text);
+                      Navigator.pushNamed(context, '/sign-in-code');
+                    }
                   });
                 },
                 child: const Text(
