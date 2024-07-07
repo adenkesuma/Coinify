@@ -22,8 +22,10 @@ class _SearchingState extends State<Searching> {
             SizedBox(
               height: 100,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
+                  SizedBox(
+                    width: 250,
                     child: 
                       TextFormField(
                         controller: filterText,
@@ -47,7 +49,6 @@ class _SearchingState extends State<Searching> {
                         ),
                       ),
                   ),
-                  SizedBox(width: 66,),
                   ElevatedButton(
                     onPressed: (){
                       filterText.clear();

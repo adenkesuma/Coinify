@@ -1,8 +1,7 @@
-
+import 'package:crypto_market/Crypto_Market/Model/coin_trade_history_model.dart';
 import 'package:defi/constant/coins.dart';
+import 'package:defi/menu-screens/crypto-graph.dart';
 import 'package:defi/menu-screens/searching.dart';
-import 'package:defi/view/welcome.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PricesMenu extends StatefulWidget {
@@ -24,218 +23,196 @@ class _PricesMenuState extends State<PricesMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.only(top: 50.0, left: 30, right: 30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettings()));
-                    },
-                    child: CircleAvatar(
-                      radius: 30, 
-                      backgroundImage: AssetImage('assets/images/user.png'), 
-                    ),
-                  ),
-                  SizedBox(height: 30,),
-                  Text(
-                    'In the past 24 hours',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "GraphikMedium",
-                      color: Colors.grey.shade700
-                    ),
-                    textAlign: TextAlign.center,
-                  ),          
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Container(
+        padding: EdgeInsets.only(top: 50.0, left: 30, right: 30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettings()));
+              },
+              child: CircleAvatar(
+                radius: 30, 
+                backgroundImage: AssetImage('assets/images/user.png'), 
+              ),
+            ),
+            SizedBox(height: 30,),
+            Text(
+              'In the past 24 hours',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600,
+                fontFamily: "GraphikMedium",
+                color: Colors.grey.shade700
+              ),
+              textAlign: TextAlign.center,
+            ),          
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*2/3,
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Market is up',
-                            style: TextStyle(
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.w700,
-                              fontFamily: "GraphikMedium"
-                            ),
-                            textAlign: TextAlign.center,
-                          ),  
-                          Text(
-                            ' +4.19%',
-                            style: TextStyle(
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.green.shade700,
-                              fontFamily: "GraphikMedium"
-                            ),
-                            textAlign: TextAlign.center,
-                          ) 
-                        ],
-                      ),
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => Searching(),));
-                        },
-                        child: Center(
-                          child: Container(
-                            width: 45,
-                            height: 45,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.grey.shade600,
-                                width: 1
-                              )
-                            ),
-                            child: Center(
-                              child: Icon(
-                                Icons.search,
-                                size: 30,
-                                color: Colors.grey.shade900,
-                              ),
-                            ),
-                          ), 
+                      Text(
+                        'Market is up',
+                        style: TextStyle(
+                          fontSize: 23.0,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "GraphikMedium"
                         ),
-                      )
-                    ]
-                  ),
-                  SizedBox(height: 20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      InkWell(
-                        onTap: () => _updateSelectedText('All assets'),
-                        child: Text(
-                          'All assets',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            color: _selectedText == 'All assets' ? Colors.blue : Colors.black,
-                          ),
+                        textAlign: TextAlign.center,
+                      ),  
+                      Text(
+                        ' +4.19%',
+                        style: TextStyle(
+                          fontSize: 23.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.green.shade700,
+                          fontFamily: "GraphikMedium"
                         ),
-                      ),
-                      SizedBox(width: 15,),
-                      InkWell(
-                        onTap: () => _updateSelectedText('Tradable'),
-                        child: Text(
-                          'Tradable',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            color: _selectedText == 'Tradable' ? Colors.blue : Colors.black,
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 15,),
-                      InkWell(
-                        onTap: () => _updateSelectedText('Gainers'),
-                        child: Text(
-                          'Gainers',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            color: _selectedText == 'Gainers' ? Colors.blue : Colors.black,
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 15,),
-                      InkWell(
-                        onTap: () => _updateSelectedText('Losers'),
-                        child: Text(
-                          'Losers',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            color: _selectedText == 'Losers' ? Colors.blue : Colors.black,
-                          ),
-                        ),
-                      ),
+                        textAlign: TextAlign.center,
+                      ) 
                     ],
                   ),
-                  SizedBox(height: 10,),
-                  SizedBox(
-                    height: 1000, // Atur tinggi sesuai kebutuhan
-                    child: _selectedText == 'All assets' ? AllCoins() : 
-                      _selectedText == 'Tradable' ? TradableCoins() : 
-                      _selectedText == 'Gainers' ? GainersCoins() :
-                      _selectedText == 'Losers' ? LosersCoins() : Text(''),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Searching(),));
+                  },
+                  child: Center(
+                    child: Container(
+                      width: 45,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.grey.shade600,
+                          width: 1
+                        )
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.search,
+                          size: 30,
+                          color: Colors.grey.shade900,
+                        ),
+                      ),
+                    ), 
                   ),
-                ],
-              ),
-            ],
-          )
-        )
+                )
+              ]
+            ),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                InkWell(
+                  onTap: () => _updateSelectedText('All assets'),
+                  child: Text(
+                    'All assets',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: _selectedText == 'All assets' ? Colors.blue : Colors.black,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 15,),
+                InkWell(
+                  onTap: () => _updateSelectedText('Tradable'),
+                  child: Text(
+                    'Tradable',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: _selectedText == 'Tradable' ? Colors.blue : Colors.black,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 15,),
+                InkWell(
+                  onTap: () => _updateSelectedText('Gainers'),
+                  child: Text(
+                    'Gainers',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: _selectedText == 'Gainers' ? Colors.blue : Colors.black,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 15,),
+                InkWell(
+                  onTap: () => _updateSelectedText('Losers'),
+                  child: Text(
+                    'Losers',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: _selectedText == 'Losers' ? Colors.blue : Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10,),
+            Expanded(
+              child: _selectedText == 'All assets' ? AllCoins() : 
+                _selectedText == 'Tradable' ? TradableCoins() : 
+                _selectedText == 'Gainers' ? GainersCoins() :
+                _selectedText == 'Losers' ? LosersCoins() : Text(''),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
 class AllCoins extends StatelessWidget {
+  const AllCoins({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      scrollDirection: Axis.vertical,
-      itemCount: allCoins.length, // Ganti dengan jumlah kartu yang Anda inginkan
-      itemBuilder: (BuildContext context, int index) {
-        Coins allcoins = allCoins[index];
-        return Card(
-          elevation: 0, // Menghilangkan bayangan default Card
-          child: Container(
-            padding: EdgeInsets.only(top: 24),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
+      itemCount: cryptoList.length,
+      itemBuilder: (context, index) {
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          height: 70,
+          child: Column(
+            children: [
+              InkWell(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => CryptoGraph(index: index,what: "All assets",),));
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      allcoins.imageUrl,
-                      // 'assets/images/USDC.png',
-                      fit: BoxFit.cover,
+                    Row(
+                      children: [
+                        Image.asset(cryptoList[index].logoUrl),
+                        SizedBox(width: 16,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(cryptoList[index].fullName,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                            Text(cryptoList[index].name,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),),
+                          ],
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 14,),
-                    Text(
-                      allcoins.name,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ]
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      allcoins.price,
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      allcoins.myAsset + ' ' + allcoins.nameCoin,
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.grey.shade600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(cryptoList[index].price,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                        Text(cryptoList[index].percen,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16,color: Colors.green),)
+                      ],
+                    )
                   ],
-                )
-              ]
-            ),
+                ),
+              ),
+              SizedBox(height: 24,)
+            ],
           ),
         );
       },
@@ -244,65 +221,49 @@ class AllCoins extends StatelessWidget {
 }
 
 class TradableCoins extends StatelessWidget {
+  const TradableCoins({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      scrollDirection: Axis.vertical,
-      itemCount: tradableCoins.length, // Ganti dengan jumlah kartu yang Anda inginkan
-      itemBuilder: (BuildContext context, int index) {
-        Coins tradablecoins = tradableCoins[index];
-        return Card(
-          elevation: 0, // Menghilangkan bayangan default Card
+      itemCount: tradeableCryptoList.length,
+      itemBuilder: (context, index) {
+        return InkWell(
+          onTap: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CryptoGraph(index: index,what: "Tradeable",),));
+          },
           child: Container(
-            padding: EdgeInsets.only(top: 24),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            width: MediaQuery.of(context).size.width,
+            height: 70,
+            child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      tradablecoins.imageUrl,
-                      // 'assets/images/USDC.png',
-                      fit: BoxFit.cover,
+                    Row(
+                      children: [
+                        Image.asset(tradeableCryptoList[index].logoUrl),
+                        SizedBox(width: 16,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(tradeableCryptoList[index].fullName,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                            Text(tradeableCryptoList[index].name,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),),
+                          ],
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 14,),
-                    Text(
-                      tradablecoins.name,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ]
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      tradablecoins.price,
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      tradablecoins.myAsset + ' ' + tradablecoins.nameCoin,
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.grey.shade600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(tradeableCryptoList[index].price,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                        Text(tradeableCryptoList[index].percen,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16,color: Colors.green),)
+                      ],
+                    )
                   ],
-                )
-              ]
+                ),
+                SizedBox(height: 24,)
+              ],
             ),
           ),
         );
@@ -312,65 +273,49 @@ class TradableCoins extends StatelessWidget {
 }
 
 class GainersCoins extends StatelessWidget {
+  const GainersCoins({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      scrollDirection: Axis.vertical,
-      itemCount: gainersCoins.length, // Ganti dengan jumlah kartu yang Anda inginkan
-      itemBuilder: (BuildContext context, int index) {
-        Coins gainerscoins = gainersCoins[index];
-        return Card(
-          elevation: 0, // Menghilangkan bayangan default Card
+      itemCount: gainersCryptoList.length,
+      itemBuilder: (context, index) {
+        return InkWell(
+          onTap: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CryptoGraph(index: index,what: "Gainers",),));
+          },
           child: Container(
-            padding: EdgeInsets.only(top: 24),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            width: MediaQuery.of(context).size.width,
+            height: 70,
+            child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      gainerscoins.imageUrl,
-                      // 'assets/images/USDC.png',
-                      fit: BoxFit.cover,
+                    Row(
+                      children: [
+                        Image.asset(gainersCryptoList[index].logoUrl),
+                        SizedBox(width: 16,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(gainersCryptoList[index].fullName,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                            Text(gainersCryptoList[index].name,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),),
+                          ],
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 14,),
-                    Text(
-                      gainerscoins.name,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ]
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      gainerscoins.price,
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      gainerscoins.myAsset + ' ' + gainerscoins.nameCoin,
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.grey.shade600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(gainersCryptoList[index].price,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                        Text(gainersCryptoList[index].percen,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16,color: Colors.green),)
+                      ],
+                    )
                   ],
-                )
-              ]
+                ),
+                SizedBox(height: 24,)
+              ],
             ),
           ),
         );
@@ -380,65 +325,49 @@ class GainersCoins extends StatelessWidget {
 }
 
 class LosersCoins extends StatelessWidget {
+  const LosersCoins({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      scrollDirection: Axis.vertical,
-      itemCount: losersCoins.length, // Ganti dengan jumlah kartu yang Anda inginkan
-      itemBuilder: (BuildContext context, int index) {
-        Coins loserscoins = losersCoins[index];
-        return Card(
-          elevation: 0, // Menghilangkan bayangan default Card
+      itemCount: losersCryptoList.length,
+      itemBuilder: (context, index) {
+        return InkWell(
+          onTap: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CryptoGraph(index: index,what: "Losers",),));
+          },
           child: Container(
-            padding: EdgeInsets.only(top: 24),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            width: MediaQuery.of(context).size.width,
+            height: 70,
+            child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      loserscoins.imageUrl,
-                      // 'assets/images/USDC.png',
-                      fit: BoxFit.cover,
+                    Row(
+                      children: [
+                        Image.asset(losersCryptoList[index].logoUrl),
+                        SizedBox(width: 16,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(losersCryptoList[index].fullName,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                            Text(losersCryptoList[index].name,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 14,color: Colors.grey),),
+                          ],
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 14,),
-                    Text(
-                      loserscoins.name,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ]
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      loserscoins.price,
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      loserscoins.myAsset + ' ' + loserscoins.nameCoin,
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.grey.shade600,
-                        fontFamily: "GraphikMedium"
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(losersCryptoList[index].price,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16),),
+                        Text(losersCryptoList[index].percen,style: TextStyle(fontFamily: "GraphikRegular",fontSize: 16,color: Colors.green),)
+                      ],
+                    )
                   ],
-                )
-              ]
+                ),
+                SizedBox(height: 24,)
+              ],
             ),
           ),
         );

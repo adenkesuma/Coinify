@@ -13,9 +13,26 @@ class _PortfolioMenuState extends State<PortfolioMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        actions: [
+          PopupMenuButton(
+            color: Colors.white,
+            itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+              const PopupMenuItem(
+                child: Text("USD")
+              ),
+              const PopupMenuItem(
+                child: Text("IDR")
+              )
+            ]
+          ),
+          const SizedBox(width: 15,),
+          ],
+        ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(top: 50.0, left: 30, right: 30),
+          padding: const EdgeInsets.only(top: 50.0, left: 30, right: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +51,7 @@ class _PortfolioMenuState extends State<PortfolioMenu> {
                     ),
                     textAlign: TextAlign.center,
                   ),          
-                  Text(
+                  const Text(
                     '\$13.84',
                     style: TextStyle(
                       fontSize: 30.0,
@@ -45,7 +62,7 @@ class _PortfolioMenuState extends State<PortfolioMenu> {
                   ),  
                 ]
               ),
-              SizedBox(height: 14.0,),
+              const SizedBox(height: 14.0,),
               SizedBox(
                 height: 1000, // Atur tinggi sesuai kebutuhan
                 child: VerticalScrollCoins(),
@@ -59,7 +76,7 @@ class _PortfolioMenuState extends State<PortfolioMenu> {
           print("Hello world");
           await showPortfolioMenuBottomSheet(context);
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -73,12 +90,12 @@ Future<void> showPortfolioMenuBottomSheet(BuildContext context){
       return Container(
         width: MediaQuery.of(context).size.width,
         height: 445,
-        padding: EdgeInsets.symmetric(vertical: 24),
+        padding: const EdgeInsets.symmetric(vertical: 24),
         child: Column(
           children: [
             ElevatedButton(
               onPressed: (){},
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.add_rounded,color: Colors.blue,),
                   SizedBox(width: 12,),
@@ -95,22 +112,22 @@ Future<void> showPortfolioMenuBottomSheet(BuildContext context){
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                 ),
-                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                minimumSize: MaterialStateProperty.all(const Size.fromHeight(60.0)),
                 backgroundColor: MaterialStateProperty.all(Colors.transparent),
                 foregroundColor: MaterialStateProperty.all(Colors.black),
                 shadowColor: MaterialStateProperty.all(Colors.transparent),
                 textStyle: MaterialStateProperty.all(
-                  TextStyle(
+                  const TextStyle(
                     fontFamily: "GraphikRegular",
                     fontSize: 16.0,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 32,),
+            const SizedBox(height: 32,),
             ElevatedButton(
               onPressed: (){},
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.add_rounded,color: Colors.blue,),
                   SizedBox(width: 12,),
@@ -127,22 +144,22 @@ Future<void> showPortfolioMenuBottomSheet(BuildContext context){
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                 ),
-                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                minimumSize: MaterialStateProperty.all(const Size.fromHeight(60.0)),
                 backgroundColor: MaterialStateProperty.all(Colors.transparent),
                 foregroundColor: MaterialStateProperty.all(Colors.black),
                 shadowColor: MaterialStateProperty.all(Colors.transparent),
                 textStyle: MaterialStateProperty.all(
-                  TextStyle(
+                  const TextStyle(
                     fontFamily: "GraphikRegular",
                     fontSize: 16.0,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 32,),
+            const SizedBox(height: 32,),
             ElevatedButton(
               onPressed: (){},
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.add_rounded,color: Colors.blue,),
                   SizedBox(width: 12,),
@@ -159,22 +176,22 @@ Future<void> showPortfolioMenuBottomSheet(BuildContext context){
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                 ),
-                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                minimumSize: MaterialStateProperty.all(const Size.fromHeight(60.0)),
                 backgroundColor: MaterialStateProperty.all(Colors.transparent),
                 foregroundColor: MaterialStateProperty.all(Colors.black),
                 shadowColor: MaterialStateProperty.all(Colors.transparent),
                 textStyle: MaterialStateProperty.all(
-                  TextStyle(
+                  const TextStyle(
                     fontFamily: "GraphikRegular",
                     fontSize: 16.0,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 32,),
+            const SizedBox(height: 32,),
             ElevatedButton(
               onPressed: (){},
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.add_rounded,color: Colors.blue,),
                   SizedBox(width: 12,),
@@ -191,22 +208,22 @@ Future<void> showPortfolioMenuBottomSheet(BuildContext context){
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                 ),
-                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                minimumSize: MaterialStateProperty.all(const Size.fromHeight(60.0)),
                 backgroundColor: MaterialStateProperty.all(Colors.transparent),
                 foregroundColor: MaterialStateProperty.all(Colors.black),
                 shadowColor: MaterialStateProperty.all(Colors.transparent),
                 textStyle: MaterialStateProperty.all(
-                  TextStyle(
+                  const TextStyle(
                     fontFamily: "GraphikRegular",
                     fontSize: 16.0,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 32,),
+            const SizedBox(height: 32,),
             ElevatedButton(
               onPressed: (){},
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.add_rounded,color: Colors.blue,),
                   SizedBox(width: 12,),
@@ -223,12 +240,12 @@ Future<void> showPortfolioMenuBottomSheet(BuildContext context){
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
                 ),
-                minimumSize: MaterialStateProperty.all(Size.fromHeight(60.0)),
+                minimumSize: MaterialStateProperty.all(const Size.fromHeight(60.0)),
                 backgroundColor: MaterialStateProperty.all(Colors.transparent),
                 foregroundColor: MaterialStateProperty.all(Colors.black),
                 shadowColor: MaterialStateProperty.all(Colors.transparent),
                 textStyle: MaterialStateProperty.all(
-                  TextStyle(
+                  const TextStyle(
                     fontFamily: "GraphikRegular",
                     fontSize: 16.0,
                   ),
@@ -251,9 +268,10 @@ class VerticalScrollCoins extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         Coins coin = coins[index];
         return Card(
+          color: Colors.white,
           elevation: 0, // Menghilangkan bayangan default Card
           child: Container(
-            padding: EdgeInsets.only(top: 24),
+            padding: const EdgeInsets.only(top: 24),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -264,10 +282,10 @@ class VerticalScrollCoins extends StatelessWidget {
                       // 'assets/images/USDC.png',
                       fit: BoxFit.cover,
                     ),
-                    SizedBox(width: 14,),
+                    const SizedBox(width: 14,),
                     Text(
                       coin.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w600,
                         fontFamily: "GraphikMedium"
@@ -282,7 +300,7 @@ class VerticalScrollCoins extends StatelessWidget {
                   children: [
                     Text(
                       coin.price,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.w600,
                         fontFamily: "GraphikMedium"

@@ -108,6 +108,7 @@ class _CurrencyPickerState extends State<CurrencyPicker> {
                       subtitle: Text(filteredCurrencies[index].abbreviation),
                       onTap: () {
                         // Do something when currency is tapped
+                        Navigator.of(context).pop();
                         print(
                             'Selected currency: ${filteredCurrencies[index].fullName}');
                       },

@@ -23,6 +23,7 @@ class _ShareAddressState extends State<ShareAddress> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Receive Bitcoin"),
       ),

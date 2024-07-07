@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 4;
+  int _selectedIndex = 3;
 
   static List<Widget Function(BuildContext)> _widgetOptions = <Widget Function(BuildContext)>[
     (BuildContext context) => HomeMenu(),

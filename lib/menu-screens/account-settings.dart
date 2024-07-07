@@ -236,13 +236,16 @@ class _AccountSettingsState extends State<AccountSettings> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Privacy mode",style: TextStyle(fontSize: 16,fontFamily: "GraphikRegular"),),
-                      Text("Long press on your portfolio balance to",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),),
-                      Text("hide your balances everywhere in the app",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),)
-                    ],
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width*2/3,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Privacy mode",style: TextStyle(fontSize: 16,fontFamily: "GraphikRegular"),),
+                        Text("Long press on your portfolio balance to hide your balances everywhere in the app",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),),
+                        // Text("",style: TextStyle(fontSize: 14,fontFamily: "GraphikRegular",color: Colors.grey),)
+                      ],
+                    ),
                   ),
                   Switch(
                     activeColor: Colors.blue,
@@ -273,7 +276,7 @@ class _AccountSettingsState extends State<AccountSettings> {
               SizedBox(height: 40,),
               ElevatedButton(
                 onPressed: (){
-                  Provider.of<ProfileProvider>(context).resetWhole();
+                  Provider.of<ProfileProvider>(context,listen: false).resetWhole();
                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Welcome(),), (Route<dynamic> route) => false);
                 },
                 child: Text("Sign out"),

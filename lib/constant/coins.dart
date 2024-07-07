@@ -71,6 +71,21 @@ List<Crypto> cryptoList = [
   Crypto(name: "BAT", logoUrl: "assets/images/BAT.png", price: "\$1.07", percen: "-10.35%",fullName: "Basic Attention Token"),
 ];
 
+List<Crypto> tradeableCryptoList =[
+  Crypto(name: 'KNC', logoUrl: 'assets/images/KNC.png', price: '\$2,66', percen: '+22.37%',fullName: 'KNC'),
+  Crypto(name: 'ATOM', logoUrl: 'assets/images/ATOM.png', price: '\$16.39', percen: '+16.07%',fullName: 'Atom'),
+];
+
+List<Crypto> gainersCryptoList =[
+Crypto(name: "BTC", logoUrl: "assets/images/Bitcoin.png", price: "\$36,701.78", percen: "-6,28%",fullName: "Bitcoin"),
+  Crypto(name: "BCH", logoUrl: "assets/images/bch.png", price: "\$666.25", percen: "-9,2%",fullName: "Bitcoin Cash"),
+];
+
+List<Crypto> losersCryptoList =[
+Crypto(name: "BCH", logoUrl: "assets/images/0x-zrx.png", price: "\$1.07", percen: "-10.75%",fullName: "Ox"),
+  Crypto(name: "BAT", logoUrl: "assets/images/BAT.png", price: "\$1.07", percen: "-10.35%",fullName: "Basic Attention Token"),
+];
+
 List<Crypto> filterCrypto = [];
 void filterTheCrypto(text){
   filterCrypto.clear();
@@ -112,20 +127,20 @@ List<Coins> coins = [
   Coins(imageUrl: 'assets/images/ETC.png', name: 'Ethereum Classic', price: '\$0.00', myAsset: '0', nameCoin: 'ETC'),
 ];
 
-List<Coins> allCoins = [
-  Coins(imageUrl: 'assets/images/USDC.png', name: 'USD Coin', price: '\$0.00', myAsset: '0', nameCoin: 'USDC'),
-  Coins(imageUrl: 'assets/images/MATIC.png', name: 'Polygon', price: '\$13.80', myAsset: '8.93221123', nameCoin: 'MATIC'),
-  Coins(imageUrl: 'assets/images/Ox-zrx.png', name: 'Ox', price: '\$0.00', myAsset: '0', nameCoin: 'ZRX'),
-  Coins(imageUrl: 'assets/images/AAVE.png', name: 'Aave', price: '\$0.00', myAsset: '0', nameCoin: 'AAVE'),
-  Coins(imageUrl: 'assets/images/ALGO.png', name: 'Algorand', price: '\$0.00', myAsset: '0', nameCoin: 'ALGO'),
-  Coins(imageUrl: 'assets/images/ampl.png', name: 'Ampleforth Governance', price: '\$0.00', myAsset: '0', nameCoin: 'FORTH'),
-  Coins(imageUrl: 'assets/images/ANKR.png', name: 'Ankr', price: '\$0.00', myAsset: '0', nameCoin: 'ANKR'),
-  Coins(imageUrl: 'assets/images/Bitcoin.png', name: 'Bitcoin', price: '\$75.000', myAsset: '1', nameCoin: 'BTC'),
-  Coins(imageUrl: 'assets/images/1INCH.png', name: '1Inch', price: '\$0.00', myAsset: '0', nameCoin: '1INC'),
-  Coins(imageUrl: 'assets/images/bch.png', name: 'Bitcoin Cash', price: '\$0.00', myAsset: '0', nameCoin: 'BTH'),
-  Coins(imageUrl: 'assets/images/ETH.png', name: 'Ethereum', price: '\$0.00', myAsset: '0', nameCoin: 'ETH'),
-  Coins(imageUrl: 'assets/images/ETC.png', name: 'Ethereum Classic', price: '\$0.00', myAsset: '0', nameCoin: 'ETC'),
-];
+// List<Coins> allCoins = [
+//   Coins(imageUrl: 'assets/images/USDC.png', name: 'USD Coin', price: '\$0.00', myAsset: '0', nameCoin: 'USDC'),
+//   Coins(imageUrl: 'assets/images/MATIC.png', name: 'Polygon', price: '\$13.80', myAsset: '8.93221123', nameCoin: 'MATIC'),
+//   Coins(imageUrl: 'assets/images/Ox-zrx.png', name: 'Ox', price: '\$0.00', myAsset: '0', nameCoin: 'ZRX'),
+//   Coins(imageUrl: 'assets/images/AAVE.png', name: 'Aave', price: '\$0.00', myAsset: '0', nameCoin: 'AAVE'),
+//   Coins(imageUrl: 'assets/images/ALGO.png', name: 'Algorand', price: '\$0.00', myAsset: '0', nameCoin: 'ALGO'),
+//   Coins(imageUrl: 'assets/images/ampl.png', name: 'Ampleforth Governance', price: '\$0.00', myAsset: '0', nameCoin: 'FORTH'),
+//   Coins(imageUrl: 'assets/images/ANKR.png', name: 'Ankr', price: '\$0.00', myAsset: '0', nameCoin: 'ANKR'),
+//   Coins(imageUrl: 'assets/images/Bitcoin.png', name: 'Bitcoin', price: '\$75.000', myAsset: '1', nameCoin: 'BTC'),
+//   Coins(imageUrl: 'assets/images/1INCH.png', name: '1Inch', price: '\$0.00', myAsset: '0', nameCoin: '1INC'),
+//   Coins(imageUrl: 'assets/images/bch.png', name: 'Bitcoin Cash', price: '\$0.00', myAsset: '0', nameCoin: 'BTH'),
+//   Coins(imageUrl: 'assets/images/ETH.png', name: 'Ethereum', price: '\$0.00', myAsset: '0', nameCoin: 'ETH'),
+//   Coins(imageUrl: 'assets/images/ETC.png', name: 'Ethereum Classic', price: '\$0.00', myAsset: '0', nameCoin: 'ETC'),
+// ];
 
 List<Coins> tradableCoins = [
   Coins(imageUrl: 'assets/images/USDC.png', name: 'USD Coin', price: '\$0.00', myAsset: '0', nameCoin: 'USDC'),
