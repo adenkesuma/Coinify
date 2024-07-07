@@ -1,8 +1,10 @@
 import "package:defi/data-provider.dart";
 import "package:defi/menu-screens/choose-pinfaceid.dart";
 import "package:defi/menu-screens/limits-and-features.dart";
+import "package:defi/menu-screens/link-your-card.dart";
 import "package:defi/menu-screens/notification-settings.dart";
 import "package:defi/menu-screens/share-address.dart";
+import "package:defi/view/auth/currencies-list.dart";
 import "package:defi/view/auth/receive-bitcoin.dart";
 import "package:defi/view/welcome.dart";
 import "package:flutter/material.dart";
@@ -69,7 +71,9 @@ class _AccountSettingsState extends State<AccountSettings> {
               Text("Payment Methods",style: TextStyle(fontFamily: "GraphikMedium",fontSize: 22),),
               SizedBox(height: 12,),
               ElevatedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => LinkYourCard(),));
+                },
                 child: Text("Add a payment method"),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -114,7 +118,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                 height: 50,
                 child: InkWell(
                   onTap: (){
-
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => CurrencyPicker(),));
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

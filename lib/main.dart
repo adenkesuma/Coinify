@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomePage(),
           '/take-photo-of-your-bill': (context) => CameraApp(),
         },
-        home: HomePage(),
+        home: Welcome(),
       ),
     );
   }
